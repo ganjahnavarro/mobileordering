@@ -1,0 +1,200 @@
+[
+  {
+    "menu_id": 0,
+    "menu_cat": "stimulating",
+    "menu_name": "Rum Coke (Single Shot)",
+    "menu_desc": "None",
+    "menu_ingredient": "",
+    "menu_procedure": "",
+    "menu_price": "55",
+    "menu_image": "stimulating_rumcoke",
+    "menu_short": "S Rum"
+  },
+  {
+    "menu_id": 1,
+    "menu_cat": "stimulating",
+    "menu_name": "Vodka Pineapple",
+    "menu_desc": "",
+    "menu_ingredient": "",
+    "menu_procedure": "",
+    "menu_price": "55",
+    "menu_image": "stimulating_vodkapineapple",
+    "menu_short": "S Vodka P"
+  },
+  {
+    "menu_id": 2,
+    "menu_cat": "stimulating",
+    "menu_name": "Vodka orange",
+    "menu_desc": "",
+    "menu_ingredient": "",
+    "menu_procedure": "",
+    "menu_price": "55",
+    "menu_image": "stimulating_vodkaorange",
+    "menu_short": "S Vodka O"
+  },
+  {
+    "menu_id": 3,
+    "menu_cat": "stimulating_",
+    "menu_name": "Gin Pineapple",
+    "menu_desc": "None",
+    "menu_ingredient": " ",
+    "menu_procedure": "",
+    "menu_price": "55",
+    "menu_image": "stimulating_ginpineapple",
+    "menu_short": "S Gin P"
+  },
+  {
+    "menu_id": 4,
+    "menu_cat": "stimulating",
+    "menu_name": "Gin Lemon Lime",
+    "menu_desc": "None",
+    "menu_ingredient": "",
+    "menu_procedure": "",
+    "menu_price": "55",
+    "menu_image": "stimulating_ginlemonlime",
+    "menu_short": "S Gin LL"
+  },
+  {
+    "menu_id": 5,
+    "menu_cat": "stimulating",
+    "menu_name": "Tequila Shot (Silver)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "65",
+    "menu_image": "stimulating_tequilashotsilver",
+    "menu_short": "S Tequila SS"
+  },
+  {
+    "menu_id": 6,
+    "menu_cat": "stimulating",
+    "menu_name": "Tequila Shot (Gold)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "65",
+    "menu_image": "stimulating_tequilashotgold",
+    "menu_short": "S Tequila SG"
+  },
+  {
+    "menu_id": 7,
+    "menu_cat": "stimulating",
+    "menu_name": "Blue Paradise (Glass)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "75",
+    "menu_image": "stimulating_blueparadise",
+    "menu_short": "S BP G"
+  },
+  {
+    "menu_id": 8,
+    "menu_cat": "stimulating",
+    "menu_name": "Blue Paradise (Pitcher)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "285",
+    "menu_image": "stimulating_blueparadisepitcher",
+    "menu_short": "S BP P"
+  },
+  {
+    "menu_id": 9,
+    "menu_cat": "stimulating",
+    "menu_name": "Regla Mix (Glass)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "75",
+    "menu_image": "stimulating_reglaglass",
+    "menu_short": "S Regla G"
+  },
+  {
+    "menu_id": 10,
+    "menu_cat": "stimulating",
+    "menu_name": "Regla Mix (Pitcher)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "285",
+    "menu_image": "stimulating_reglapitcher",
+    "menu_short": "S Regla P"
+  },
+  {
+    "menu_id": 11,
+    "menu_cat": "stimulating",
+    "menu_name": "Threesome",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "65",
+    "menu_image": "stimulating_threesome",
+    "menu_short": "S Threesome"
+  },
+  {
+    "menu_id": 12,
+    "menu_cat": "stimulating",
+    "menu_name": "Green Illusion",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "65",
+    "menu_image": "stimulating_greenillusion",
+    "menu_short": "S Green I"
+  },
+  {
+    "menu_id": 13,
+    "menu_cat": "stimulating",
+    "menu_name": "Double Damage",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "85",
+    "menu_image": "stimulating_doubledamage",
+    "menu_short": "S Double D"
+  },
+  {
+    "menu_id": 14,
+    "menu_cat": "stimulating",
+    "menu_name": "Tequila Sunrise",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "105",
+    "menu_image": "stimulating_tequilasunrise",
+    "menu_short": "S Tequila S"
+  },
+  {
+    "menu_id": 15,
+    "menu_cat": "stimulating",
+    "menu_name": "Glass of Red Wine",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "75",
+    "menu_image": "stimulating_glassofredwine",
+    "menu_short": "S Red Wine G"
+  },
+  {
+    "menu_id": 16,
+    "menu_cat": "stimulating",
+    "menu_name": "Glass of White Wine",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "75",
+    "menu_image": "stimulating_glassofwhitewine",
+    "menu_short": "S White Wine G"
+  },
+  {
+    "menu_id": 17,
+    "menu_cat": "stimulating",
+    "menu_name": "Paul Masson (Bottle)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "950",
+    "menu_image": "stimulating_paulmasson",
+    "menu_short": "S Paul Masson"
+  }
+]

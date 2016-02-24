@@ -1,0 +1,68 @@
+[
+  {
+    "menu_id": 0,
+    "menu_cat": "blissful",
+    "menu_name": "Clubhouse Sandwiches",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "120",
+    "menu_image": "blissfulflavors_clubhousesandwiches",
+    "menu_short": "B Clubhouse"
+  },
+  {
+    "menu_id": 1,
+    "menu_cat": "blissful",
+    "menu_name": "Pesto Pasta",
+    "menu_desc": "None",
+    "menu_ingredient": "2 x 200 g skinless free-range chicken breasts \n 1 teaspoon fennel seeds \n 2 sprigs of fresh rosemary \n 2 tablespoons rapeseed oil \n 4-5 cloves of garlic \n 1-2 fresh red chillies \n 8 ripe cherry tomatoes \n 250 g green beans \n 1 big bunch of fresh basil \n 50 g blanched almonds \n 50 g Parmesan cheese , plus extra to serve \n 2 tablespoons extra virgin olive oil \n 1 lemon \n 1 clove of garlic \n 300 g fresh lasagne sheets \n 200 g baby spinach",
+    "menu_procedure": "On a large sheet of greaseproof paper, toss the chicken with salt, pepper, fennel seeds and the rosemary leaves. Fold over the paper, then bash and flatten the chicken to 1.5cm thick with a rolling pin . Put into the frying pan with the rapeseed oil, the bashed unpeeled garlic cloves and halved chillies, turning after about 3 or 4 minutes, until golden and cooked through. Line the beans up and cut off the stalks, put into the casserole pan, cover with boiling salted water and cook for 6 minutes with the lid on Pick a few basil leaves for garnish, then rip off the stalks and put the rest of the bunch into the processor with the almonds, Parmesan, extra virgin olive oil and lemon juice � Squash in the unpeeled garlic through a garlic crusher. Blitz until smooth, adding a ladle or two of cooking water from the beans to loosen, then season to taste. Slice the lasagne sheets up into random handkerchief shapes and add to the beans to cook for a couple of minutes. Halve or quarter the tomatoes, add to the chicken and give the pan a shakeStir the spinach into the pasta pan, then drain, reserving a cupful of the starchy cooking water. Return the pasta, beans and spinach to the pan, pour in the pesto from the processor and stir together, loosening with splashes of cooking water until silky. Slice the chicken breasts in half and serve with the tomatoes and chilli spooned over the top. Finely grate a little extra Parmesan over the pasta, then sprinkle everything with basil leaves ",
+    "menu_price": "95",
+    "menu_image": "blissfulflavors_pestopasta",
+    "menu_short": "B Pesto P"
+  },
+  {
+    "menu_id": 2,
+    "menu_cat": "blissful",
+    "menu_name": "Pepper Beef Pasta",
+    "menu_desc": "None",
+    "menu_ingredient": "8 ounces dry whole grain penne pasta, uncooked \n 1 pound boneless beef top sirloin steak, cut into thin slices \n 1/4 teaspoon salt \n 1/2 teaspoon ground black pepper, divided \n 2 tablespoons Pure Wesson� Vegetable Oil, divided \n 1 pkg (16 oz each) frozen pepper stir-fry vegetables \n 2 tablespoons Hunt's� Tomato Paste \n 1 can (14.5 oz each) Hunt's� Fire Roasted Diced Tomatoes with Garlic, undrained \n 2 tablespoons La Choy� Lite Soy Sauce",
+    "menu_procedure": "Cook pasta according to package directions, omitting salt. Sprinkle steak with salt and 1/4 teaspoon black pepper. Heat 1 tablespoon oil in large skillet over medium-high heat. Add steak; cook and stir until browned. Drain. Remove from skillet; cover to keep warm. Place remaining 1 tablespoon oil, stir-fry vegetables and tomato paste in skillet; cook and stir 5 minutes. Stir in undrained tomatoes, soy sauce and steak. Reduce heat to low; simmer 5 minutes. Drain pasta. Toss pasta with vegetable mixture and remaining 1/4 teaspoon black pepper.",
+    "menu_price": "110",
+    "menu_image": "blissfulflavors_pepperbeefpasta",
+    "menu_short": "B Pepper P"
+  },
+  {
+    "menu_id": 3,
+    "menu_cat": "blissful",
+    "menu_name": "Veggie Carbonara",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "95",
+    "menu_image": "blissfulflavors_creamyvegancarbonara'",
+    "menu_short": "B Veggie Carbo"
+  },
+  {
+    "menu_id": 4,
+    "menu_cat": "blissful",
+    "menu_name": "Tuna and Cheese Sandwich",
+    "menu_desc": "",
+    "menu_ingredient": "1 can (6 ounces) tuna, drained and flaked \n 1 cup (4 ounces) shredded cheddar cheese \n 1/2 cup chopped walnuts \n 1/2 cup mayonnaise \n 1 tablespoon milk \n 1 teaspoon lemon juice \n 1/2 teaspoon Worcestershire sauce \n 1/4 teaspoon onion salt \n  1/8 teaspoon pepper \n 10 slices whole wheat bread \n 2-1/2 cups finely shredded lettuce",
+    "menu_procedure": "In a small bowl, combine the first nine ingredients. On five slices of bread, layer 1/2 cup lettuce and about 1/4 cup tuna mixture; top with remaining bread.",
+    "menu_price": "120",
+    "menu_image": "blissfulflavors_tunaandcheesesandwich",
+    "menu_short": "B Tuna S"
+  },
+  {
+    "menu_id": 5,
+    "menu_cat": "blissful",
+    "menu_name": "Palabok",
+    "menu_desc": "Pancit Palabok is a noodle dish with shrimp sauce and topped with several ingredients such as cooked shrimp, boiled pork, crushed chicharon, tinapa flakes, fried tofu, scallions, and fried garlic. A very tasty treat that is sure to relieve your hunger.",
+    "menu_ingredient": " 1 pack (1 lb) rice noodles (bihon) \n 2 tbsp cooking oil \n � lb ground pork \n 1 tbsp anatto powder \n 3 cups pork broth \n 1 piece shrimp cube \n 6 tablespoons all-purpose flour \n 2 tbsp fish sauce \n � tsp ground black pepper \n 1 cup boiled pork, thinly sliced and cut into small pieces \n 2 pieces fried firm tofu (tokwa), cubed \n � cup tinapa flakes (smoked fish) \n � cup chicharon (pounded) \n 2 hard boiled eggs,sliced \n � cup cooked shrimps (boiled or steamed) \n � cup green onion or scallions, finely chopped \n 3 tbsp fried garlic \n 2 pieces lemon, sliced (or 6 to 8 pieces calamansi)",
+    "menu_procedure": "Soak the rice noodles in water for about 15 minutes. Drain and set aside. Cook the sauce by heating a saucepan. Pour-in the cooking oil. When the oil is hot enough, put-in the ground pork and cook for about 5 to 7 minutesDilute the annato powder in pork broth then pour the mixture in the saucepan. Bring to a boil (If you are using anatto seeds, soak them first in 3 tbsp water to bring-out the color)Add the shrimp cube and stir and simmer for 3 minutesAdd the flour gradually while stirring.Add the fish sauce and ground black pepper then simmer until sauce becomes thick. Set aside.Meanwhile, boil enough water in a pot. Place the soaked noodles in a strainer (use metal or bamboo strainer) then submerge the strainer in the boiling water for about a minute or until the noodles are cooked. (make sure that the noodles are still firm)Remove the strainer from the pot and drain the liquid from the noodles.Place the noodles in the serving plate. Pour the sauce on top of the noodles then arrange the toppings over the sauce.Serve with a slice of lemon or calamansi.",
+    "menu_price": "120",
+    "menu_image": "blissfulflavors_palabok",
+    "menu_short": "B Palabok"
+  }
+]

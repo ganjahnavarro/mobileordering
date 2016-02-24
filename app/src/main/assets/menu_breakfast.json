@@ -1,0 +1,57 @@
+[
+  {
+    "menu_id": 0,
+    "menu_cat": "breakfast",
+    "menu_name": "Tapsilog",
+    "menu_desc": "Tapsilog is a meal composed of Filipino beef jerky, garlic fried rice, and fried egg.",
+    "menu_ingredient": "1½ lb. beef tapa \n 4 cups sinangag (garlic fried rice) \n 4 pieces fried eggs (over easy) \n Spiced vinegar (sinamak or pinakurat)",
+    "menu_procedure": "Arrange 1 cup sinangag, a quarter of the beef tapa, and piece of fried egg in a plate. Serve with spiced vinegar and ketchup.",
+    "menu_price": "89",
+    "menu_image": "breakfast_tapsilog",
+    "menu_short": "B Tapsilog"
+  },
+  {
+    "menu_id": 1,
+    "menu_cat": "breakfast",
+    "menu_name": "Hamsilog",
+    "menu_desc": "",
+    "menu_ingredient": "3 pc Sliced Ham \n 1 pc Egg \n 1 cup Rice (cooked) \n 2 cloves Garlic (minced) \n Cooking oil \n Salt and pepper",
+    "menu_procedure": "In a pan heat the oil then sauté garlic and rice. Add salt and pepper to taste. Afterwards, place the rice on a plate. Fry the sliced ham and place on the plate with the rice. Fry the egg sunny side up and add it to the plate. Serve with ketchup.",
+    "menu_price": "75",
+    "menu_image": "breakfast_hamsilog",
+    "menu_short": "B Hamsilog"
+  },
+  {
+    "menu_id": 2,
+    "menu_cat": "breakfast",
+    "menu_name": "Hotsilog",
+    "menu_desc": "",
+    "menu_ingredient": "2 pc hotdog \n 1 cup garlic rice \n 1 pc fried egg",
+    "menu_procedure": "Heat cooking oil and fry the hotdogs, and once the slits frills out the hotdogs are done.",
+    "menu_price": "75",
+    "menu_image": "breakfast_hotsilog",
+    "menu_short": "B Hotsilog"
+  },
+  {
+    "menu_id": 3,
+    "menu_cat": "breakfast",
+    "menu_name": "Chicsilog",
+    "menu_desc": "",
+    "menu_ingredient": "1 pc Chicken leg and thigh(seasoned with salt & pepper and little soy sauce) \n 1 cup Garlic rice \n 1 pc Fried egg",
+    "menu_procedure": "In a frying pan, deep fried chicken for 8-12 minutes or until cooked. Garlic rice – heal oil in a pan, place chopped garlic , a cup of cooked rice seasoned with salt in  a teflon pan, fry an egg on a low heat.",
+    "menu_price": "79",
+    "menu_image": "breakfast_chicsilog",
+    "menu_short": "B Chicsilog"
+  },
+  {
+    "menu_id": 4,
+    "menu_cat": "breakfast",
+    "menu_name": "Bangsilog",
+    "menu_desc": " Bangsilog is another popular breakfast dish by most Filipinos which is a combination of Bang=bangus(milkfish), Si=sinangag(fried rice), log = itlog(fried egg). Boneless bangus should be marinated in vinegar, garlic and pepper then fried until golden brown. Serve with fried egg and fried rice.",
+    "menu_ingredient": "1 large-sized boneless milkfish(bangus), cut in half \n 2 cups leftover rice \n 2 raw eggs \n 4 gloves garlic, minced \n salt and pepper to taste\n  6 gloves garlic, pound\n 1/2 cup vinegar\n 1/4 teaspoon ground pepper",
+    "menu_procedure": "Marinate milkfish in garlic, pepper and vinegar for at least 3 hours or overnight inside the fridge. In a pan, heat oil then fry sunny-side up egg until set. Drain and set aside. In a same pan, fry garlic until light brown. Add rice then season with salt. Keep stirring for 3 minutes or until well blended. Set aside. In a frying pan, heat oil then fry marinated milkfish for 5 minutes each side or until golden brown. Drain on paper towel. Arrange fried milkfish in a serving plate with fried egg and fried rice. Enjoy!",
+    "menu_price": "79",
+    "menu_image": "breakfast_bangsilog",
+    "menu_short": "B Bangsilog"
+  }
+]

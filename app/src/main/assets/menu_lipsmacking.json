@@ -1,0 +1,101 @@
+[
+  {
+    "menu_id": 0,
+    "menu_cat": "lipsmacking",
+    "menu_name": "Pork Steak",
+    "menu_desc": "Pork Steak is a variation of Bistek Tagalog.",
+    "menu_ingredient": "4 to 5 pieces pork chops \n 5 tablespoons soy sauce \n 2 pieces lime or 1 piece lemon \n  ½ cup cooking oil \n  2 medium onions, sliced \n 1½ cups water \n 1 tablespoon granulated white sugar \n Salt and pepper to taste",
+    "menu_procedure": "Combine all the marinade ingredients in a bowl then marinate the beef for at least 20 minutes In a separate bowl, combine the ingredients for the sauce and stir well. Set aside Pour the water in a cooking pot and let boil. Blanch the broccoli for a minute. Remove the broccoli from the cooking pot and soak in ice water for 10 to 20 seconds then drain excess water. Set aside Apply high heat on a wok or a frying pan then pour-in cooking oil when the pan is really hot. Put-in the beef and arrange so that all the slices directly touches the pan. Allow to cook for a minute. Flip the beef and allow the other side to cook then put-in the garlic and cook for a minute. Pour-in the sauce and bring to a boil. Add the broccoli and cook for a minute. Stir-in the cornstarch (diluted in water) and cook until the sauce thickens. Serve hot with rice. Share and enjoy!",
+    "menu_price": "139",
+    "menu_image": "lipsmacking_porksteak",
+    "menu_short": "L Pork"
+  },
+  {
+    "menu_id": 1,
+    "menu_cat": "lipSmacking",
+    "menu_name": "Salisbury Steak",
+    "menu_desc": "",
+    "menu_ingredient": "1 (10.5 ounce) can condensed French onion soup \n 1 1/2 pounds ground beef \n 1/2 cup dry bread crumbs \n 1 egg \n 1/4 teaspoon salt \n 1/8 teaspoon ground black pepper \n 1 tablespoon all-purpose flour \n 1/4 cup ketchup \n 1/4 cup water \n 1 tablespoon Worcestershire sauce \n  1/2 teaspoon mustard powder",
+    "menu_procedure": "In a large bowl, mix together 1/3 cup condensed French onion soup with ground beef, bread crumbs, egg, salt and black pepper. Shape into 6 oval patties. In a large skillet over medium-high heat, brown both sides of patties. Pour off excess fat. In a small bowl, blend flour and remaining soup until smooth. Mix in ketchup, water, Worcestershire sauce and mustard powder. Pour over meat in skillet. Cover, and cook for 20 minutes, stirring occasionally.",
+    "menu_price": "95",
+    "menu_image": "lipsmacking_salis burrysteak",
+    "menu_short": "L Salisbury"
+  },
+  {
+    "menu_id": 2,
+    "menu_cat": "lipsmacking",
+    "menu_name": "Kare-Kare",
+    "menu_desc": "Kare Kare is a traditional Filipino stew complimented with a thick savory peanut sauce. The commonly used meats for this dish are ox tail, tripe, and pork leg; on some occasions goat and chicken meat are also used. Besides the peanuts, this dish depends on the shrimp paste (on the side) in order to be fully enjoyed. Traditionally, “palayok” (clay cooking pot) is used to cook this dish and it is also used as the serving pot.",
+    "menu_ingredient": "3 lbs oxtail (cut in 2 inch slices) you an also use tripe or beef slices \n 1 small banana flower bud (sliced) \n 1 bundle of pechay or bok choy \n 1 bundle of string beans (cut into 2 inch slices) \n 4 pcs eggplants (sliced)1 cup ground peanuts \n ½ cup peanut butter \n ½ cup shrimp paste \n 34 Ounces water (about 1 Liter) \n ½ cup annatto seeds (soaked in a cup of water) \n ½ cup toasted ground rice \n 1 tbsp garlic, minced \n 1 large onion, chopped \n salt and pepper",
+    "menu_procedure": " In a large pot, bring the water to a boil Put in the oxtail followed by the onions and simmer for 2.5 to 3 hrs or until tender (35 minutes if using a pressure cooker) Once the meat is tender, add the ground peanuts, peanut butter, and coloring (water from the annatto seed mixture) and simmer for 5 to 7 minutes Add the toasted ground rice and simmer for 5 minutes On a separate pan, saute the garlic then add the banana flower, eggplant, and string beans and cook for 5 minutes Transfer the cooked vegetables to the large pot (where the rest of the ingredients are) Add salt and pepper to taste Serve hot with shrimp paste.",
+    "menu_price": "110",
+    "menu_image": "lipsmacking_karekare",
+    "menu_short": "L Kare"
+  },
+  {
+    "menu_id": 3,
+    "menu_cat": "lipsmacking",
+    "menu_name": "Lechon Paksiw Bagnet",
+    "menu_desc": "Lechon Paksiw na Bagnet is another simple and easy Filipino pork dish. This is similar to lechon paksiw but instead of roasted pork we used bagnet. Bagnet is a popular delicacy in Ilocos made from pork belly deep fried until crispy and blister on skin.",
+    "menu_ingredient": "1 1/2- 2 lbs beef sirloin  (thinly sliced) \n1 big onion (cut into rings) \ncooking oil \n2 cups water \n1/2 cup soy sauce \n2 tbsp calamansi juice or 3 tbsp lemon juice",
+    "menu_procedure": "In a pan or wok, marinate meat in soy sauce & 2 tbsp calamansi or lemon juice for at least an hour. Add water to the meat marinade. Make sure all of the meat are flat or straighten out. (if not it will curl and will be hard to fry later). Bring the meat to a boil removing scum as it gathers and simmer for 30 minutes or until the meat is tender. Remove the meat from the pan. (Reserve the liquid from the wok where you boiled the meat). Pan fry all the meat & onion rings. Simmer the fried meat with the reserved liquid for 5-10 minutes. Add the onion rings. Add more calamansi or lemon juice as needed. Simmer for 2 minutes. Serve with hot rice. Enjoy!",
+    "menu_price": "130",
+    "menu_image": "lipsmacking_lechonpaksiwbagnet",
+    "menu_short": "L Paksiw"
+  },
+  {
+    "menu_id": 4,
+    "menu_cat": "lipsmacking",
+    "menu_name": "Crispy Bagnet",
+    "menu_desc": "Bagnet is a deep fried crispy pork belly dish that is similar to lechon kawali. It originated from Ilocos and is considered to be a top favorite among Filipinos. This is best served bagoong monamon. it is a dip made of fermented anchovies.",
+    "menu_ingredient": "½ lb. of beef sirloin, thinly sliced \n½ tablespoon soy sauce (cooking wine) \n1 tablespoon cornstarch \n4 tablespoon vegetable oil \n1/3 teaspoon salt \n1 tablespoon water \n½ lb. spinach \n6 sections green onion (1 inch long) \n1 tablespoon shredded ginger",
+    "menu_procedure": "Blend 1 tablespoon of vegetable oil, soy sauce and cornstarch with sliced beef to prevent the meat from sticking together during frying. In a wok or large skillet, heat 1 tablespoon vegetable oil. Briefly stir-fry spinach, salt and water; remove and place in bowl and keep warm. To hot wok, add 2 additional tablespoons vegetable oil. Stir-fry green onions and ginger, add beef and stir-fry to desired tenderness. Add spinach to wok. Stir constantly to mix well.",
+    "menu_price": "130",
+    "menu_image": "lipsmacking_crispybagnet",
+    "menu_short": "L Crispy"
+  },
+  {
+    "menu_id": 5,
+    "menu_cat": "lipsmacking",
+    "menu_name": "Pork Tonkatsu",
+    "menu_desc": "Tonkatsu is a popular Asian breaded pork chop recipe that is usually consumed for lunch. This dish is simple and quick to prepare.",
+    "menu_ingredient": "1/2 kilo beef shank \n1 bundle of pechay or bok choy \n1 bundle of string beans (cut into 2 inch slices) \n2 pcs eggplants (sliced) \n1/2 cup peanut butter \n1/2 cup shrimp paste (bagoong) \n1 Liter of water \n1/2 cup annatto seeds (soaked in a cup of water) \n1 tbsp garlic, minced \n1 large onion, chopped \nsalt and pepper to taste",
+    "menu_procedure": "In a large pot, add water and beef shank then boil for 3 hours or until tender (35 minutes if using a pressure cooker) Once the meat is tender, add the peanut butter, and coloring (water from the annatto seed mixture) and simmer for 5 to 7 minutes On a separate pan, saute the garlic then add the eggplant, and string beans and cook for 3 minutes Transfer the cooked vegetables to the large pot (where the rest of the ingredients are) Add the Pechay or  bok choy simmer for 2 minutes Add salt and pepper to taste. Serve hot with shrimp paste.",
+    "menu_price": "95",
+    "menu_image": "lipsmacking_porktankatsu",
+    "menu_short": "L PorkT"
+  },
+  {
+    "menu_id": 6,
+    "menu_cat": "lipsmacking",
+    "menu_name": "Chicken Teriyaki",
+    "menu_desc": "One of my favorite Filipino dishes is the Kaldereta or Caldereta. It is a hearty meat dish using chevon (goat meat), beef, or pork combined with potatoes, carrots, tomato sauce, and liver spread or liver paste. This is a popular dish served during special occasions and a regular in every Filipino cookbook. My family loves Beef Kaldereta and I must say that my wife is an expert in cooking this dish. As special at it may seem, preparing something like this takes some time and patience but it is all worth the wait. I would recommend the presence of a pressure cooker though to save some time in making the meat tender.",
+    "menu_ingredient": "2 lbs beef, cubed \n3 garlic cloves, crushed and chopped \n1 onion, finely chopped \n2 cups beef broth \n1 small red bell pepper, sliced \n1 small green bell pepper, sliced \n1 cup tomato sauce \n½ cup liver spread or liver paste (processed using blender) \n1 tsp. crushed chili or red pepper \n3 large bay leaves \n2 cups potatoes, sliced \n2 cups carrots, sliced \n1 cup cooking oil \n? cup green olives \nsalt and pepper to taste",
+    "menu_procedure": "Heat the cooking oil in the cooking pot or pressure cooker. Sauté the onion and garlic. Add the beef. Cook for 5 minutes or until the color turns light brown. Add the dried bay leaves and crushed pepper. Stir. Add the liver spread. Stir. Pour-in the tomato sauce and beef broth. Cook the beef until it becomes tender (about 30 mins if using a pressure cooker, or 1 to 2 hours if using an ordinary pot). Add potato and carrots. Cook for 8 to 10 minutes. Put the green olives and bell peppers in the cooking pot. Stir and continue to cook for 5 minutes more. Add salt and pepper to taste. Serve Hot. Enjoy!",
+    "menu_price": "95",
+    "menu_image": "lipsmacking_chickenteriyaki",
+    "menu_short": "L Chicken"
+  },
+  {
+    "menu_id": 7,
+    "menu_cat": "lipsmacking",
+    "menu_name": "Katsudon",
+    "menu_desc": "Katsudon is Tonkatsu (deep-fried pork) and eggs cooked in a sweet and salty broth and placed over rice. ",
+    "menu_ingredient": "3 to 3 1/2 lbs (1.3 to 1.6 kg) of Boneless Rump Roast (pick an end cut with a layer of fat if you can) \n1 Tbsp olive oil \n8-10 slivers of garlic (3 to 4 cloves, sliced in half or into thirds) \nSalt and pepper \nRed wine, water, and or beef stock \ncorn starch",
+    "menu_procedure": "The beef should be brought to close to room temperature before you start to roast it so that it cooks more evenly. So, remove it from the refrigerator at least 1 hour, preferably 2 hours, before cooking. Open the wrapping, sprinkle all sides with salt, and wrap it up again. Preheat your oven to 375°F (190°C). Pat the roast dry with paper towels. Use the tip of a sharp knife to make 8 to 10 small incisions around the roast. Put a sliver of garlic into each cut. Rub olive oil all over the roast. Sprinkle with salt and pepper. Place the roast directly on the middle oven rack, fatty side up, with a roasting pan to catch the drippings on the rack beneath it. Placing the roast directly on the rack like this with a pan on the rack below creates a convection type environment in the oven, allowing the hot air to more easily circulate around the roast, so you don't have to turn the roast as it cooks. Place the roast fat-side up so that as the fat melts it bathes the entire roast in flavor. Cook the roast initially at 375°F (190°C) for half an hour, to brown it. Then lower the heat to 225°F (107°C). The roast should take somewhere from 1 1/2 to 2 1/2 hours additionally to cook. The shape of the roast will affect the cooking time. If your roast is long and narrow, rather than a more round shape, it may take less time to cook, so keep an eye on it. When juices start to drip from the roast, and it is browned on the outside, check the roast's internal temperature with a meat thermometer. Remove the roast from the oven when the internal temperature of the roast is 135° to 140°F (57°C to 60°C). Place the roast on a cutting board and tent it with aluminum foil to keep it warm. Let it rest for 15 to 30 minutes before cutting. Thinly slice the roast to serve. (Resting the cooked roast is important. If you cut into it too soon, the roast will lose more of its juices.)",
+    "menu_price": "130",
+    "menu_image": "lipsmacking_katsudon",
+    "menu_short": "L Katsudo"
+  },
+  {
+    "menu_id": 8,
+    "menu_cat": "lipsmacking",
+    "menu_name": "Oyakodon",
+    "menu_desc": "The literal translation of Oyakodon (親子丼) means “parent-and-child rice bowl.” The typical ingredients include chicken (as in parent), egg (as in child), and onions. The ingredients are simmered together in a sauce then served on top of a bowl of rice. It’s a very common Donburi dish and served at most traditional Japanese diners.",
+    "menu_ingredient": "2 chicken thighs, rinsed and pat dry \n 3 Tbsp. mirin \n 1 Tbsp. sake \n 1 cup dashi \n 2 Tbsp. soy sauce \n 1 Tbsp. sugar \n ½ large onion, thinly sliced \n 2 large eggs, gently beaten \n 1 mitsuba (Japanese wild parsley) or green onion/scallion, finely sliced for garnish \n 3 cups cooked Japanese rice",
+    "menu_procedure": "Slice the chicken diagonally and cut into 1 (2.5 cm) pieces (Use Sogigiri cutting technique). In a large frying pan, add mirin and sake and bring to a boil over medium high heat. Add dashi, soy sauce and sugar, and bring to a boil again. Add the onion in a single layer and place the chicken on top. Cover and bring to a boil. Skim off the scum and fat, and cook over medium heat for about 10 minutes. Slowly and evenly drizzle the beaten egg over the chicken and onion. Cook covered until the egg is done. Shake the pan occasionally so the egg and chicken don't stick to the pan. Add the mitsuba (or green onion) right before removing from the heat. Pour the chicken and egg on top of steamed rice and pour desired amount of sauce.",
+    "menu_price": "130",
+    "menu_image": "lipsmacking_oyakodon",
+    "menu_short": "L Oyakodon"
+  }
+]

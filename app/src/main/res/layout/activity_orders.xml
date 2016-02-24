@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="12"
+    tools:context="com.mobile.mobileordering.OrdersActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="12">
+
+        <ImageButton
+            android:id="@+id/ibOrdersRefresh"
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@android:color/transparent"
+            android:cropToPadding="true"
+            android:padding="@dimen/padding_lg"
+            android:scaleType="fitCenter"
+            android:src="@drawable/refresh" />
+
+        <TextView
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:gravity="center"
+            android:text="@string/app_act_orders"
+            android:textSize="25sp" />
+
+        <ImageButton
+            android:id="@+id/ibOrdersLogout"
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@android:color/transparent"
+            android:cropToPadding="true"
+            android:padding="@dimen/padding_lg"
+            android:scaleType="fitCenter"
+            android:src="@drawable/home" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="2" />
+
+    <ListView
+        android:id="@+id/lvOrders"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="11" />
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="12">
+
+    <TextView
+        android:id="@+id/tReportLabel"
+        android:layout_width="@dimen/linear_zero_dimen"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:text="French Fries"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/textsize_md"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tReportQuantity"
+        android:layout_width="@dimen/linear_zero_dimen"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="x2"
+        android:textSize="@dimen/textsize_md"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/tReportSubtotal"
+        android:layout_width="@dimen/linear_zero_dimen"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:gravity="end|center"
+        android:text="Php 1000.00"
+        android:textSize="@dimen/textsize_md"
+        android:textStyle="bold" />
+
+</LinearLayout>

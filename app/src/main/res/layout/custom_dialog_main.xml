@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_lg"
+    android:weightSum="2">
+
+    <EditText
+        android:id="@+id/etMainUsername"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:hint="Username"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/textsize_lg" />
+
+    <EditText
+        android:id="@+id/etMainPassword"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/textsize_lg" />
+
+</LinearLayout>

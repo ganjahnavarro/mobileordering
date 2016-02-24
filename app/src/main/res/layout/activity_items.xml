@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="12"
+    tools:context=".ItemsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="12">
+
+        <TextView
+            android:id="@+id/tvItemsTable"
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tvItemsHeading"
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:gravity="center"
+            android:text="@string/app_act_item"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:id="@+id/ibItemsLogout"
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@android:color/transparent"
+            android:cropToPadding="true"
+            android:padding="@dimen/padding_lg"
+            android:scaleType="fitCenter"
+            android:src="@drawable/home" />
+
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/gvItems"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_weight="10"
+        android:background="@drawable/bg_item" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="12">
+
+        <Space
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="3" />
+
+        <Button
+            android:id="@+id/bItemsView"
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:text="@string/items_b_view_order"
+            android:textSize="@dimen/textsize_sm" />
+
+        <Space
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="3" />
+    </LinearLayout>
+
+</LinearLayout>

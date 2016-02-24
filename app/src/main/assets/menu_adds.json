@@ -1,0 +1,57 @@
+[
+  {
+    "menu_id": 0,
+    "menu_cat": "adds",
+    "menu_name": "Extra Egg",
+    "menu_desc": "None",
+    "menu_ingredient": "3 pieces medium to large squid, cleaned \n 1 cup soy sauce \n 1 large tomato, diced \n 1 large sweet onion, diced \n 3 pieces dried Thai chili \n ½ piece lemon or 2 pieces calamansi \n salt and ground black pepper to taste",
+    "menu_procedure": "In a large container, combine onion and tomato Add some salt and pepper and mix well. Stuff the squid with the onion and tomato mixture. Add more if necessary. Grill the squid for 6 to 8 minutes per side. Transfer to a serving plate. \nServe hot with dip. Share and Enjoy! Serve hot and enjoy!",
+    "menu_price": "15",
+    "menu_image": "adds_extraegg",
+    "menu_short": "A Extra Egg"
+  },
+  {
+    "menu_id": 1,
+    "menu_cat": "adds",
+    "menu_name": "Extra Gravy",
+    "menu_desc": "Gravy is a sauce, made often from the juices that run naturally during cooking and often thickened with wheat flour or cornstarch for added texture",
+    "menu_ingredient": "1/4 pound (1 stick) unsalted butter \n 1 1/2 cups chopped yellow onion (2 onions) \n 1/4 cup flour \n 1 teaspoon kosher salt \n 1/2 teaspoon freshly ground black pepper \n Defatted turkey drippings plus chicken stock to make 2 cups, heated \n 1 tablespoon Cognac or brandy \n 1 tablespoon white wine, optional \n 1 tablespoon heavy cream, optional",
+    "menu_procedure": "In a large (10 to 12-inch) saute pan, cook the butter and onions over medium-low heat for 12 to 15 minutes, until the onions are lightly browned. Don't rush this step; it makes all the difference when the onions are well-cooked.Sprinkle the flour into the pan, whisk in, then add the salt and pepper. Cook for 2 to 3 minutes. Add the hot chicken stock mixture and Cognac, and cook uncovered for 4 to 5 minutes until thickened. Add the wine and cream, if desired. Season, to taste, and serve.",
+    "menu_price": "10",
+    "menu_image": "adds_extragravy",
+    "menu_short": "A Extra Gravy"
+  },
+  {
+    "menu_id": 2,
+    "menu_cat": "adds",
+    "menu_name": "Extra Special Rice",
+    "menu_desc": "None",
+    "menu_ingredient": "1 large milkfish (bangus), with scales but guts removed \n 1 large tomato, diced \n 1 large red onion, diced \n 1 lemon (or 3 pieces calamansi) \n 1 tablespoon minced ginger \n 2 teaspoons salt \n 1/2 teaspoon ground black pepper",
+    "menu_procedure": "Wash the milk fish. Pat it dry using a paper towel. Open the incision and then rub the salt on the inside of the dish. The fish should have an incision in the belly area. Meanwhile, combine tomato, onion, and ginger in a large bowl. Squeeze some lemon juice in and add the ground black pepper. Gently stir. Stuff the mixture inside the milkfish. Grill the fish in medium heat for about 10 to 12 minutes per side. Serve with toyomansi and steamed rice. Share and enjoy!",
+    "menu_price": "27",
+    "menu_image": "adds_extraspecialrice",
+    "menu_short": "A Extra Special Rice"
+  },
+  {
+    "menu_id": 3,
+    "menu_cat": "adds",
+    "menu_name": "Extra Siomai",
+    "menu_desc": "None",
+    "menu_ingredient": "1 kg Pork Belly (Liempo), 1 inch thick \n 1/4 cup ketchup \n 1 tablespoon cooking oil \n 1/2 cup soy sauce \n 6 cloves garlic, crushed \n 1/4 cup calamansi or lime juice \n 1/2 teaspoon grind black pepper \n 1 teaspoon salt \n 3 tablespoons brown sugar",
+    "menu_procedure": "In a bowl, combine marinade ingredients then marinate pork belly for at least 3 hours or in a fridge overnight. Remove the pork belly and then reserve the marinade. Combine ketchup and oil in marinade then mix well for basting. Grill marinated pork belly over hot charcoal for 10 minutes each side or until tender while basting with marinade mixture. Transfer serving plate and serve with steamed rice and spicy toyo-mansi.",
+    "menu_price": "9",
+    "menu_image": "adds_extrasiomai",
+    "menu_short": "A Extra Siomai"
+  },
+  {
+    "menu_id": 4,
+    "menu_cat": "adds",
+    "menu_name": "Extra Rice",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "15",
+    "menu_image": "adds_rice",
+    "menu_short": "A Extra Rice"
+  }
+]

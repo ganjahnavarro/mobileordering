@@ -1,0 +1,178 @@
+[
+  {
+    "menu_id": 0,
+    "menu_cat": "beverages",
+    "menu_name": "Glass of Iced Tea",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "29",
+    "menu_image": "beverages_glassoficedtea",
+    "menu_short": "B Iced Tea G"
+  },
+  {
+    "menu_id": 1,
+    "menu_cat": "beverages",
+    "menu_name": "Pitcher of Iced Tea",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "145",
+    "menu_image": "beverages_pitcheroficedtea",
+    "menu_short": "B Iced Tea P"
+  },
+  {
+    "menu_id": 2,
+    "menu_cat": "beverages",
+    "menu_name": "Black Gulaman",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "29",
+    "menu_image": "beverages_blackgulaman",
+    "menu_short": "B Black G"
+  },
+  {
+    "menu_id": 3,
+    "menu_cat": "beverages",
+    "menu_name": "Melon Juice",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "29",
+    "menu_image": "beverages_melonjuice",
+    "menu_short": "B Melon j"
+  },
+  {
+    "menu_id": 4,
+    "menu_cat": "beverages",
+    "menu_name": "Canned Juice (Pineapple, Mango, Four Seasons)",
+    "menu_desc": "",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "45",
+    "menu_image": "beverages_cannedjuice",
+    "menu_short": "B Canned J"
+  },
+  {
+    "menu_id": 5,
+    "menu_cat": "beverages",
+    "menu_name": "Canned Soda (Mug,RC, Coke, Sprite, Royal)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "45",
+    "menu_image": "beverages_cannedsoda",
+    "menu_short": "B Canned S"
+  },
+  {
+    "menu_id": 6,
+    "menu_cat": "beverages",
+    "menu_name": "Cup of Coffee",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "35",
+    "menu_image": "beverages_cupofcoffee",
+    "menu_short": "B Coffee"
+  },
+  {
+    "menu_id": 7,
+    "menu_cat": "beverages",
+    "menu_name": "Cup of Tea",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "35",
+    "menu_image": "beverages_cupoftea",
+    "menu_short": "B Tea"
+  },
+  {
+    "menu_id": 8,
+    "menu_cat": "beverages",
+    "menu_name": "RC Cola (240 ml)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "15",
+    "menu_image": "beverages_rccola240ml",
+    "menu_short": "B RC 240"
+  },
+  {
+    "menu_id": 9,
+    "menu_cat": "beverages",
+    "menu_name": "RC Cola (500 ml)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "25",
+    "menu_image": "beverages_rccola500ml",
+    "menu_short": "B RC 500"
+  },
+  {
+    "menu_id": 10,
+    "menu_cat": "beverages",
+    "menu_name": "RC Cola (1.5 L)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "70",
+    "menu_image": "beverages_rccola15l",
+    "menu_short": "B RC 15"
+  },
+  {
+    "menu_id": 11,
+    "menu_cat": "beverages",
+    "menu_name": "Mug Root Beer (1.5 L)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "70",
+    "menu_image": "beverages_mugrootbeer15l",
+    "menu_short": "B Mug RB 15"
+  },
+  {
+    "menu_id": 12,
+    "menu_cat": "beverages",
+    "menu_name": "Orange Fruit Soda (1.5 L)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "70",
+    "menu_image": "beverages_orangefruitsoda15l",
+    "menu_short": "B Orange FS 15"
+  },
+  {
+    "menu_id": 13,
+    "menu_cat": "beverages",
+    "menu_name": "Avocado Mikshake",
+    "menu_desc": "A tasty sweet and sour fish fillet for those who like to eat fish without those tiny fish bones. There are many kinds of fish fillet you can use if you can’t find labahita (surgeon fish) or lapu-lapu (grouper). Substitutes can be cream dory fillet or tilapia fillet since those fishes have white and tasty flesh. This dish is also very easy to cook. You only have to coat the fish fillet with eggs and bread crumbs before frying and just cooking the sauce with very few ingredients then combine them, the fish and the sauce, then serve hot.",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "70",
+    "menu_image": "beverages_avocadomilkshake",
+    "menu_short": "B Avocado"
+  },
+  {
+    "menu_id": 14,
+    "menu_cat": "beverages",
+    "menu_name": "Mango Yogurt Milkshake",
+    "menu_desc": "A tasty sweet and sour fish fillet for those who like to eat fish without those tiny fish bones. There are many kinds of fish fillet you can use if you can’t find labahita (surgeon fish) or lapu-lapu (grouper). Substitutes can be cream dory fillet or tilapia fillet since those fishes have white and tasty flesh. This dish is also very easy to cook. You only have to coat the fish fillet with eggs and bread crumbs before frying and just cooking the sauce with very few ingredients then combine them, the fish and the sauce, then serve hot.",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "85",
+    "menu_image": "beverages_mangoyogurtmilkshake",
+    "menu_short": "B Mango"
+  },
+  {
+    "menu_id": 15,
+    "menu_cat": "beverages",
+    "menu_name": "Oreo Milkshake",
+    "menu_desc": "A tasty sweet and sour fish fillet for those who like to eat fish without those tiny fish bones. There are many kinds of fish fillet you can use if you can’t find labahita (surgeon fish) or lapu-lapu (grouper). Substitutes can be cream dory fillet or tilapia fillet since those fishes have white and tasty flesh. This dish is also very easy to cook. You only have to coat the fish fillet with eggs and bread crumbs before frying and just cooking the sauce with very few ingredients then combine them, the fish and the sauce, then serve hot.",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "85",
+    "menu_image": "beverages_oreomilkshake",
+    "menu_short": "B Oreo"
+  }
+]

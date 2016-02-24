@@ -1,0 +1,46 @@
+[
+  {
+    "menu_id": 0,
+    "menu_cat": "tapsi",
+    "menu_name": "Tocilog",
+    "menu_desc": "None",
+    "menu_ingredient": "1 lb. uncooked tocino \n3 cups sinangag \n3 sunny-side up eggs \n2 cups water \n¼ cup cooking oil",
+    "menu_procedure": "Boil the water in a cooking pot. Once the water starts to boil, pour-in the cooking oil and add the uncooked tocino. Boil in medium heat until the water evaporates. Once the water completely evaporate, the oil will be left behind. Let one side of the tocino cook in oil for 3 minutes. Flip the tocino and cook the other side for the same time. Arrange the cooked tocino with the eggs in individual plates. Meanwhile, remove the excess oil in the cooking pot where the tocino was cooked. Heat the same pot and put-in the sinangag. Cook the fried rice for 1 minute while tossing. The residue from the tocino will stick to the fried rice making it more tasty. Arrange the fried rice with the tocino in individual plates. Serve with spiced vinegar. Share and enjoy!",
+    "menu_price": "85",
+    "menu_image": "tapsi_tocilog",
+    "menu_short": "Tocilog"
+  },
+  {
+    "menu_id": 1,
+    "menu_cat": "tapsi",
+    "menu_name": "Longsilog",
+    "menu_desc": "Longsilog is another popular breakfast dish by most Filipinos which is a combination of Long=Longanisa(sausage), Si=sinangag(fried rice) and log = itlog(fried egg). Longanisa is a flavoured sausage that is commonly made of ground pork meat and spices.",
+    "menu_ingredient": "4 pieces longanisa(sausage) \n2 cups leftover rice \n2 raw eggs \n4 gloves garlic, minced \nsalt to tast",
+    "menu_procedure": "In a pan, heat oil then fry sunny-side up egg until set. Drain and set aside. In a same pan, fry garlic until light brown. Add rice then season with salt. Keep stirring for 3 minutes or until well blended. Set aside. In a pan, heat oil then cook longanisa until brown. Drain and set aside. Arrange longanisa in a serving plate with fried egg and fried rice. Enjoy!",
+    "menu_price": "85",
+    "menu_image": "tapsi_longsilog",
+    "menu_short": "Longsilog"
+  },
+  {
+    "menu_id": 2,
+    "menu_cat": "tapsi",
+    "menu_name": "Tapsilog",
+    "menu_desc": "None",
+    "menu_ingredient": "1½ lb. beef tapa \n4 cups sinangag (garlic fried rice) \n4 pieces fried eggs (over easy) \nSpiced vinegar (sinamak or pinakurat)",
+    "menu_procedure": "Arrange 1 cup sinangag, a quarter of the beef tapa, and piece of fried egg in a plate. Serve with spiced vinegar and ketchup. Share and enjoy!",
+    "menu_price": "85",
+    "menu_image": "tapsi_tapsilog",
+    "menu_short": "Tapsilog"
+  },
+  {
+    "menu_id": 3,
+    "menu_cat": "tapsi",
+    "menu_name": "Emsilog",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "85",
+    "menu_image": "tapsi_emsilog",
+    "menu_short": "Emsilog"
+  }
+]

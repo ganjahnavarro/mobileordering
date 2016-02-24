@@ -1,0 +1,47 @@
+﻿[
+  {
+    "menu_id": 0,
+    "menu_cat": "combo",
+    "menu_name": "Combo 1",
+    "menu_desc": "Papi's Fried Chicken, Chopsuey, Rice, Soup and Iced Tea",
+    "menu_price": "119",
+    "menu_image": "combo_combo1",
+    "menu_short": "C combo1"
+  },
+  {
+    "menu_id": 1,
+    "menu_cat": "combo",
+    "menu_name": "Combo 2",
+    "menu_desc": "Sweet and Sour Pork, Chopsuey, Rice, Soup and Iced Tea",
+    "menu_price": "119",
+    "menu_image": "combo_combo2",
+    "menu_short": "C combo2"
+  },
+  {
+    "menu_id": 2,
+    "menu_cat": "combo",
+    "menu_name": "Combo 3",
+    "menu_desc": "Sweet and Sour Pork, Pancit Canton, Rice, Soup and Iced Tea",
+    "menu_price": "119",
+    "menu_image": "combo_combo3",
+    "menu_short": "C combo3"
+  },
+  {
+    "menu_id": 3,
+    "menu_cat": "combo",
+    "menu_name": "Combo 4",
+    "menu_desc": "Butterd Chicken, Pancit Canton, Rice, Soup and iced Tea",
+    "menu_price": "119",
+    "menu_image": "combo_combo4",
+    "menu_short": " C combo4"
+  },
+  {
+    "menu_id": 4,
+    "menu_cat": "combo",
+    "menu_name": "Combo 5",
+    "menu_desc": "Fish Fillet, Buttered Chicken, Pancit Canton, Rice, Soup and Iced Tea",
+    "menu_price": "130",
+    "menu_image": "combo_combo4",
+    "menu_short": " C combo4"
+  }
+]

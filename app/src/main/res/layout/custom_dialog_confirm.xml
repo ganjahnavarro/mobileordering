@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/customConfirm"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_lg"
+    android:weightSum="12">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:fillViewport="false">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Are you sure you want to order"
+            android:id="@+id/textView"
+            android:layout_weight="10"
+            tools:ignore="HardcodedText,ObsoleteLayoutParam"
+            android:textSize="@dimen/abc_text_size_headline_material" />
+    </ScrollView>
+
+</LinearLayout>

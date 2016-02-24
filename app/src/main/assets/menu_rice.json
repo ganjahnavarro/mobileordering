@@ -1,0 +1,46 @@
+[
+  {
+    "menu_id": 0,
+    "menu_cat": "rice",
+    "menu_name": "Bagoong Rice",
+    "menu_desc": "Bagoong Rice is a type of fried rice dish that makes use of shrimp paste or bagoong. This original version of this dish is of Thai origin. However, and since we love bagoong, I made a real quick and easy version of the recipe that everyone can enjoy.",
+    "menu_ingredient": "/4 lb. pork belly, sliced thin \n 3 tablespoons chopped scallions \n 1/2 cup green mango, chopped \n 5 cups steamed white rice \n 3 tablespoons bagoong guisado (or bottled shrimp paste) \n 1 teaspoon garlic, minced \n 1 tablespoon cooking oil",
+    "menu_procedure": "Heat a frying pan. Sear the sliced pork belly by putting them directly in the hot pan and cooking them until oil comes out. This should take about 2 to 5 minutes. Add 1 tablespoon of bagoong guisado and then stir. Cook for a minute and then remove from the pan and set aside. Pour the oil in the same frying pan. When the oil becomes hot, put-in the garlic and then cook for 15 seconds. Add 2 tablespoons of shrimp paste and then cook for 30 seconds in medium heat. Put-in the rice. Gently mix while cooking until all the ingredients are distributed properly. Cook the rice for 10 minutes while gently scraping the bottom of the pan once in a while.Transfer the rice to a serving bowl. Top with the cooked pork belly, chopped green mango, and chopped scallions.",
+    "menu_price": "80",
+    "menu_image": "specialriceplatters_bagoongrice",
+    "menu_short": "R Bagoong R"
+  },
+  {
+    "menu_id": 1,
+    "menu_cat": "rice",
+    "menu_name": "Shanghai Rice",
+    "menu_desc": "None",
+    "menu_ingredient": "2 lbs. Pork, cubed \n1 tbsp Garlic, minced \n5 tbsp vinegar \n1 cup onion, chopped \n1 cup tomato, chopped \n1 pc chili (banana pepper, Jalapeno, or long chili pepper), sliced \n½ cup shrimp paste \n3-5 pcs. dried bay leaves \n1 tbsp whole pepper corn \n24 ounces water \nsalt and pepper",
+    "menu_procedure": "In a cooking pot, pour-in the water and bring to a boil. Put-in the pork, vinegar, and dried bay leaves and simmer for 35 minutes or until meat is tender. Remove the meat from the pot separating it from the liquid and other ingredients. set aside. In a separate pan, saute the garlic, onion, tomato. Add the shrimp paste and simmer for 5 minutes (more time is needed for raw shrimp paste). Put the pork in and cook for 7 minutes. Be sure to mix all the ingredients well. Add the chili and simmer for 3 minutes. Add salt and pepper to taste",
+    "menu_price": "80",
+    "menu_image": "specialriceplatters_shanghairice",
+    "menu_short": "R Shanghai R"
+  },
+  {
+    "menu_id": 2,
+    "menu_cat": "rice",
+    "menu_name": "Fisherman's Rice",
+    "menu_desc": "None",
+    "menu_ingredient": "oil \n1 onion, peeled and chopped \n1-1/2 pounds ground pork \n1 cup crushed pineapple, drained \n1 large carrot, peeled and shredded \n1 cup raisins \n¼ cup banana ketchup \n3 eggs, well-beaten \n2 teaspoons salt \n1 teaspoon pepper \n3 eggs, hardboiled, peeled and quartered \n3 pieces vienna sausages, cut into four lengthwise",
+    "menu_procedure": "In a pan over medium heat, heat about 1 tablespoon of oil. Add onions and cook until limp. In a large bowl, combine ground pork, crushed pineapple, carrots, sauteed onions, raisins, ketchup, beaten eggs, salt and pepper. Mix well until evenly distributed. On center of a 12-inch aluminum foil, spread ? of the pork mixture creating a rectangular shape. Arrange sliced eggs and vienna sausages on top and middle of pork mixture. Carefully roll mixture to form a log of about 3-inch in diameter. Wrap the foil around the meat and crimp ends of foil to seal tightly. Repeat with remaining pork mixture. In a roasting pan, add about 2 inches of water. Arrange foil-wrapped pork mixture on a roasting rack and position rack on top of water-filled pan. Bake in a 375 F oven for about 50 to 60 minutes or until juice runs clear when pork rolls are pierced with a knife. Allow to cool before peeling foil. In a pan, heat about 1 inch of oil. Add embutido and cook, turning occasionally, until lightly browned on all sides. Let stand for about 5 minutes before slicing into desired thickness.",
+    "menu_price": "80",
+    "menu_image": "specialriceplatters_fishermanrice",
+    "menu_short": "R Fisherman R"
+  },
+  {
+    "menu_id": 3,
+    "menu_cat": "rice",
+    "menu_name": "Mexican Rice Platter",
+    "menu_desc": "None",
+    "menu_ingredient": "2 lbs. pork belly \n2 tbsp salt \n2 tbsp whole pepper corn \n5 pcs. dried bay leaves \n3 cups cooking Oil \n34 ounces Water",
+    "menu_procedure": "Place the water on a big cooking pot and bring to a boil Put-in the pork belly then add 1 tbsp of salt, pepper, and bay leaves and simmer for 30 minutes or until meat is tender Remove the meat from the pot and let it cool down for a few minutes Spread 1 tbsp of salt on the meat, make sure to distribute it evenly on all sections We now need to deep fry the meat. On a dry cooking pot place the cooking oil and heat it up When the oil is hot enough, put the meat in the cooking pot and let it cook until the immersed side is brown and the meat's texture is crispy Flip the meat to cook the opposite side Remove the meat from the pan, let it cool down a little then slice according to desired portions Serve hot. Share and Enjoy!",
+    "menu_price": "80",
+    "menu_image": "specialriceplatters_mexicanriceplatter",
+    "menu_short": "R Mexican R"
+  }
+]

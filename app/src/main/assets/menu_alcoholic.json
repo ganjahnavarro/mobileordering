@@ -1,0 +1,112 @@
+[
+  {
+    "menu_id": 0,
+    "menu_cat": "alcoholic",
+    "menu_name": "Pale Pilsen",
+    "menu_desc": "T-Bone steak sauteed with onions is a quick and easy steak dish that you can prepare for dinner. Aside from T-Bone, this dish can also be made with other beef steak cuts.",
+    "menu_ingredient": "1 lb T-Bone steak (or any steak cut), grilled medium rare \n 1 medium yellow onion, sliced \n 2 tablespoons Extra Virgin Olive oil \n 2 tablespoons French fried onion \n 1 tablespoon Worcestershire sauce \n Salt and pepper to taste",
+    "menu_procedure": "Slice the steak into thick strips. Heat a pan and then pour-in olive oil. When the oil becomes hot, put-in the onion and then sauté for 2 minutes. Add the sliced steak. Pour-in the Worcestershire sauce. Sprinkle salt and pepper. Stir and then cook for 3 minutes in medium heat. Transfer to a serving plate. Top with French fried onions. Serve. Share and enjoy!",
+    "menu_price": "50",
+    "menu_image": "alcoholic_palepilsen",
+    "menu_short": "A Pale Pilsen"
+  },
+  {
+    "menu_id": 1,
+    "menu_cat": "alcoholic",
+    "menu_name": "San Mig Light",
+    "menu_desc": "None",
+    "menu_ingredient": "20 ounces porterhouse steak \n 1 teaspoon olive oil \n 1 tablespoon meat tenderizer \n 1 teaspoon steak seasoning",
+    "menu_procedure": "Place steak on a plate and coat lightly with olive oil. Rub steak with meat tenderizer. Sprinkle steak with Canadian steak seasoning and gently rub into steak. Cover with plastic wrap and let stand for 20 minutes. Preheat a grill for high heat. When the grill is hot, lightly oil the grate. Unwrap steaks and grill on open flame or charcoal grill for 3 to 5 minutes per side, or to your desired degree of doneness.",
+    "menu_price": "50",
+    "menu_image": "alcoholic_sanmiglight",
+    "menu_short": "A SanMigLight"
+  },
+  {
+    "menu_id": 2,
+    "menu_cat": "alcoholic",
+    "menu_name": "Red Horse Beer",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "50",
+    "menu_image": "alcoholic_redhorsebeer",
+    "menu_short": "A RedHorseBeer"
+  },
+  {
+    "menu_id": 3,
+    "menu_cat": "alcoholic",
+    "menu_name": "San Mig Apple",
+    "menu_desc": "None",
+    "menu_ingredient": "3-4 pcs beef shanks \n 1 head garlic, pounded with skin on \n 2 large onions, quartered \n 1 tbsp peppercorns \n 2 tsp rubbed parsley \n salt \n 3 tbsp butter \n 2 tbsp flour \n 1½ cup reduced beef stock (from boiling the shanks) \n 1 tbsp Worcestershire sauce \n 4 tsp mushroom powder (you can also use dried shiitake and grind it on a coffee grinder) \n 4 cloves garlic, minced \n 1 tsp onion powder \n salt \n freshly ground black pepper \n 2 tbsp butter \n 2 cups white button mushrooms, sliced \n fried onions \n oil",
+    "menu_procedure": "In a pot place all bulalo ingredients, pour enough water to barely cover all ingredients. Bring it to a boil then simmer for 1½ to 2 hrs. or until beef is tender. Remove from pot then set it aside. Continue boiling the stock until reduced, drain using a muslin cloth to remove non liquid ingredients then set it aside. In a pan add 2 tbsp butter and cook mushrooms, remove from pan then set aside. Using the same pan add 3 tbsp butter and garlic, stir for a minute then add mushroom powder, stir again for a minute. Add flour to the pan then mix roux. Add Worcestershire sauce, reduced beef stock and onion powder. Cook until sauce thickens then season with salt and freshly ground black pepper Place a sizzling plate on stove top with heat on high. While waiting the plate to become hot, brush shanks with small amount of oil. Place shanks on the sizzling plate then leave it for 3-4 minutes then turn it on the other side. Add mushrooms on top then pour gravy on top. Then serve while sizzling hot.",
+    "menu_price": "50",
+    "menu_image": "alcoholic_sanmigapple",
+    "menu_short": "A SanMig A"
+  },
+  {
+    "menu_id": 4,
+    "menu_cat": "alcoholic",
+    "menu_name": "San Mig Lemon",
+    "menu_desc": "None",
+    "menu_ingredient": "2 pounds pig face (snouts, ears and jowls) \n 1-1/2 cups vinegar \n water \n 1 bay leaf \n 2 tablespoons salt and more to taste \n 1 teaspoon whole pepper corns \n 1 tablespoon oil \n 1 large onion, peeled and diced \n 2 to 3 cloves garlic, peeled and minced \n 1 thumb-size ginger, peeled and minced \n 5 Thai chili peppers, stemmed and minced (more or less depending on spiciness desired) \n 2 tablespoons soy sauce \n pepper to taste \n calamansi, cut into halves",
+    "menu_procedure": "In a pot, combine pig face, 1 cup of the vinegar, bay leaf, 2 tablespoons salt, pepper corns and enough water to completely cover pork. Bring to a boil, skimming scum that accumulates on top. Lower heat, cover and simmer for about 45 minutes to 1 hour or until meat is tender. Remove from heat and drain well, discarding liquid. \n Over hot coals, grill pork for about 4 to 6 minutes on each side or until crisp and slightly charred. Allow to cool to touch and dice. \n In a pan over medium heat, heat oil. Add ¾ of the onions, garlic and ginger. Cook for about 2 to 3 minutes or until limp and aromatic. Add meat and stir gently to combine. Add chili peppers, soy sauce and the remaining ½ cup vinegar. Bring to a boil, uncovered and without stirring, for about 3 to 5 minutes. Continue to cook, stirring occasionally, for about 8 to 10 minutes or until pork is heated through and liquid is absorbed. Season with salt and pepper to taste. Arrange on hot plates and top with remaining onions. Serve with calamansi.",
+    "menu_price": "50",
+    "menu_image": "alcoholic_sanmiglemon",
+    "menu_short": "A SanMig L"
+  },
+  {
+    "menu_id": 5,
+    "menu_cat": "alcoholic",
+    "menu_name": "Tanduay Ice",
+    "menu_desc": "Sizzling Gambas is a shrimp dish that is considered to be both an appetizer and a main dish. Although the term “Gambas” in Spanish pertain to prawns, this dish often uses medium to large sized shrimps (compared to jumbo and colossal prawns) because of price and quantity reasons. On the other hand, the “sizzling” adjective refers to the manner on how the shrimps are presented. A hot metal plate known as a sizzling plate (or fajita plate) is used to serve the dish to make it more appealing and exciting to eat.",
+    "menu_ingredient": "1 lb shrimp, peeled and deveined \n2 tablespoons garlic, minced \n1/4 cup lemon juice \n1/2 cup green chili, sliced diagonally \n1 cup red bell pepper, chopped \n1/4 cup cooking oil or olive oil \n1 medium-sized onion, quartered \n2 tablespoons cooking rice wine \n1/4 cup tomato sauce \n2 tablespoons chili sauce \nSalt and pepper to taste",
+    "menu_procedure": "Combine lemon juice and shrimp and marinade for 30 minutes. Pour cooking oil in a wok of frying pan then apply heat. When the oil is hot enough, put-in the garlic and cook until the color turns light brown. Add the onions and red bell pepper then cook until the texture softens. Put-in the shrimps and cook for 2 minutes. Add the cooking rice wine, salt, and pepper then cook for another minute. Add the tomato sauce and stir. Cook for 2 minutes. Put-in the hot sauce and simmer for 30 seconds. Turn off the heat and set-aside. Heat a sizzling plate and transfer the shrimp along with the other ingredients. Top with sliced green chilies and serve. Share and enjoy!",
+    "menu_price": "50",
+    "menu_image": "alcoholic_tanduayice",
+    "menu_short": "A T Ice"
+  },
+  {
+    "menu_id": 6,
+    "menu_cat": "alcoholic",
+    "menu_name": "Beer Bucket",
+    "menu_desc": "This dish is grilled squid served in sizzling plate. The squid is first marinated in salt, soy sauce, vinegar, ginger, garlic and sugar. Then it is grilled until done and served in a hot cast iron sizzling plate.",
+    "menu_ingredient": "1 pc. big squid \n 2 slices ginger, julienne (cut into thin strips) \n 1/2 tsp. salt \n 3 cloves garlic \n 1 Tbsp. soy sauce \n 1 tsp. sugar \n 1 Tbsp. vinegar",
+    "menu_procedure": "Combine salt, soy sauce, vinegar, ginger, garlic and sugar in a bowl. Marinate squid in the mixture for half a day. Grill to almost done, but not quite, basting regularly with the marinade. Slice into rings. Transfer to a heated up sizzling plate. Pour a little marinade over the grilled squid. Serve.",
+    "menu_price": "270",
+    "menu_image": "alcoholic_beerbucket",
+    "menu_short": "A Beer Bucket"
+  },
+  {
+    "menu_id": 7,
+    "menu_cat": "alcoholic",
+    "menu_name": "Beer Bucket with Onion Rings",
+    "menu_desc": "None",
+    "menu_ingredient": "Chicken breast 2 boneless, flattened \n Garlic ½ tsp \n Black pepper ½ tsp, crushed \n Worcester sauce 1 tbsp \n Mustard paste ½ tsp \n Demi glace powder 1 tsp, heaped \n Salt ½ tsp \n Water ½ cup \n Oil 1 tbsp",
+    "menu_procedure": "Marinate chicken breast with salt, black pepper, mustard, garlic & oil. Heat grill pan, spread chicken on it & fry till done. Add Worcester sauce, demi glace powder & ½ cup water. Cook till thick. Serve with boiled sautéed vegetables & grilled onions. Serve on a sizzler.",
+    "menu_price": "",
+    "menu_image": "alcoholic_beerbucketonionrings",
+    "menu_short": "A BB Onion"
+  },
+  {
+    "menu_id": 8,
+    "menu_cat": "alcoholic",
+    "menu_name": "Beer Bucket with Gising-Gising",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "",
+    "menu_image": "alcoholic_beerbucketwithgisinggising",
+    "menu_short": "A BB GG"
+  },
+  {
+    "menu_id": 9,
+    "menu_cat": "alcoholic",
+    "menu_name": "Beer Bucket with Sisig",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "",
+    "menu_image": "alcoholic_beerbucketwithsisig",
+    "menu_short": "A BB Sisig"
+  }
+]

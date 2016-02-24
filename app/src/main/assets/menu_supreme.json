@@ -1,0 +1,35 @@
+[
+  {
+    "menu_id": 0,
+    "menu_cat": "supreme",
+    "menu_name": "Garlic Shrimp Fry with Soup and Iced Tea",
+    "menu_desc": "Filipino style creamy carbonara recipe is another simple pasta dish. It is usually consist of pasta and a creamy white sauce topped with ham and bacon.",
+    "menu_ingredient": "500 grams Fettucine noodles(or any desired pasta) \n1 can evaporated milk \n250 ml all purpose cream \n1 can creamed of mushroom soup \n200 grams sweet ham \n200 grams bacon \n1 head garlic, minced \n1 onion, minced \n1 teaspoon ground pepper \n2 tablespoons olive oil \n250 grams grated Parmesan cheese \n2 tablespoon parsley, chopped(optional)",
+    "menu_procedure": "In a large pot, prepare the pasta based on cooking instructions. Set aside. Fry the bacon but not too crispy. drain and cut into small pieces. Set aside. Fry the ham, drain and cut into small square pieces. Set aside. In a pan, heat oil and saute garlic and onion. Add 3/4 of fried bacon and ham. Add evaporated milk and creamed mushroom soup. Add the all purpose cream and grated parmesan cheese. Stir and bring to boil. Season with ground pepper. Add more evaporated milk or a cup of water if the sauce is too creamy or salty. Simmer until beginning to thicken. Remove from heat. Prepare pasta on pasta tray, top with grated Parmesan cheese together with the remaining bacon and ham bits and chopped parsley. Serve with garlic bread. Enjoy",
+    "menu_price": "180",
+    "menu_image": "supremeplates_garlicshrimpfrywithsoupandicedtea",
+    "menu_short": "S Garlic"
+  },
+  {
+    "menu_id": 1,
+    "menu_cat": "supreme",
+    "menu_name": "Pork Asado Dish with Soup and Iced Tea",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "160",
+    "menu_image": "supremeplates_porkasadodishwithsoupandicedtea",
+    "menu_short": "S Pork Asado"
+  },
+  {
+    "menu_id": 2,
+    "menu_cat": "supreme",
+    "menu_name": "Seasoned Chicken Dish with Soup and Iced Tea",
+    "menu_desc": "None",
+    "menu_ingredient": "1 lb uncooked elbow macaroni \n3 tbsp butter \n1 lb ground beef \n1 ½ cup diced tomatoes (canned) \n1 small onions, diced \n½ cup green bell pepper, diced \n½ cup tomato paste \n1 tsp paprika \n1 piece beef cube \n1 cup water \n1 tbsp sugar \nSalt and pepper to taste \n3 tbsp butter \n3 tbsp all-purpose flour \n2 cups fresh milk \n¼ tsp salt \n1 ounce grated parmesan cheese \n2 ounces grated sharp cheddar cheese",
+    "menu_procedure": "Prepare the elbow macaroni according to instructions in the package and intentionally cut the cooking time so that the macaroni is not well done (the macaroni will be fully cooked once baked) then drain and set aside. Prepare the meat sauce by heating a cooking pot and melt-in the butter. When the butter is hot enough, add the ground beef and cook for 5 minutes or until the color turns medium brown. Add the onion, green bell pepper, and diced tomatoes then stir and simmer for 3 minutes or until the vegetables are soft. Add the tomato paste and paprika then stir and cook for a minute Add the beef cube and water then stir until everything is well distributed. Simmer for 20 minutes. Put-in the sugar, salt, and pepper then mix well. Turn of the heat and set aside. Prepare the Mornay sauce by melting the butter in a sauce pan over medium heat. Add the flour stir constantly for about a minute (color must be yellowish and not brown). Slowly whisk in the milk and continue to whisk until the sauce thickens and comes to a boil. Add salt and pepper then simmer for 2 to 3 minutes. Stir in the cheeses and whisk until melted. Set aside Combine the cooked macaroni and meat sauce in a baking dish then toss until the meat sauce is well distributed. Arrange the macaroni and pour the Mornay sauce over it. (Spread the Mornay sauce over the macaroni and meat sauce mixture ensuring that every space is covered) Preheat oven to 350 degrees Fahrenheit and bake for about 15 to 20 minutes. Remove from the oven and allow to cool down a bit. Serve hot. Share and Enjoy!",
+    "menu_price": "160",
+    "menu_image": "supremeplates_seasonedchickendishwithsoupandicedtea",
+    "menu_short": "S Seasoned C"
+  }
+]

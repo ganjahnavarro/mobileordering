@@ -1,0 +1,113 @@
+[
+  {
+    "menu_id": 0,
+    "menu_cat": "soup",
+    "menu_name": "Bulalo",
+    "menu_desc": "A beef soup comprised of shank with bone marrow still inside the bone.",
+    "menu_ingredient": "2 lbs beef shank \n � pc small cabbage, whole leaf individually detached \n 1 small bundle Pechay \n 3 pcs Corn, each cut into 3 parts \n 2 tbsp Whole pepper corn \n � cup Green onions \n 1 medium sized onion \n 34 ounces water \n 2 tbsp fish sauce (optional)",
+    "menu_procedure": "n a big cooking pot, pour in water and bring to a boil. Put-in the beef shank followed by the onion and whole pepper corn then simmer for 1.5 hours (30 mins if using a pressure cooker) or until meat is tender. Add the corn and simmer for another 10 minutes. Add the fish sauce,cabbage, pechay, and green onion (onion leeks)",
+    "menu_price": "160",
+    "menu_image": "soup_bulalo",
+    "menu_short": "S Bulalo"
+  },
+  {
+    "menu_id": 1,
+    "menu_cat": "soup",
+    "menu_name": "Corn and Egg Soup",
+    "menu_desc": "None",
+    "menu_ingredient": "2 tablespoons potato starch or corn starch \n 3 cups (750ml) chicken stock \n 1/2 can cream-style corn \n 1/2 can corn kernels \n 1/2 teaspoon salt \n Pinch of sugar\n 1 egg, beaten ",
+    "menu_procedure": "Dissolve the potato or corn starch in 4 tablespoons of water in a small bowl. Leave to a side. Put the chicken stock into a saucepan and bring it to a boil on medium heat.Add both kinds of corn into the stock and stir thoroughly. Add the salt and sugar. Bring it back to a boil.Stir the dissolved starch into the soup. Add a little at a time to the soup, stirring until it thickens. Add the beaten egg a little at a time while the soup is boiling. Stir in large circular motions.Once the egg has spread throughout the soup and has start to set, turn off the heat. It should take about 15-20 seconds.",
+    "menu_price": "79",
+    "menu_image": "soup_cornandeggsoup",
+    "menu_short": "S Corn egg"
+  },
+  {
+    "menu_id": 2,
+    "menu_cat": "soup",
+    "menu_name": "Crab and Corn",
+    "menu_desc": "None",
+    "menu_ingredient": "4 cups chicken broth \n 1 tablespoon seafood base \n 1 cup crab meat, flaked \n 1 cup corn kernels \n � cup imitation crab, chopped \n salt and pepper to taste \n 2 tablespoons cornstarch \n � cup water \n 1 egg \n green onions, chopped",
+    "menu_procedure": "In a pot over medium heat, combine chicken broth and seafood base and bring to a boil, stirring until seafood base is dissolved. Add crab meat, corn and imitation crab. Continue to cook for about 1 to 2 minutes. Season with salt and pepper to taste. In a bowl, combine cornstarch and water and stir until cornstarch is dissolved and mixture is smooth. Lower heat and add cornstarch mixture, whisking vigorously to prevent lumps. Return to a boil for about 1 to 2 minutes, stirring regularly. Break the egg into the pot and with a fork, stir until egg is dispersed. Continue to cook for 1 minute or until egg is set. Ladle soup into bowls and garnish with green onions. Serve hot.",
+    "menu_price": "79",
+    "menu_image": "soup_crabandcorn",
+    "menu_short": "S Crab Corn"
+  },
+  {
+    "menu_id": 3,
+    "menu_cat": "soup",
+    "menu_name": "Cream of Asparagus",
+    "menu_desc": "None",
+    "menu_ingredient": "3 cups (1/2-inch) sliced asparagus (about 1 pound) \n 2 cups fat-free, less-sodium chicken broth \n 3/4 teaspoon fresh thyme, divided \n 1 bay leaf \n 1 garlic clove, crushed \n 1 tablespoon all-purpose flour \n 2 cups 1% low-fat milk \n Dash of ground nutmeg \n 2 teaspoons butter \n 3/4 teaspoon salt \n 1/4 teaspoon grated lemon rind ",
+    "menu_procedure": "Combine asparagus, broth, 1/2 teaspoon thyme, bay leaf, and garlic in a large saucepan over medium-high heat; bring to a boil. Reduce heat, cover, and simmer 10 minutes. Discard bay leaf. Place asparagus mixture in a blender; process until smooth. Place flour in pan. Gradually add the milk, stirring with a whisk until blended. Add pur�ed asparagus and ground nutmeg; stir to combine. Bring to a boil. Reduce heat; simmer 5 minutes, stirring constantly. Remove from heat, and stir in 1/4 teaspoon thyme, butter, salt, and lemon rind.",
+    "menu_price": "79",
+      "menu_image": "soup_creamofasparagus",
+    "menu_short": "S Cream Asp"
+  },
+  {
+    "menu_id": 4,
+    "menu_cat": "soup",
+    "menu_name": "Crem of Mushroom",
+    "menu_desc": "None",
+    "menu_ingredient": "5 cups sliced fresh mushrooms \n 1 1/2 cups chicken broth \n 1/2 cup chopped onion \n 1/8 teaspoon dried thyme \n 3 tablespoons butter \n 3 tablespoons all-purpose flour1/4 teaspoon salt \n 1/4 teaspoon ground black pepper \n 1 cup half-and-half \n 1 tablespoon sherry",
+    "menu_procedure": "In a large heavy saucepan, cook mushrooms in the broth with onion and thyme until tender, about 10 to 15 minutes. In blender or food processor, puree the mixture , leaving some chunks of vegetable in it. Set aside. In the saucepan, melt the butter, whisk in the flour until smooth. Add the salt, pepper, half and half and vegetable puree. Stirring constantly, bring soup to a boil and cook until thickened. Adjust seasonings to taste, and add sherry.",
+    "menu_price": "79",
+    "menu_image": "soup_creamofmushroom",
+    "menu_short": "S Cream Mush"
+  },
+  {
+    "menu_id": 5,
+    "menu_cat": "soup",
+    "menu_name": "Kare-Kare (choice of pork and oxtripe)",
+    "menu_desc": "Kare Kare is a traditional Filipino stew complimented with a thick savory peanut sauce. The commonly used meats for this dish are ox tail, tripe, and pork leg; on some occasions goat and chicken meat are also used. Besides the peanuts, this dish depends on the shrimp paste (on the side) in order to be fully enjoyed. Traditionally, �palayok� (clay cooking pot) is used to cook this dish and it is also used as the serving pot.",
+    "menu_ingredient": "3 lbs oxtail (cut in 2 inch slices) you an also use tripe or beef slices \n 1 small banana flower bud (sliced) \n 1 bundle of pechay or bok choy \n 1 bundle of string beans (cut into 2 inch slices) \n 4 pcs eggplants (sliced)1 cup ground peanuts \n � cup peanut butter \n � cup shrimp paste \n 34 Ounces water (about 1 Liter) \n � cup annatto seeds (soaked in a cup of water) \n � cup toasted ground rice \n 1 tbsp garlic, minced \n 1 large onion, chopped \n salt and pepper",
+    "menu_procedure": "In a large pot, bring the water to a boil Put in the oxtail followed by the onions and simmer for 2.5 to 3 hrs or until tender (35 minutes if using a pressure cooker) Once the meat is tender, add the ground peanuts, peanut butter, and coloring (water from the annatto seed mixture) and simmer for 5 to 7 minutes Add the toasted ground rice and simmer for 5 minutes On a separate pan, saute the garlic then add the banana flower, eggplant, and string beans and cook for 5 minutes Transfer the cooked vegetables to the large pot (where the rest of the ingredients are) Add salt and pepper to taste Serve hot with shrimp paste.",
+    "menu_price": "180",
+    "menu_image": "soup_karekare",
+    "menu_short": "S kare"
+  },
+  {
+    "menu_id": 6,
+    "menu_cat": "soup",
+    "menu_name": "Pork Sinigang",
+    "menu_desc": "None",
+    "menu_ingredient": "2 Lbs of Pork Belly cut in 2 in. cubes (Liempo) \n 1 Small radish cut in 2 in. small pieces (Labanos/Daikon) \n 1 Medium Onion sliced thinly \n 1 Small tomato diced \n 1 Eggplant cut diagonally \n 1 Cup of Sitaw cut in 2 in. length (String Beans) \n 3 Cups of Kangkong (Water Spinach) \n  2 Pcs. Of Siling Mahaba (Finger Peppers) \n 1� Packet of Knorr Sinigang Mix \n 1 Tsp. MSG (Vetsin) \n Salt to taste \n 1� Quarts of water",
+    "menu_procedure": "In a large pot add water and bring to a boil. Next add pork, cover, and let it simmer for 3 minutes. Remove scum from the broth and then add onions, tomatoes, siling mahaba, (finger peppers) msg, (vetsin) and the sinigang mix and let cook for 10 minutes. Then add the Labanos, (radish) cover, and let it simmer for another 10 minutes.Add eggplant and cook it for an additional 10 minutes after adding the eggplant wait five minutes then add the string beans (sitaw). Finally add the water spinach (Kangkong) and add salt if needed. Let it cook for three more minutes and it�s ready.",
+    "menu_price": "160",
+    "menu_image": "soup_porksinigang",
+    "menu_short": "S Pork Sinigang"
+  },
+  {
+    "menu_id": 7,
+    "menu_cat": "soup",
+    "menu_name": "Sinigang na Hipon",
+    "menu_desc": "Sinigang na Hipon sa Sampaloc or Filipino Shrimp Soup in tamarind broth is a quick and easy soup dish that you can prepare for lunch or dinner. ",
+    "menu_ingredient": "2 lbs. medium to large shrimp with head and shell \n 1 lb. unripe tamarind \n 1 small daikon (white radish), sliced \n 1 bunch spinach or kangkong \n 12 pieces okra \n 2 tablespoons fish sauce \n 2 medium plum tomato, quartered \n 1 medium yellow onion, quartered \n 6 cups water \n Ground black pepper to taste",
+    "menu_procedure": "our the water in a cooking pot. Bring to a boil. Add the tamarind. Cover and boil for 30 minutes. Add more water if needed. Separate the tamarind from the water. Make sure to squeeze the juice out of the tamarind for maximum flavor. Heat the cooking pot with the remaining water and tamarind extract. You can add more water if you think that the amount of remaining liquid is less than 5 cups. Let boil. Add the tomato and onion. Cook for 5 minutes. Put-in the daikon,okra, and shrimp. Cook for 3 to 8 minutes in medium heat. Add the spinach and fish sauce. Stir. Cover and turn the heat off. Sprinkle some ground black pepper to taste. Transfer to a serving bowl. Serve.",
+    "menu_price": "170",
+    "menu_image": "soup_sinigangnahipon",
+    "menu_short": "S Sinigang Hipon"
+  },
+  {
+    "menu_id": 8,
+    "menu_cat": "soup",
+    "menu_name": "Taiwan Noodles",
+    "menu_desc": "None",
+    "menu_ingredient": " 1 pound noodles or rice of your choice \n 1/2 cup chicken broth \n 2 tablespoons dark soy sauce (or oyster sauce) \n 2 teaspoon light (regular) soy sauce\n 1 teaspoon Chinese black vinegar (or young balsamic vinegar)\n 1/2 teaspoon Chinese five-spice powder \n 1 tablespoon brown sugar \n 2 teaspoons cooking oil \n 1/2 onion, chopped \n 1 pound ground pork (or ground beef/chicken/turkey) \n 2 cloves garlic, finely minced \n One 8-ounce can bamboo shoots, drained and diced \n 4 ounces fresh shiitake mushrooms, diced \n 1 stalk green onion, chopped",
+    "menu_procedure": "Cook the noodles or rice according to package instructions. Drain. In a small bowl, combine the chicken broth, dark soy sauce, regular soy sauce, vinegar, five spice powder and brown sugar. Set aside.Heat a wok over medium-high heat. When hot, swirl in the cooking oil. Add in the onion and cook for 1 minute. Stir in the ground meat and cook for 2 minutes. Push aside the onion and ground beef to one side of the wok to create a small spot to fry the garlic. Add in the garlic and stir fry for a few seconds or until you begin smelling the garlic. Add in the bamboo shoots and mushrooms. Toss everything in the wok together.Pour in the broth/soy sauce mixture and bring to a simmer. Cook for 2 minutes. Stir in the green onions. Serve the ground beef mixture over the noodles or rice.",
+    "menu_price": "95",
+    "menu_image": "soup_taiwainnoodle",
+    "menu_short": "S Taiwan Noodles"
+  },
+  {
+    "menu_id": 9,
+    "menu_cat": "soup",
+    "menu_name": "Ulo-Ulo",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "160",
+    "menu_image": "soup_uloulo",
+    "menu_short": "S Ulo"
+  }
+
+]

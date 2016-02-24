@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="12">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_weight="9"
+        android:orientation="horizontal"
+        android:weightSum="12">
+
+        <TextView
+            android:id="@+id/tvOrdersTable"
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textSize="@dimen/textsize_lg"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvOrdersItem"
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:gravity="end"
+            android:textSize="@dimen/textsize_md" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/bOrdersReceipt"
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Receipt" />
+
+        <Button
+            android:id="@+id/bOrdersVoid"
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Void" />
+    </LinearLayout>
+</LinearLayout>

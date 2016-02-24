@@ -1,0 +1,46 @@
+[
+  {
+    "menu_id": 0,
+    "menu_cat": "meaty",
+    "menu_name": "Baby Back Ribs",
+    "menu_desc": "Baby Back Ribs is an easy ribs recipe that yields an awesome result. This BBQ Baby Back Ribs Recipe will give you a nice tasting and very tender BBQ Ribs, as long as you use the necessary equipment and follow the required steps.",
+    "menu_ingredient": "1 to 2½ lbs. slab baby back pork ribs, cleaned \n 3 tablespoon Worcestershire sauce \n ¾ cup sweet barbecue sauce \n 1 teaspoon salt \n ½ teaspoon ground black pepper",
+    "menu_procedure": "Rub salt and pepper on the baby back ribs. Let stand for 15 minutes. Rub the Worcestershire sauce and ¼ cup of barbecue sauce. Refrigerate for 30 minutes to 1 hour for the meat to absorb the flavor.Preheat oven to 350 degrees Fahrenheit. Place the slab in a covered oval roaster. Bake for 90 minutes. Remove the cover and then brush the remaining barbecue sauce over the baby back ribs. Increase the temperature to 410 degrees Fahrenheit. Put-the uncovered roasted back in the oven and bake for 10 to 12 minutes. Remove from the oven and then transfer to a serving plate.",
+    "menu_price": "250",
+    "menu_image": "meaty_babybackribs",
+    "menu_short": "M Baby B"
+  },
+  {
+    "menu_id": 1,
+    "menu_cat": "meaty",
+    "menu_name": "Bulalo Steak",
+    "menu_desc": "Bulalo Steak is a dish made from beef shanks and bone marrows still inside the bones, boiled until meat softens with some garlic, onions and scallions, and topped with cream of mushroom sauce and button mushroom slices.",
+    "menu_ingredient": "2 lbs. bulalo (beef shank)  \n 6 to 8 cups water \n 3 cloves garlic, crushed \n 1 medium size white onion, quartered \n 1 canned 420 grams Cream of Mushroom (I used Campbell’s) \n 1 small canned button mushroom, drain and sliced \n 3 tbsp. butter \n 2 tbsp. soy sauce \n 2-3 tbsp. scallions or parsley, chopped \n 1 tsp. salt \n 1 tsp. whole peppercorn",
+    "menu_procedure": "In a large cooking pot, pour in the water and add some garlic, onion, scallions, peppercorns, and salt. Bring to boil. Add the beef shanks then simmer for 1.5 hours or until the meat is tender. Add more water if necessary. If using a pressure cooker, it should be well done in 30 to 45 minutes. Skim off the scum and excess oil. Let it cool. Strain and set aside the beef shank. Reserve the broth. In a saucepan, heat the butter, and sauté the remaining garlic and onions. Put the cooked beef shank and pour in the beef broth and cream of mushroom. Bring to a boil and simmer for 3 to 5 minutes over a moderate heat or until the sauce slightly thickens. Add in the button mushrooms and cook for another 3 minutes. Season with soy sauce. Place in a serving bowl and garnish with the remaining scallions or fresh parsley.",
+    "menu_price": "139",
+    "menu_image": "meaty_bulalosteak",
+    "menu_short": "M Bulalo Steak"
+  },
+  {
+    "menu_id": 2,
+    "menu_cat": "meaty",
+    "menu_name": "Chicken Barbecue Sizzler",
+    "menu_desc": "Chicken Barbecue might look like Chicken Inasal at first glance. However, chicken Inasal is totally different in terms of ingredients and preparation. I like both grilled chicken dishes. They have their own distinctive flavors that cannot be compared.",
+    "menu_ingredient": "pieces chicken leg quarters, cleaned \n 1/2 cup soy sauce \n 1 piece lemon or 4 pieces calamansi \n 2 teaspoons salt \n 1 teaspoon ground black pepper\n 1/2 cup banana ketchup",
+    "menu_procedure": "Make the marinade by combining the soy sauce, juice of 1 lemon, banana ketchup, salt, and ground black pepper in a bowl. Stir to mix. Put the chicken leg quarters inside a large freezer bag, and then pour-in the marinade. Shake the bag gently to coat the chicken with marinade then remove the air inside the bag. Seal the bag then refrigerate overnight. Remove the chicken from the bag and transfer the remaining marinade to a bowl. Heat-up your grill and start grilling the chicken under medium heat for 12 to 15 minutes per side or until the chicken is completely cooked. Do not forget to baste the chicken with the remaining marinade mixture. Chicken takes a long time to cook. Grilling it in high heat will cause the outer part of the chicken to cook earlier leaving the inside raw. Remove from the grill and transfer to a serving plate. Serve with steamed rice.",
+    "menu_price": "130",
+    "menu_image": "meaty_chickenbbqsizzler",
+    "menu_short": "M Chick Bbq"
+  },
+  {
+    "menu_id": 3,
+    "menu_cat": "meaty",
+    "menu_name": "T-Bone",
+    "menu_desc": "A T-bone steak is a prime cut of beef that gets its name from the T-shaped bone that divides it. It is cut from a vertebral cross-section of the strip loin and the tenderloin, two of the most succulent sections of meat on a cow.",
+    "menu_ingredient": "1?2 cup water \n 1?2 cup light soy sauce \n 2 tablespoons brown sugar \n 2 tablespoons lemon juice \n 2 tablespoons red wine vinegar \n 2 tablespoons extra virgin olive oil \n 1 tablespoon McCormick's Montreal Brand steak seasoning \n 1?2 teaspoon garlic powder \n 1?2 teaspoon chipotle hot sauce \n 1?4 teaspoon pepper \n 2 -3 garlic cloves, smashed \n 2 beef t-bone steaks (1 in thick)",
+    "menu_procedure": "In a large resealable plastic bag, combine the first 11 ingredients. Add steaks. Seal the bag and turn to coat. Refrigerate overnight, turning as often as you can. (I actually marinated my for a day and a 1/2.). Drain and discard marinade. Grill steaks, over high heat for about 5 minutes on each side or until meat reaches desired doneness (for medium-rare, a meat thermometer should read 145 degrees, medium, 160 degrees, well-done 170 degrees).",
+    "menu_price": "139",
+    "menu_image": "meaty_tbone",
+    "menu_short": "M Tbone"
+  }
+]

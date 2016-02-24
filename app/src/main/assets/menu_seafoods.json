@@ -1,0 +1,179 @@
+[
+  {
+    "menu_id": 0,
+    "menu_cat": "beverages",
+    "menu_name": "Glass of Iced Tea",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "29",
+    "menu_image": "beverages_glassoficedtea",
+    "menu_short": "B Iced Tea G"
+  },
+  {
+    "menu_id": 1,
+    "menu_cat": "beverages",
+    "menu_name": "Pitcher of Iced Tea",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "145",
+    "menu_image": "beverages_pitcheroficedtea",
+    "menu_short": "B Iced Tea P"
+  },
+  {
+    "menu_id": 2,
+    "menu_cat": "beverages",
+    "menu_name": "Black Gulaman",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "29",
+    "menu_image": "beverages_blackgulaman",
+    "menu_short": "B Black G"
+  },
+  {
+    "menu_id": 3,
+    "menu_cat": "beverages",
+    "menu_name": "Melon Juice",
+    "menu_desc": "None",
+    "menu_ingredient": "1/2 cup (1 stick) melted butter \n2 tablespoons worcestershire sauce \n1/4 cup freshly squeezed lemon juice \n1 tablespoon freshly ground black pepper \n2 tablespoons vinegary hot sauce, such as Cholula \n4 cloves garlic, minced \n4 teaspoons kosher salt \n2 pounds peeled medium shrimp, cleaned and deveined \n2 lemons, thinly sliced \nFrench bread, for serving",
+    "menu_procedure": "Preheat the oven to 400ºF. Stir together the butter, worcestershire sauce, lemon juice, pepper, hot sauce, garlic, and salt in a small bowl. Arrange the shrimp and lemon slices in a large heatproof casserole dish, and pour the butter mixture over the shrimp and lemon slices. (They will not fit in one layer.) Bake uncovered for 15 to 20 minutes until the shrimp are pink, gently stirring twice to ensure even cooking. Serve with French bread for dipping in the butter sauce.",
+    "menu_price": "29",
+    "menu_image": "beverages_melonjuice",
+    "menu_short": "B Melon j"
+  },
+  {
+    "menu_id": 4,
+    "menu_cat": "beverages",
+    "menu_name": "Canned Juice (Pineapple, Mango, Four Seasons)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "45",
+    "menu_image": "beverages_cannedjuice",
+    "menu_short": "B Canned J"
+  },
+  {
+    "menu_id": 5,
+    "menu_cat": "beverages",
+    "menu_name": "Canned Soda (Mug,RC, Coke, Sprite, Royal)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "45",
+    "menu_image": "beverages_cannedsoda",
+    "menu_short": "B Canned S"
+  },
+  {
+    "menu_id": 6,
+    "menu_cat": "beverages",
+    "menu_name": "Cup of Coffee",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "35",
+    "menu_image": "beverages_cupofcoffee",
+    "menu_short": "B Coffee"
+  }
+,
+  {
+    "menu_id": 7,
+    "menu_cat": "beverages",
+    "menu_name": "Cup of Tea",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "35",
+    "menu_image": "beverages_cupoftea",
+    "menu_short": "B Tea"
+  },
+  {
+    "menu_id": 8,
+    "menu_cat": "beverages",
+    "menu_name": "RC Cola (240 ml)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "15",
+    "menu_image": "beverages_rccola240ml",
+    "menu_short": "B RC 240"
+  },
+  {
+    "menu_id": 9,
+    "menu_cat": "beverages",
+    "menu_name": "RC Cola (500 ml)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "25",
+    "menu_image": "beverages_rccola500ml",
+    "menu_short": "B RC 500"
+  },
+  {
+    "menu_id": 10,
+    "menu_cat": "beverages",
+    "menu_name": "RC Cola (1.5 L)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "70",
+    "menu_image": "beverages_rccola15l",
+    "menu_short": "B RC 15"
+  },
+  {
+    "menu_id": 11,
+    "menu_cat": "beverages",
+    "menu_name": "Mug Root Beer (1.5 L)",
+    "menu_desc": "None",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "70",
+    "menu_image": "beverages_mugrootbeer15l",
+    "menu_short": "B Mug RB 15"
+  },
+  {
+    "menu_id": 12,
+    "menu_cat": "beverages",
+    "menu_name": "Orange Fruit Soda (1.5 L)",
+    "menu_desc": " None",
+    "menu_ingredient": "None",
+    "menu_procedure": "",
+    "menu_price": "70",
+    "menu_image": "beverages_orangefruitsoda15l",
+    "menu_short": "B Orange FS 15"
+  },
+  {
+    "menu_id": 13,
+    "menu_cat": "beverages",
+    "menu_name": "Avocado Mikshake",
+    "menu_desc": "A tasty sweet and sour fish fillet for those who like to eat fish without those tiny fish bones. There are many kinds of fish fillet you can use if you can’t find labahita (surgeon fish) or lapu-lapu (grouper). Substitutes can be cream dory fillet or tilapia fillet since those fishes have white and tasty flesh. This dish is also very easy to cook. You only have to coat the fish fillet with eggs and bread crumbs before frying and just cooking the sauce with very few ingredients then combine them, the fish and the sauce, then serve hot.",
+    "menu_ingredient": "2 medium size labahita or lapu-lapu \n1-1/2 cup Japanese bread crumbs \n4 calamansi, juice extracted \n3 eggs, beaten \nsalt and pepper \nMSG or granulated seasoning \n1 pc onion, quartered \n1 clove garlic, minced \n2 Tbsp. cornstarch \n1-1/2 Tbsp sugar \n1/4 cup water \n1 cup pineapple juice \n1/4 cup vinegar \n1 Tbsp. soy sauce \n1 Tbsp. margarine",
+    "menu_procedure": "Clean the fish and remove the skin. Separate the flesh from the fish bones and cut the fillet into 1 inch crosswise. Rub the fillet with calamansi juice, salt, pepper and MSG. Before frying, dip in beaten eggs and roll in bread crumbs. Deep fry in a medium heat until golden brown. Set aside. To make the sauce, in a saucepan mix thoroughly the cornstarch and sugar in 1/4 cup water. Add in onion, garlic, pineapple juice, vinegar, soy sauce, and margarine. Cook over medium heat stirring constantly until the mixture starts to boil. Cook for about 2 minutes more until the sauce thickens then pour over fried fish fillets. Serve hot.",
+    "menu_price": "70",
+    "menu_image": "beverages_avocadomilkshake",
+    "menu_short": "B Avocado"
+  },
+  {
+    "menu_id":14,
+    "menu_cat": "beverages",
+    "menu_name": "Mango Yogurt Milkshake",
+    "menu_desc": "A tasty sweet and sour fish fillet for those who like to eat fish without those tiny fish bones. There are many kinds of fish fillet you can use if you can’t find labahita (surgeon fish) or lapu-lapu (grouper). Substitutes can be cream dory fillet or tilapia fillet since those fishes have white and tasty flesh. This dish is also very easy to cook. You only have to coat the fish fillet with eggs and bread crumbs before frying and just cooking the sauce with very few ingredients then combine them, the fish and the sauce, then serve hot.",
+    "menu_ingredient": "2 medium size labahita or lapu-lapu \n1-1/2 cup Japanese bread crumbs \n4 calamansi, juice extracted \n3 eggs, beaten \nsalt and pepper \nMSG or granulated seasoning \n1 pc onion, quartered \n1 clove garlic, minced \n2 Tbsp. cornstarch \n1-1/2 Tbsp sugar \n1/4 cup water \n1 cup pineapple juice \n1/4 cup vinegar \n1 Tbsp. soy sauce \n1 Tbsp. margarine",
+    "menu_procedure": "Clean the fish and remove the skin. Separate the flesh from the fish bones and cut the fillet into 1 inch crosswise. Rub the fillet with calamansi juice, salt, pepper and MSG. Before frying, dip in beaten eggs and roll in bread crumbs. Deep fry in a medium heat until golden brown. Set aside. To make the sauce, in a saucepan mix thoroughly the cornstarch and sugar in 1/4 cup water. Add in onion, garlic, pineapple juice, vinegar, soy sauce, and margarine. Cook over medium heat stirring constantly until the mixture starts to boil. Cook for about 2 minutes more until the sauce thickens then pour over fried fish fillets. Serve hot.",
+    "menu_price": "85",
+    "menu_image": "beverages_mangoyogurtmilkshake",
+    "menu_short": "B Mango"
+  },
+  {
+    "menu_id": 15,
+    "menu_cat": "beverages",
+    "menu_name": "Oreo Milkshake",
+    "menu_desc": "A tasty sweet and sour fish fillet for those who like to eat fish without those tiny fish bones. There are many kinds of fish fillet you can use if you can’t find labahita (surgeon fish) or lapu-lapu (grouper). Substitutes can be cream dory fillet or tilapia fillet since those fishes have white and tasty flesh. This dish is also very easy to cook. You only have to coat the fish fillet with eggs and bread crumbs before frying and just cooking the sauce with very few ingredients then combine them, the fish and the sauce, then serve hot.",
+    "menu_ingredient": "None",
+    "menu_procedure": "None",
+    "menu_price": "85",
+    "menu_image": "beverages_oreomilkshake",
+    "menu_short": "B Oreo"
+  }
+]

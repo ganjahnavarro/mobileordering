@@ -15,13 +15,10 @@ import com.mobile.mobileordering.MainActivity;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- * Created by simplyph on 1/25/2016.
- */
-public class FetchOrders extends Service {
+public class OrderService extends Service {
 
-    StringRequest stringRequest;
-    RequestQueue requestQueue;
+    private StringRequest stringRequest;
+    private RequestQueue requestQueue;
 
     private Timer timer = new Timer();
 
@@ -34,13 +31,13 @@ public class FetchOrders extends Service {
     public void onCreate(){
         super.onCreate();
         requestQueue = Volley.newRequestQueue(this);
-        stringRequest = request("http://opres.heliohost.org/order/getorder");
+        stringRequest = request("http://mobileordering-gnjb.rhcloud.com/orders.php?status=" + Constants.ORDER_STATUS_PENDING);
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 requestQueue.add(stringRequest);
             }
-        }, 0, 1 * 60 * 1000);//5 Minutes
+        }, 0, 60 * 1000);//1 Minute
     }
 
     private StringRequest request(String uri) {

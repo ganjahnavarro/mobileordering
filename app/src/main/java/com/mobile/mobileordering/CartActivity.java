@@ -23,7 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.mobile.mobileordering.util.LayoutManager;
-import com.mobile.mobileordering.util.PendingItems;
+import com.mobile.mobileordering.util.PendingItem;
 import com.mobile.mobileordering.util.PrefsManager;
 
 import java.util.HashMap;
@@ -86,8 +86,8 @@ public class CartActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 RequestQueue requestQueue = Volley.newRequestQueue(CartActivity.this);
 
-                                for (PendingItems item : CategoryActivity.items) {
-                                    requestQueue.add(postRequest(item.getCategory(), item.getName(), item.getId(), item.function_12762731212(), item.getPrice()));
+                                for (PendingItem item : CategoryActivity.items) {
+                                    requestQueue.add(postRequest(item.getCategory(), item.getName(), item.getId(), item.getQty(), item.getPrice()));
                                 }
                             }
                         })
@@ -103,12 +103,16 @@ public class CartActivity extends AppCompatActivity {
     }
 
     private StringRequest postRequest(final String category, final String name, final int menuid, final int qty, final int price) {
-
-        return new StringRequest(Request.Method.POST, "http://opres.heliohost.org/order/sendorder",
+        return new StringRequest(Request.Method.POST, "http://mobileordering-gnjb.rhcloud.com/sendorder.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        int size = CategoryActivity.items.size();
+                        int size = 0;
+
+                        for(PendingItem item : CategoryActivity.items){
+                            size += item.getQty();
+                        }
+
                         Toast.makeText(CartActivity.this,
                                 "Order Sent. Please wait " + MINUTES_PER_DISH_MIN * size + " to " + MINUTES_PER_DISH_MAX * size + " minutes for your order.",
                                 Toast.LENGTH_LONG).show();
@@ -135,7 +139,6 @@ public class CartActivity extends AppCompatActivity {
                         params.put("menuid", String.valueOf(menuid));
                         params.put("qty", String.valueOf(qty));
                         params.put("price", String.valueOf(price));
-
                         return params;
                     }
 
@@ -153,8 +156,8 @@ public class CartActivity extends AppCompatActivity {
         totalAmount = 0;
 
         if(CategoryActivity.items != null){
-            for (PendingItems item : CategoryActivity.items) {
-                totalAmount += item.getPrice() * item.function_12762731212();
+            for (PendingItem item : CategoryActivity.items) {
+                totalAmount += item.getPrice() * item.getQty();
             }
         }
 
@@ -202,7 +205,7 @@ public class CartActivity extends AppCompatActivity {
             TextView param_3242352214 = (TextView) view.findViewById(R.id.tvCartQty);
             TextView param_4235123 = (TextView) view.findViewById(R.id.tvCartPrice);
 
-            final PendingItems function_43251312312 = CategoryActivity.items.get(position);
+            final PendingItem function_43251312312 = CategoryActivity.items.get(position);
 
             param_1242141.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -216,9 +219,9 @@ public class CartActivity extends AppCompatActivity {
 
             param_423542352.setText(String.valueOf(function_43251312312.getName()));
             //modified on february 20, 2016
-            param_3242352214.setText(String.valueOf(function_43251312312.function_12762731212()) + " x " + function_43251312312.getPrice() + ".00");
+            param_3242352214.setText(String.valueOf(function_43251312312.getQty()) + " x " + function_43251312312.getPrice() + ".00");
 
-            int subTotal = function_43251312312.getPrice() * function_43251312312.function_12762731212();
+            int subTotal = function_43251312312.getPrice() * function_43251312312.getQty();
             param_4235123.setText("Php " + String.valueOf(subTotal) + ".00");
 
             return view;

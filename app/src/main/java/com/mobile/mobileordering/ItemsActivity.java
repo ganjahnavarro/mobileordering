@@ -26,7 +26,7 @@ import android.widget.TextView;
 import com.mobile.mobileordering.util.FontManager;
 import com.mobile.mobileordering.util.JSONManager;
 import com.mobile.mobileordering.util.LayoutManager;
-import com.mobile.mobileordering.util.PendingItems;
+import com.mobile.mobileordering.util.PendingItem;
 import com.mobile.mobileordering.util.PrefsManager;
 
 import org.json.JSONArray;
@@ -105,9 +105,9 @@ public class ItemsActivity extends AppCompatActivity {
                 final LayoutManager layoutManager = new LayoutManager(ItemsActivity.this);
                 View dialogView = layoutManager.inflate(R.layout.custom_dialog_items);
 
-                final TextView textView = (TextView) dialogView.findViewById(R.id.tvItemsQty);
-                TextView textView1 = (TextView) dialogView.findViewById(R.id.tvItemsDesc);
-                textView1.setText(description);
+                final TextView quantityTextView = (TextView) dialogView.findViewById(R.id.tvItemsQty);
+                TextView descriptionTextView = (TextView) dialogView.findViewById(R.id.tvItemsDesc);
+                descriptionTextView.setText(description);
                 final SeekBar seekBar = (SeekBar) dialogView.findViewById(R.id.sbItemsQty);
 
                 final int[] progressBar = new int[1];
@@ -118,7 +118,7 @@ public class ItemsActivity extends AppCompatActivity {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         progress += MIN_QUANTITY;
-                        textView.setText(String.valueOf(progress));
+                        quantityTextView.setText(String.valueOf(progress));
                         progressBar[0] = progress;
                     }
 
@@ -132,7 +132,8 @@ public class ItemsActivity extends AppCompatActivity {
 
                     }
                 });
-                seekBar.setProgress(0);
+                quantityTextView.setText("1");
+                progressBar[0] = 1;
 
                 try {
                     new AlertDialog.Builder(ItemsActivity.this)
@@ -153,7 +154,7 @@ public class ItemsActivity extends AppCompatActivity {
                                         if (progressBar[0] != 0) {
                                             String menuName = data.getJSONObject(position).getString("menu_name");
                                             int menuPrice = Integer.parseInt(data.getJSONObject(position).getString("menu_price"));
-                                            CategoryActivity.items.add(new PendingItems(category, position, menuName, progressBar[0], menuPrice));
+                                            CategoryActivity.items.add(new PendingItem(category, position, menuName, progressBar[0], menuPrice));
                                         }
                                     } catch (JSONException e) {
                                         e.printStackTrace();
@@ -245,10 +246,7 @@ public class ItemsActivity extends AppCompatActivity {
 
     private BitmapDrawable getDrawableFromAsset(String filename) throws IOException {
         AssetManager assetManager = getAssets();
-        InputStream inputStream = null;
-
-        inputStream = assetManager.open("menu_image/" + filename);
-
+        InputStream inputStream = assetManager.open("menu_image/" + filename);
         Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
         return new BitmapDrawable(bitmap);
     }

@@ -17,7 +17,6 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.Filter;
@@ -30,7 +29,7 @@ import android.widget.TextView;
 import com.mobile.mobileordering.util.FontManager;
 import com.mobile.mobileordering.util.JSONManager;
 import com.mobile.mobileordering.util.LayoutManager;
-import com.mobile.mobileordering.util.PendingItems;
+import com.mobile.mobileordering.util.PendingItem;
 import com.mobile.mobileordering.util.PrefsManager;
 
 import org.json.JSONArray;
@@ -44,7 +43,7 @@ public class CategoryActivity extends AppCompatActivity {
 
     protected JSONArray data;
     private CategoryAdapter adapter;
-    public static final ArrayList<PendingItems> items = new ArrayList<>();
+    public static final ArrayList<PendingItem> items = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

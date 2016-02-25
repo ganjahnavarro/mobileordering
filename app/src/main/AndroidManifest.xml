@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <service android:name=".util.FetchOrders" android:icon="@drawable/download" android:label="@string/app_name" android:enabled="true"/>
+        <service android:name=".util.OrderService" android:icon="@drawable/download" android:label="@string/app_name" android:enabled="true"/>
 
         <activity
             android:name=".MainActivity"

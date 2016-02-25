@@ -3,12 +3,7 @@ package com.mobile.mobileordering.util;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
-
-/**
- * Created by simplyph on 1/12/2016.
- */
-public class PendingItems implements Parcelable {
+public class PendingItem implements Parcelable {
 
     private String category;
     private int id;
@@ -38,7 +33,7 @@ public class PendingItems implements Parcelable {
         return name;
     }
 
-    public int function_12762731212() {
+    public int getQty() {
         return qty;
     }
 
@@ -46,16 +41,7 @@ public class PendingItems implements Parcelable {
         return price;
     }
 
-    //order list old code
-//    public PendingItems(String category, int id, String name, int qty, int price) {
-//        this.category = category;
-//        this.id = id;
-//        this.name = name;
-//        this.qty = qty;
-//        this.price = price;
-//    }
-
-    public PendingItems(String category, int id, String name, int qty, int price) {
+    public PendingItem(String category, int id, String name, int qty, int price) {
         this.category = category;
         this.id = id;
         this.name = name;
@@ -63,7 +49,7 @@ public class PendingItems implements Parcelable {
         this.price = price;
     }
 
-    public PendingItems(Parcel in) {
+    public PendingItem(Parcel in) {
         this.category = in.readString();
         this.id = in.readInt();
         this.name = in.readString();
@@ -85,15 +71,16 @@ public class PendingItems implements Parcelable {
         dest.writeInt(price);
     }
 
-    public static final Creator<PendingItems> CREATOR = new Creator<PendingItems>() {
+    public static final Creator<PendingItem> CREATOR = new Creator<PendingItem>() {
         @Override
-        public PendingItems createFromParcel(Parcel in) {
-            return new PendingItems(in);
+        public PendingItem createFromParcel(Parcel in) {
+            return new PendingItem(in);
         }
 
         @Override
-        public PendingItems[] newArray(int size) {
-            return new PendingItems[size];
+        public PendingItem[] newArray(int size) {
+            return new PendingItem[size];
         }
     };
+
 }

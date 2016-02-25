@@ -163,7 +163,6 @@ public class InventoryActivity extends AppCompatActivity {
     }
 
     private StringRequest updateRequest(final int inventoryid, final String qty) {
-
         return new StringRequest(Request.Method.POST, "http://opres.heliohost.org/order/updateinventory",
                 new Response.Listener<String>() {
                     @Override

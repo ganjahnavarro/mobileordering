@@ -15,21 +15,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.mobile.mobileordering.util.FetchOrders;
+import com.mobile.mobileordering.util.OrderService;
 import com.mobile.mobileordering.util.JSONParser;
 import com.mobile.mobileordering.util.LayoutManager;
 import com.mobile.mobileordering.util.Order;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         setupNotificationBuilder();
 
-        Intent fetchOrdersIntent = new Intent(MainActivity.this, FetchOrders.class);
+        Intent fetchOrdersIntent = new Intent(MainActivity.this, OrderService.class);
         startService(fetchOrdersIntent);
 
         loadListeners();
@@ -175,6 +172,10 @@ public class MainActivity extends AppCompatActivity {
                 .setSmallIcon(R.drawable.download)
                 .setContentTitle("New Orders")
                 .setAutoCancel(true);
+
+        //TODO
+        notificationBuilder.setContentTitle("Test Title");
+        notificationBuilder.setContentText("Test description");
 
         Intent intent = new Intent(MainActivity.this, MainActivity.class);
         TaskStackBuilder taskStackBuilder = TaskStackBuilder.create(MainActivity.this);

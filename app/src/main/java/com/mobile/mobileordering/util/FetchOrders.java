@@ -50,8 +50,8 @@ public class FetchOrders extends Service {
                     @Override
                     public void onResponse(String response) {
                         if(!response.equalsIgnoreCase("[]")) {
-                            if(MainActivity.function_9343213 != null)
-                                MainActivity.function_9343213.notify("orders", 1, MainActivity.field_13432423.build());
+                            if(MainActivity.notificationManager != null)
+                                MainActivity.notificationManager.notify("orders", 1, MainActivity.notificationBuilder.build());
                         }
                     }
                 },

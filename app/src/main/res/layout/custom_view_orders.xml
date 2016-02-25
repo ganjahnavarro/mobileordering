@@ -32,6 +32,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layoutForPaid"
         android:layout_width="match_parent"
         android:layout_height="@dimen/linear_zero_dimen"
         android:layout_weight="3"
@@ -43,7 +44,7 @@
             android:layout_width="@dimen/linear_zero_dimen"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Receipt" />
+            android:text="Re-print Receipt" />
 
         <Button
             android:id="@+id/bOrdersVoid"
@@ -52,4 +53,28 @@
             android:layout_weight="1"
             android:text="Void" />
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutForPending"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/bOrdersProcess"
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Process Payment" />
+
+        <Button
+            android:id="@+id/bOrdersCancel"
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Cancel" />
+    </LinearLayout>
+
 </LinearLayout>

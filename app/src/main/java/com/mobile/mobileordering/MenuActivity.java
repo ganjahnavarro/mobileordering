@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private String menuList[] = {"Orders", "Inventory", "Report", "Customer Feedback", "Set Table"};
+    private String menuList[] = {"Unpaid Orders", "Paid Orders", "Inventory", "Report", "Set Table"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +39,14 @@ public class MenuActivity extends AppCompatActivity {
                 String menuName = menuList[position];
 
                 switch (menuName) {
-                    case "Orders":
-                        Intent ordersIntent = new Intent(MenuActivity.this, OrdersActivity.class);
-                        startActivity(ordersIntent);
+                    case "Unpaid Orders":
+                        Intent unpaidOrdersIntent = new Intent(MenuActivity.this, PendingOrdersActivity.class);
+                        startActivity(unpaidOrdersIntent);
+                        break;
+
+                    case "Paid Orders":
+                        Intent paidOrdersIntent = new Intent(MenuActivity.this, PaidOrdersActivity.class);
+                        startActivity(paidOrdersIntent);
                         break;
 
                     case "Inventory":

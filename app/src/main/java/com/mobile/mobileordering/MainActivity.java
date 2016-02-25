@@ -5,28 +5,36 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.mobile.mobileordering.util.FetchOrders;
+import com.mobile.mobileordering.util.JSONParser;
 import com.mobile.mobileordering.util.LayoutManager;
+import com.mobile.mobileordering.util.Order;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static SharedPreferences function_976846221;
-
-    public static NotificationManager function_9343213;
-    public static NotificationCompat.Builder field_13432423;
+    public static NotificationManager notificationManager;
+    public static NotificationCompat.Builder notificationBuilder;
 
     protected int MARGIN_DP = 4;
     protected static int AVAILABLE_WIDTH;
@@ -38,15 +46,44 @@ public class MainActivity extends AppCompatActivity {
 
         AVAILABLE_WIDTH = getAvailableWidth();
 
-        function_2416732();
+        setupNotificationBuilder();
 
-        Intent i = new Intent(MainActivity.this, FetchOrders.class);
-        startService(i);
+        Intent fetchOrdersIntent = new Intent(MainActivity.this, FetchOrders.class);
+        startService(fetchOrdersIntent);
 
-        field_23asade124();
+        loadListeners();
     }
 
-    private void field_23asade124() {
+    private void volleyTest(){
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String urlHeliosGet ="http://mobileordering-gnjb.rhcloud.com/orders.php?status=33";
+
+        StringRequest orderRequest = new StringRequest(Request.Method.GET, urlHeliosGet,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            ArrayList<Order> orders = JSONParser.parseFeedOrder(response);
+
+                            if(orders != null){
+                                for(Order order : orders){
+                                    System.out.println("@MobileOrdering Order: " + order.getId() + " - " + order.getName() + " " + order.getQty());
+                                }
+                            }
+                        } catch (Exception e){
+                            System.out.println("@MobileOrdering Error: " + e.getMessage());
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println("@MobileOrdering Volley Helios Error: " + error.getMessage());
+            }
+        });
+        queue.add(orderRequest);
+    }
+
+    private void loadListeners() {
         Button customer = (Button) findViewById(R.id.bMainCustomer);
         ImageButton admin = (ImageButton) findViewById(R.id.ibMainAdmin);
 
@@ -62,6 +99,9 @@ public class MainActivity extends AppCompatActivity {
         admin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//              TODO
+                volleyTest();
+
                 LayoutManager layoutManager = new LayoutManager(MainActivity.this);
                 View loginView = layoutManager.inflate(R.layout.custom_dialog_main);
 
@@ -101,7 +141,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
         new AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("Closing Application")
@@ -131,8 +170,8 @@ public class MainActivity extends AppCompatActivity {
         return width;
     }
 
-    public void function_2416732() {
-        field_13432423 = new NotificationCompat.Builder(MainActivity.this)
+    public void setupNotificationBuilder() {
+        notificationBuilder = new NotificationCompat.Builder(MainActivity.this)
                 .setSmallIcon(R.drawable.download)
                 .setContentTitle("New Orders")
                 .setAutoCancel(true);
@@ -143,10 +182,7 @@ public class MainActivity extends AppCompatActivity {
         taskStackBuilder.addNextIntent(intent);
         PendingIntent pendingIntent = taskStackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        field_13432423.setContentIntent(pendingIntent);
-        function_9343213 = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-
-        String tag = "orders";
-        int id = 1;
+        notificationBuilder.setContentIntent(pendingIntent);
+        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
     }
 }

@@ -48,27 +48,36 @@
             android:name=".MenuActivity"
             android:configChanges="orientation|keyboard|keyboardHidden"
             android:screenOrientation="portrait" />
+
         <activity
-            android:name=".OrdersActivity"
+            android:name=".PendingOrdersActivity"
             android:configChanges="orientation|keyboard|keyboardHidden"
             android:parentActivityName=".MenuActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".PaidOrdersActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:parentActivityName=".MenuActivity"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".InventoryActivity"
             android:configChanges="orientation|keyboard|keyboardHidden"
             android:parentActivityName=".MenuActivity"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".ReportActivity"
             android:configChanges="orientation|keyboard|keyboardHidden"
             android:parentActivityName=".MenuActivity"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".NewItemActivity"
             android:configChanges="orientation|keyboard|keyboardHidden"
             android:parentActivityName=".MenuActivity"
             android:screenOrientation="portrait" />
-
 
         <activity
             android:name=".PrintDialogActivity"

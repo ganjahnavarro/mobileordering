@@ -21,8 +21,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.mobile.mobileordering.util.OrderJSONParser;
-import com.mobile.mobileordering.util.SalesManager;
+import com.mobile.mobileordering.util.JSONParser;
+import com.mobile.mobileordering.util.Sales;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -35,18 +35,15 @@ import java.util.Map;
 
 public class ReportActivity extends FragmentActivity implements DatePickerDialog.OnDateSetListener {
 
-    public static ArrayList<SalesManager> simple_2312312das = new ArrayList<>();
-    private static String dateNow;
-
-    Calendar c;
+    public static ArrayList<Sales> salesList = new ArrayList<>();
+    private Calendar calendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
 
-
-        c = Calendar.getInstance();
+        calendar = Calendar.getInstance();
 
         displayDate();
 
@@ -64,7 +61,7 @@ public class ReportActivity extends FragmentActivity implements DatePickerDialog
         bReportDaily.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StringRequest stringRequest = request("http://opres.heliohost.org/order/getsalesdaily", "" + String.valueOf(c.get(Calendar.YEAR)) + "-" + String.valueOf(c.get(Calendar.MONTH) + 1) + "-" + String.valueOf(c.get(Calendar.DAY_OF_YEAR) + ""));
+                StringRequest stringRequest = request("http://opres.heliohost.org/order/getsalesdaily", "" + String.valueOf(calendar.get(Calendar.YEAR)) + "-" + String.valueOf(calendar.get(Calendar.MONTH) + 1) + "-" + String.valueOf(calendar.get(Calendar.DAY_OF_YEAR) + ""));
 
                 RequestQueue requestQueue = Volley.newRequestQueue(ReportActivity.this);
                 requestQueue.add(stringRequest);
@@ -75,7 +72,7 @@ public class ReportActivity extends FragmentActivity implements DatePickerDialog
         bReportMonthly.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String month = String.valueOf(c.get(Calendar.MONTH)+1);
+                String month = String.valueOf(calendar.get(Calendar.MONTH)+1);
                 if (month.length() < 2)
                     month = "0" + month;
 
@@ -89,7 +86,7 @@ public class ReportActivity extends FragmentActivity implements DatePickerDialog
         bReportYearly.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String year = String.valueOf(c.get(Calendar.YEAR));
+                String year = String.valueOf(calendar.get(Calendar.YEAR));
 
                 StringRequest stringRequest = request("http://opres.heliohost.org/order/getsalesyearly", year);
 
@@ -111,8 +108,6 @@ public class ReportActivity extends FragmentActivity implements DatePickerDialog
     }
 
     private void printDialog() {
-
-
         Intent printIntent = new Intent(ReportActivity.this, PrintDialogActivity.class);
         File tempReceipt;
 
@@ -127,7 +122,7 @@ public class ReportActivity extends FragmentActivity implements DatePickerDialog
             tempReceipt = File.createTempFile("sales", "txt");
 
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(tempReceipt));
-            bufferedWriter.write(field_sdsadada(title, centerSpace, false));
+            bufferedWriter.write(formatString(title, centerSpace, false));
 
 
             bufferedWriter.newLine();
@@ -138,30 +133,30 @@ public class ReportActivity extends FragmentActivity implements DatePickerDialog
             int priceWidth = 15;
             int grossTotal = 0;
 
-            bufferedWriter.write(field_sdsadada("Name", nameWidth, true));
-            bufferedWriter.write(field_sdsadada("Qty", qtyWidth, false));
-            bufferedWriter.write(field_sdsadada("Sub", priceWidth, false));
+            bufferedWriter.write(formatString("Name", nameWidth, true));
+            bufferedWriter.write(formatString("Qty", qtyWidth, false));
+            bufferedWriter.write(formatString("Sub", priceWidth, false));
             bufferedWriter.newLine();
             bufferedWriter.newLine();
 
-            for (SalesManager salesManager : simple_2312312das) {
-                String name = salesManager.getName();
-                int qty = salesManager.getQty();
-                int price = salesManager.getPrice();
+            for (Sales sales : salesList) {
+                String name = sales.getName();
+                int qty = sales.getQty();
+                int price = sales.getPrice();
 
                 int total = qty * price;
 
                 grossTotal += total;
 
-                bufferedWriter.write(field_sdsadada(name, nameWidth, true));
-                bufferedWriter.write(field_sdsadada(qty, qtyWidth, false));
-                bufferedWriter.write(field_sdsadada("Php " + String.valueOf(total) + ".00", priceWidth, false));
+                bufferedWriter.write(formatString(name, nameWidth, true));
+                bufferedWriter.write(formatString(qty, qtyWidth, false));
+                bufferedWriter.write(formatString("Php " + String.valueOf(total) + ".00", priceWidth, false));
                 bufferedWriter.newLine();
             }
 
             bufferedWriter.newLine();
-            bufferedWriter.write(field_sdsadada("Total:", 10, true));
-            bufferedWriter.write(field_sdsadada("Php " + String.valueOf(grossTotal) + ".00", 50, false));
+            bufferedWriter.write(formatString("Total:", 10, true));
+            bufferedWriter.write(formatString("Php " + String.valueOf(grossTotal) + ".00", 50, false));
 
             bufferedWriter.close();
 
@@ -182,7 +177,7 @@ public class ReportActivity extends FragmentActivity implements DatePickerDialog
         return type;
     }
 
-    public String field_sdsadada(String s, int size, boolean left) {
+    public String formatString(String s, int size, boolean left) {
         String temp;
 
         if (left) {
@@ -194,7 +189,7 @@ public class ReportActivity extends FragmentActivity implements DatePickerDialog
         return temp.substring(0, size);
     }
 
-    public String field_sdsadada(int s, int size, boolean left) {
+    public String formatString(int s, int size, boolean left) {
         String formatInt = String.valueOf(s);
         String temp;
         if (left) {
@@ -210,7 +205,8 @@ public class ReportActivity extends FragmentActivity implements DatePickerDialog
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        simple_2312312das = OrderJSONParser.parseFeedSales(response);
+                        System.out.println("@MobileOrdering Volley Report Response: " + response);
+                        salesList = JSONParser.parseFeedSales(response);
                         printDialog();
                     }
                 },
@@ -239,13 +235,13 @@ public class ReportActivity extends FragmentActivity implements DatePickerDialog
 
     @Override
     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-        c.set(year, monthOfYear, dayOfMonth);
+        calendar.set(year, monthOfYear, dayOfMonth);
         displayDate();
     }
 
     public void displayDate() {
         TextView tvReportCDate = (TextView) findViewById(R.id.tvReportCDate);
-        tvReportCDate.setText(String.valueOf(c.get(Calendar.MONTH)) + "-" + String.valueOf(c.get(Calendar.DAY_OF_MONTH)) + "-" + String.valueOf(c.get(Calendar.YEAR)));
+        tvReportCDate.setText(String.valueOf(calendar.get(Calendar.MONTH)) + "-" + String.valueOf(calendar.get(Calendar.DAY_OF_MONTH)) + "-" + String.valueOf(calendar.get(Calendar.YEAR)));
     }
 
     public static class DatePickerFragment extends DialogFragment {

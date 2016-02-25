@@ -24,7 +24,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.mobile.mobileordering.util.InventoryManager;
 import com.mobile.mobileordering.util.LayoutManager;
-import com.mobile.mobileordering.util.OrderJSONParser;
+import com.mobile.mobileordering.util.JSONParser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -147,7 +147,7 @@ public class InventoryActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        function_132141asa31 = OrderJSONParser.parseFeedInventory(response);
+                        function_132141asa31 = JSONParser.parseFeedInventory(response);
                         field_232141.setVisibility(View.GONE);
                         ListView listView = (ListView) findViewById(R.id.lvInventory);
                         listView.setAdapter(new InventoryAdapter(InventoryActivity.this));

@@ -3,10 +3,7 @@ package com.mobile.mobileordering.util;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by simplyph on 1/23/2016.
- */
-public class SalesManager implements Parcelable{
+public class Sales implements Parcelable{
 
     private String category;
     private int id;
@@ -55,7 +52,7 @@ public class SalesManager implements Parcelable{
     }
 
 
-    public SalesManager(String category, int id){
+    public Sales(String category, int id){
         this.category = category;
         this.id = id;
         this.name = name;
@@ -63,7 +60,7 @@ public class SalesManager implements Parcelable{
         this.price = price;
     }
 
-    public SalesManager(Parcel in) {
+    public Sales(Parcel in) {
         this.category = in.readString();
         this.id = in.readInt();
     }
@@ -79,15 +76,15 @@ public class SalesManager implements Parcelable{
         dest.writeInt(id);
     }
 
-    public static final Creator<SalesManager> CREATOR = new Creator<SalesManager>() {
+    public static final Creator<Sales> CREATOR = new Creator<Sales>() {
         @Override
-        public SalesManager createFromParcel(Parcel in) {
-            return new SalesManager(in);
+        public Sales createFromParcel(Parcel in) {
+            return new Sales(in);
         }
 
         @Override
-        public SalesManager[] newArray(int size) {
-            return new SalesManager[size];
+        public Sales[] newArray(int size) {
+            return new Sales[size];
         }
     };
 }

@@ -246,8 +246,6 @@ public class CategoryActivity extends AppCompatActivity {
         inputStream = assetManager.open("menu_image/" + filename);
 
         Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-
-        // TODO Change the return value
         return new BitmapDrawable(bitmap);
     }
 

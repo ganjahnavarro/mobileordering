@@ -6,43 +6,16 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-/**
- * Created by simplyph on 1/14/2016.
- */
-public class OrderJSONParser {
+public class JSONParser {
 
-    public static ArrayList<PendingItems> parseFeed(String content) {
+    public static ArrayList<Sales> parseFeedSales(String content) {
         try {
             JSONArray jsonArray = new JSONArray(content);
 
-            ArrayList<PendingItems> pendingItemsArrayList = new ArrayList<>();
+            ArrayList<Sales> salesManagerArrayList = new ArrayList<>();
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                // String category, int id, String name, int qty, int price
-                PendingItems pendingItems = new PendingItems(jsonObject.getString("category"), jsonObject.getInt("menuid"), jsonObject.getString("name"), jsonObject.getInt("qty"), jsonObject.getInt("price"));
-                pendingItems.setTableid(jsonObject.getInt("tableid"));
-
-                pendingItemsArrayList.add(pendingItems);
-            }
-
-            return pendingItemsArrayList;
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    public static ArrayList<SalesManager> parseFeedSales(String content) {
-        try {
-            JSONArray jsonArray = new JSONArray(content);
-
-            ArrayList<SalesManager> salesManagerArrayList = new ArrayList<>();
-
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jsonObject = jsonArray.getJSONObject(i);
-
 
                 /// Sizzling pata 2 190 Php 12121
                 /// Sizzling pata 3 190 Php 12121
@@ -50,21 +23,21 @@ public class OrderJSONParser {
                 if (!salesManagerArrayList.isEmpty()) {
                     boolean gotcha = false;
 
-                    for (SalesManager salesManager : salesManagerArrayList) {
-                        if (salesManager.getCategory().equalsIgnoreCase(jsonObject.getString("category")) && String.valueOf(salesManager.getId()).equalsIgnoreCase(String.valueOf(jsonObject.getInt("menuid")))) {
+                    for (Sales sales : salesManagerArrayList) {
+                        if (sales.getCategory().equalsIgnoreCase(jsonObject.getString("category")) && String.valueOf(sales.getId()).equalsIgnoreCase(String.valueOf(jsonObject.getInt("menuid")))) {
                             // Get
-                            int current = salesManager.getQty();
+                            int current = sales.getQty();
                             int addedQty = jsonObject.getInt("qty");
 
                             // Set
-                            salesManager.setQty(current + addedQty);
+                            sales.setQty(current + addedQty);
                             gotcha = true;
                             break;
                         }
                     }
 
                     if(!gotcha){
-                        SalesManager newSales = new SalesManager(jsonObject.getString("category"), jsonObject.getInt("menuid"));
+                        Sales newSales = new Sales(jsonObject.getString("category"), jsonObject.getInt("menuid"));
 
                         newSales.setName(jsonObject.getString("name"));
                         newSales.setQty(jsonObject.getInt("qty"));
@@ -74,7 +47,7 @@ public class OrderJSONParser {
                     }
                 } else {
 
-                    SalesManager newSales = new SalesManager(jsonObject.getString("category"), jsonObject.getInt("menuid"));
+                    Sales newSales = new Sales(jsonObject.getString("category"), jsonObject.getInt("menuid"));
 
                     newSales.setName(jsonObject.getString("name"));
                     newSales.setQty(jsonObject.getInt("qty"));
@@ -101,11 +74,9 @@ public class OrderJSONParser {
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-
-                Order order = new Order(jsonObject.getString("category"), jsonObject.getInt("menuid"), jsonObject.getInt("id"), jsonObject.getString("name") + "adsfasdf", jsonObject.getInt("qty"), jsonObject.getInt("price"));
+                Order order = new Order(jsonObject.getString("category"), jsonObject.getInt("menuid"), jsonObject.getInt("id"), jsonObject.getString("name"), jsonObject.getInt("qty"), jsonObject.getInt("price"));
                 order.setTableid(jsonObject.getInt("tableid"));
                 orders.add(order);
-
             }
 
             return orders;
@@ -127,9 +98,7 @@ public class OrderJSONParser {
 
                 InventoryManager inventoryManager = new InventoryManager(jsonObject.getString("category"), jsonObject.getInt("menuid"), jsonObject.getInt("id"), jsonObject.getString("name"), jsonObject.getInt("inventory"));
                 inventoryManagerArrayList.add(inventoryManager);
-
             }
-
             return inventoryManagerArrayList;
 
         } catch (JSONException e) {

@@ -8,34 +8,37 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:weightSum="24"
-    tools:context="com.mobile.mobileordering.CategoryActivity">
+    android:weightSum="12"
+    tools:context="com.mobile.mobileordering.FeedbackActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/linear_zero_dimen"
-        android:layout_weight="3"
+        android:layout_weight="1"
         android:orientation="horizontal"
         android:weightSum="12">
 
-        <TextView
-            android:id="@+id/tvCategoryTable"
+        <ImageButton
+            android:id="@+id/ibFeedbackRefresh"
             android:layout_width="@dimen/linear_zero_dimen"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:gravity="center"
-            android:textSize="25sp" />
+            android:background="@android:color/transparent"
+            android:cropToPadding="true"
+            android:padding="@dimen/padding_lg"
+            android:scaleType="fitCenter"
+            android:src="@drawable/refresh" />
 
         <TextView
             android:layout_width="@dimen/linear_zero_dimen"
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center"
-            android:text="@string/app_act_category"
+            android:text="@string/app_act_feedback"
             android:textSize="25sp" />
 
         <ImageButton
-            android:id="@+id/ibCategoryLogout"
+            android:id="@+id/ibFeedbackLogout"
             android:layout_width="@dimen/linear_zero_dimen"
             android:layout_height="match_parent"
             android:layout_weight="2"
@@ -47,17 +50,19 @@
 
     </LinearLayout>
 
-    <EditText android:id="@+id/inputSearch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Search.."
-        android:inputType="textVisiblePassword"/>
+    <ProgressBar
+        android:id="@+id/feedbackProgressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="2" />
 
     <ListView
-        android:id="@+id/lvCategory"
+        android:id="@+id/lvFeedback"
         android:layout_width="match_parent"
         android:layout_height="@dimen/linear_zero_dimen"
-        android:layout_weight="21"
-        android:background="@drawable/bg_item" />
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="11" />
 
 </LinearLayout>

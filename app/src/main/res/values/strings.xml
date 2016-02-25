@@ -10,6 +10,7 @@
     <string name="app_act_item">Item</string>
     <string name="app_act_menu">Admin</string>
     <string name="app_act_orders">Orders</string>
+    <string name="app_act_feedback">Feedback</string>
     <string name="app_act_inventory">Inventory</string>
     <string name="app_act_report">Sales Report</string>
 

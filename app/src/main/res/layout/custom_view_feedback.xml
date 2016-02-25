@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="12">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <RatingBar
+            android:id="@+id/feedbackRatingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="1.0"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:rating="1.0"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_weight="9"
+        android:orientation="horizontal"
+        android:weightSum="12">
+        <TextView
+            android:id="@+id/tvFeedbackMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="@string/app_act_feedback"
+            android:textSize="@dimen/textsize_md" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_weight="9"
+        android:orientation="horizontal"
+        android:weightSum="12">
+        <TextView
+            android:id="@+id/tvFeedbackBy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="@string/app_act_feedback"
+            android:textSize="@dimen/textsize_sm" />
+    </LinearLayout>
+
+</LinearLayout>

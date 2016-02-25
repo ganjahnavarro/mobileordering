@@ -69,7 +69,6 @@ public class JSONParser {
     public static ArrayList<Order> parseFeedOrder(String content) {
         try {
             JSONArray jsonArray = new JSONArray(content);
-
             ArrayList<Order> orders = new ArrayList<>();
 
             for (int i = 0; i < jsonArray.length(); i++) {
@@ -78,9 +77,25 @@ public class JSONParser {
                 order.setTableid(jsonObject.getInt("tableid"));
                 orders.add(order);
             }
-
             return orders;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
+    public static ArrayList<Feedback> parseFeedFeedback(String content) {
+        try {
+            JSONArray jsonArray = new JSONArray(content);
+            ArrayList<Feedback> feedbackList = new ArrayList<>();
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                Feedback feedback = new Feedback(jsonObject.getInt("id"), jsonObject.getInt("rating"),
+                        jsonObject.getString("message"), jsonObject.getString("name"));
+                feedbackList.add(feedback);
+            }
+            return feedbackList;
         } catch (JSONException e) {
             e.printStackTrace();
             return null;

@@ -137,7 +137,7 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
         orders = new ArrayList<>();
         progressBar.setVisibility(View.VISIBLE);
         StringRequest stringRequest = request("http://mobileordering-gnjb.rhcloud.com/orders.php?status=" + getStatus());
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
 

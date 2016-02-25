@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private String menuList[] = {"Unpaid Orders", "Paid Orders", "Inventory", "Report", "Set Table"};
+    private String menuList[] = {"Unpaid Orders", "Paid Orders", "Inventory", "Report", "Customer Feedback", "Set Table"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +95,7 @@ public class MenuActivity extends AppCompatActivity {
                         break;
 
                     case "Customer Feedback":
-                        Intent feedBackIntent = new Intent(MenuActivity.this, ReportActivity.class);
+                        Intent feedBackIntent = new Intent(MenuActivity.this, FeedbackActivity.class);
                         startActivity(feedBackIntent);
                         break;
 

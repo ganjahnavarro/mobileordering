@@ -93,22 +93,22 @@ public class OrderJSONParser {
         }
     }
 
-    public static ArrayList<OrderManager> parseFeedOrder(String content) {
+    public static ArrayList<Order> parseFeedOrder(String content) {
         try {
             JSONArray jsonArray = new JSONArray(content);
 
-            ArrayList<OrderManager> orderManagerArrayList = new ArrayList<>();
+            ArrayList<Order> orders = new ArrayList<>();
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
 
-                OrderManager orderManager = new OrderManager(jsonObject.getString("category"), jsonObject.getInt("menuid"), jsonObject.getInt("id"), jsonObject.getString("name") + "adsfasdf", jsonObject.getInt("qty"), jsonObject.getInt("price"));
-                orderManager.setTableid(jsonObject.getInt("tableid"));
-                orderManagerArrayList.add(orderManager);
+                Order order = new Order(jsonObject.getString("category"), jsonObject.getInt("menuid"), jsonObject.getInt("id"), jsonObject.getString("name") + "adsfasdf", jsonObject.getInt("qty"), jsonObject.getInt("price"));
+                order.setTableid(jsonObject.getInt("tableid"));
+                orders.add(order);
 
             }
 
-            return orderManagerArrayList;
+            return orders;
 
         } catch (JSONException e) {
             e.printStackTrace();

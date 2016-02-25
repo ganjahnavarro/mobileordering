@@ -12,10 +12,16 @@ import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -37,26 +43,28 @@ import java.util.ArrayList;
 public class CategoryActivity extends AppCompatActivity {
 
     protected JSONArray data;
-    public static final ArrayList<PendingItems> function_2134124124 = new ArrayList<>();
+    private CategoryAdapter adapter;
+    public static final ArrayList<PendingItems> items = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
-        function_96534512();
-        field_214536753();
+        loadPreferences();
+        loadListAndListeners();
     }
 
-    private void function_96534512(){
-        PrefsManager class_3423445 = new PrefsManager(this);
-        TextView class_34242 = (TextView) findViewById(R.id.tvCategoryTable);
-        class_34242.setText(String.valueOf(class_3423445.getPreferences().getInt(class_3423445.TABLE, 1)));
+    private void loadPreferences(){
+        PrefsManager prefsManager = new PrefsManager(this);
+        TextView textView = (TextView) findViewById(R.id.tvCategoryTable);
+        textView.setText(String.valueOf(prefsManager.getPreferences().getInt(prefsManager.TABLE, 1)));
     }
 
-    private void field_214536753(){
+    private void loadListAndListeners(){
         ImageButton logout = (ImageButton) findViewById(R.id.ibCategoryLogout);
         ListView listView = (ListView) findViewById(R.id.lvCategory);
+        EditText inputSearch = (EditText) findViewById(R.id.inputSearch);
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,27 +75,48 @@ public class CategoryActivity extends AppCompatActivity {
             }
         });
 
-        listView.setAdapter(new CategoryAdapter(this, "menu_category.json"));
+        adapter = new CategoryAdapter(this, "menu_category.json");
+        listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(CategoryActivity.this, ItemsActivity.class);
                 try {
-                    String field_4523523 = data.getJSONObject(position).getString("menu_name");
-                    String field_314132313 = data.getJSONObject(position).getString("menu_label");
-                    intent.putExtra("category", field_4523523);
-                    intent.putExtra("categoryname", field_314132313);
+                    String category = data.getJSONObject(position).getString("menu_name");
+                    String categoryname = data.getJSONObject(position).getString("menu_label");
+
+                    System.out.println("Category: " + category);
+                    System.out.println("Category Name: " + categoryname);
+
+                    intent.putExtra("category", category);
+                    intent.putExtra("categoryname", categoryname);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
                 startActivity(intent);
             }
         });
+
+        inputSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                adapter.getFilter().filter(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     @Override
     public void onBackPressed() {
-
         new AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("Closing Application")
@@ -103,15 +132,17 @@ public class CategoryActivity extends AppCompatActivity {
 
     }
 
-    private class CategoryAdapter extends BaseAdapter {
+    private class CategoryAdapter extends BaseAdapter implements Filterable {
 
-        private Context data_2e143122;
+        private Context context;
+        private JSONArray filteredData;
+        private ValueFilter valueFilter;
 
         public CategoryAdapter(Context c, String path) {
-            data_2e143122 = c;
-
+            context = c;
             JSONManager jsonManager = new JSONManager(c, path);
             data = jsonManager.getData();
+            this.filteredData = data;
             new FontManager(c);
         }
 
@@ -135,7 +166,7 @@ public class CategoryActivity extends AppCompatActivity {
             View view;
 
             if (convertView == null) {
-                LayoutManager layoutManager = new LayoutManager(data_2e143122);
+                LayoutManager layoutManager = new LayoutManager(context);
                 view = layoutManager.inflate(R.layout.custom_view_category, parent);
             } else {
                 view = convertView;
@@ -145,7 +176,6 @@ public class CategoryActivity extends AppCompatActivity {
             TextView label = (TextView) view.findViewById(R.id.tvCategoryLabel);
 
             String image;
-
 
             label.setTypeface(FontManager.FONT_TIMESB);
 
@@ -160,6 +190,52 @@ public class CategoryActivity extends AppCompatActivity {
             }
 
             return view;
+        }
+
+        @Override
+        public Filter getFilter() {
+            if (valueFilter == null) {
+                valueFilter = new ValueFilter();
+            }
+            return valueFilter;
+        }
+
+        private class ValueFilter extends Filter {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                FilterResults results = new FilterResults();
+
+                if (constraint != null && constraint.length() > 0) {
+                    JSONArray jsonArray = new JSONArray();
+
+                    for (int i = 0; i < filteredData.length(); i++) {
+                        String label;
+                        try {
+                            label = filteredData.getJSONObject(i).getString("menu_label");
+
+                            if(label != null && label.toUpperCase().contains(constraint.toString().toUpperCase())){
+                                jsonArray.put(filteredData.getJSONObject(i));
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    results.count = jsonArray.length();
+                    results.values = jsonArray;
+                } else {
+                    results.count = filteredData.length();
+                    results.values = filteredData;
+                }
+                return results;
+
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                data = (JSONArray) results.values;
+                notifyDataSetChanged();
+            }
+
         }
     }
 

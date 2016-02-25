@@ -31,7 +31,8 @@
         <activity
             android:name=".CategoryActivity"
             android:configChanges="orientation|keyboard|keyboardHidden"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name=".ItemsActivity"
             android:configChanges="orientation|keyboard|keyboardHidden"

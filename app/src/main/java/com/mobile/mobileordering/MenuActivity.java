@@ -24,37 +24,41 @@ import java.util.ArrayList;
 
 public class MenuActivity extends AppCompatActivity {
 
-    public String field_21341241 = "table";
-    private String menuList[] = {"Orders", "Inventory", "Report", "Set Table"};
+    private String menuList[] = {"Orders", "Inventory", "Report", "Customer Feedback", "Set Table"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        ListView param_3416965 = (ListView) findViewById(R.id.lvMenu);
-        param_3416965.setAdapter(new MenuAdapter(this));
-        param_3416965.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ListView menuListView = (ListView) findViewById(R.id.lvMenu);
+        menuListView.setAdapter(new MenuAdapter(this));
+        menuListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case 0:
+                String menuName = menuList[position];
+
+                switch (menuName) {
+                    case "Orders":
                         Intent ordersIntent = new Intent(MenuActivity.this, OrdersActivity.class);
                         startActivity(ordersIntent);
                         break;
 
-                    case 1:
+                    case "Inventory":
                         Intent inventoryIntent = new Intent(MenuActivity.this, InventoryActivity.class);
                         startActivity(inventoryIntent);
                         break;
 
-                    case 2:
+                    case "Report":
                         Intent reportIntent = new Intent(MenuActivity.this, ReportActivity.class);
                         startActivity(reportIntent);
                         break;
 
-                    case 3:
-                        String items[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35"};
+                    case "Set Table":
+                        String items[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12",
+                                "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
+                                "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35"};
+
                         final int[] selected = new int[1];
 
                         new AlertDialog.Builder(MenuActivity.this)
@@ -84,6 +88,12 @@ public class MenuActivity extends AppCompatActivity {
                                 .setNegativeButton("Cancel", null)
                                 .show();
                         break;
+
+                    case "Customer Feedback":
+                        Intent feedBackIntent = new Intent(MenuActivity.this, ReportActivity.class);
+                        startActivity(feedBackIntent);
+                        break;
+
                     default:
                         return;
                 }

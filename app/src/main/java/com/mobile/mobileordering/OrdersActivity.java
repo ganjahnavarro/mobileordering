@@ -26,33 +26,31 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.mobile.mobileordering.util.OrderJSONParser;
-import com.mobile.mobileordering.util.OrderManager;
+import com.mobile.mobileordering.util.Order;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class OrdersActivity extends AppCompatActivity {
 
-    public static ArrayList<OrderManager> field_23124314 = new ArrayList<>();
-    ProgressBar field_789434523;
-    ListView field_123413124;
-    RequestQueue param_3423423;
-
+    public static ArrayList<Order> orders = new ArrayList<>();
+    private ProgressBar progressBar;
+    private ListView ordersListView;
+    private RequestQueue requestQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orders);
 
-        param_3423423 = Volley.newRequestQueue(this);
-        field_789434523 = (ProgressBar) findViewById(R.id.progressBar);
-        field_789434523.setVisibility(View.VISIBLE);
+        requestQueue = Volley.newRequestQueue(this);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.VISIBLE);
 
         ImageButton logout = (ImageButton) findViewById(R.id.ibOrdersLogout);
         logout.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +71,7 @@ public class OrdersActivity extends AppCompatActivity {
         });
 
         StringRequest stringRequest = request("http://opres.heliohost.org/order/getorder");
-        param_3423423.add(stringRequest);
+        requestQueue.add(stringRequest);
     }
 
     private StringRequest request(String uri) {
@@ -82,11 +80,10 @@ public class OrdersActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        field_789434523.setVisibility(View.GONE);
-                        field_23124314 = OrderJSONParser.parseFeedOrder(response);
-                        field_123413124 = (ListView) findViewById(R.id.lvOrders);
-                        field_123413124.setAdapter(new OrdersAdapter(OrdersActivity.this));
-
+                        progressBar.setVisibility(View.GONE);
+                        orders = OrderJSONParser.parseFeedOrder(response);
+                        ordersListView = (ListView) findViewById(R.id.lvOrders);
+                        ordersListView.setAdapter(new OrdersAdapter(OrdersActivity.this));
                     }
                 },
                 new Response.ErrorListener() {
@@ -133,8 +130,8 @@ public class OrdersActivity extends AppCompatActivity {
     }
 
     private void refreshListView() {
-        field_23124314 = new ArrayList<>();
-        field_789434523.setVisibility(View.VISIBLE);
+        orders = new ArrayList<>();
+        progressBar.setVisibility(View.VISIBLE);
         StringRequest stringRequest = request("http://opres.heliohost.org/order/getorder");
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
@@ -194,7 +191,7 @@ public class OrdersActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return field_23124314.size();
+            return orders.size();
         }
 
         @Override
@@ -224,27 +221,28 @@ public class OrdersActivity extends AppCompatActivity {
             Button receipt = (Button) view.findViewById(R.id.bOrdersReceipt);
             Button voidOrder = (Button) view.findViewById(R.id.bOrdersVoid);
 
-            final OrderManager orderManager = field_23124314.get(position);
+            final Order order = orders.get(position);
 
-            String value = "x" + String.valueOf(orderManager.getQty()) + " " + orderManager.getName();
+            String value = "x" + String.valueOf(order.getQty()) + " " + order.getName();
+            value = value.replace("adsfasdf", "");
 
             items.setText(value);
-            table.setText(String.valueOf(orderManager.getTableid()));
+            table.setText(String.valueOf(order.getTableid()));
 
             voidOrder.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    StringRequest stringRequest = updateRequest(2, orderManager.getId(), orderManager.getName());
-                    param_3423423.add(stringRequest);
+                    StringRequest stringRequest = updateRequest(2, order.getId(), order.getName());
+                    requestQueue.add(stringRequest);
                 }
             });
 
             receipt.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    StringRequest stringRequest = updateRequest(1, orderManager.getId(), orderManager.getName());
-                    param_3423423.add(stringRequest);
-                    printDialog(orderManager.getName(), orderManager.getQty(), orderManager.getPrice());
+                    StringRequest stringRequest = updateRequest(1, order.getId(), order.getName());
+                    requestQueue.add(stringRequest);
+                    printDialog(order.getName(), order.getQty(), order.getPrice());
                 }
             });
 

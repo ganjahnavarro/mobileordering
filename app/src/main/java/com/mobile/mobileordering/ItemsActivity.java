@@ -38,35 +38,34 @@ import java.io.InputStream;
 public class ItemsActivity extends AppCompatActivity {
 
     private JSONArray data;
-    private String param_1433895645;
-    private String param_3407635235;
+    private String category;
+    private String categoryname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_items);
 
-        param_1433895645 = getIntent().getStringExtra("category");
-        param_3407635235 = getIntent().getStringExtra("categoryname");
+        category = getIntent().getStringExtra("category");
+        categoryname = getIntent().getStringExtra("categoryname");
 
         TextView textView = (TextView) findViewById(R.id.tvItemsHeading);
-        textView.setText(param_3407635235);
+        textView.setText(categoryname);
 
-        field_123641231();
-        field_3423523();
-        field_98765234();
+        loadPreferences();
+        loadListeners();
+        loadItems();
     }
 
-    private void field_123641231() {
+    private void loadPreferences() {
         PrefsManager prefsManager = new PrefsManager(this);
         TextView tableNumber = (TextView) findViewById(R.id.tvItemsTable);
         tableNumber.setText(String.valueOf(prefsManager.getPreferences().getInt(prefsManager.TABLE, 1)));
     }
 
-    private void field_3423523() {
+    private void loadListeners() {
         Button viewOrder = (Button) findViewById(R.id.bItemsView);
         ImageButton logout = (ImageButton) findViewById(R.id.ibItemsLogout);
-
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,8 +85,8 @@ public class ItemsActivity extends AppCompatActivity {
         });
     }
 
-    private void field_98765234(){
-        String itemCategory = "menu_" + param_1433895645 + ".json";
+    private void loadItems(){
+        String itemCategory = "menu_" + category + ".json";
 
         GridView gridView = (GridView) findViewById(R.id.gvItems);
         gridView.setNumColumns(3);
@@ -99,7 +98,6 @@ public class ItemsActivity extends AppCompatActivity {
 
                 try {
                     description = data.getJSONObject(position).getString("menu_desc");
-//                    description = data.getJSONObject(position).getString("menu_desc") + "\n\n\nIngredient:\n\n" + data.getJSONObject(position).getString("menu_ingredient") + "\n\n\nProcedure:\n\n" + data.getJSONObject(position).getString("menu_procedure");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -113,11 +111,13 @@ public class ItemsActivity extends AppCompatActivity {
                 final SeekBar seekBar = (SeekBar) dialogView.findViewById(R.id.sbItemsQty);
 
                 final int[] progressBar = new int[1];
+                final int MIN_QUANTITY = 1;
 
-                seekBar.setMax(10);
+                seekBar.setMax(10 - MIN_QUANTITY);
                 seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        progress += MIN_QUANTITY;
                         textView.setText(String.valueOf(progress));
                         progressBar[0] = progress;
                     }
@@ -132,6 +132,7 @@ public class ItemsActivity extends AppCompatActivity {
 
                     }
                 });
+                seekBar.setProgress(0);
 
                 try {
                     new AlertDialog.Builder(ItemsActivity.this)
@@ -152,7 +153,7 @@ public class ItemsActivity extends AppCompatActivity {
                                         if (progressBar[0] != 0) {
                                             String menuName = data.getJSONObject(position).getString("menu_name");
                                             int menuPrice = Integer.parseInt(data.getJSONObject(position).getString("menu_price"));
-                                            CategoryActivity.function_2134124124.add(new PendingItems(param_1433895645, position, menuName, progressBar[0], menuPrice));
+                                            CategoryActivity.items.add(new PendingItems(category, position, menuName, progressBar[0], menuPrice));
                                         }
                                     } catch (JSONException e) {
                                         e.printStackTrace();

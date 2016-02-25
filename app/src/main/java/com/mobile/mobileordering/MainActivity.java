@@ -74,22 +74,23 @@ public class MainActivity extends AppCompatActivity {
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                String user = "papis";
-                                String pass = "2011";
-
-                                if (TextUtils.isEmpty(username.getText().toString()) || TextUtils.isEmpty(password.getText().toString())) {
-                                    Toast.makeText(MainActivity.this, "Incomplete Credentials", Toast.LENGTH_SHORT).show();
-                                    return;
-                                }
-
-                                if (username.getText().toString().matches(user) && password.getText().toString().matches(pass)) {
+//                                TODO
+//                                String user = "papis";
+//                                String pass = "2011";
+//
+//                                if (TextUtils.isEmpty(username.getText().toString()) || TextUtils.isEmpty(password.getText().toString())) {
+//                                    Toast.makeText(MainActivity.this, "Incomplete Credentials", Toast.LENGTH_SHORT).show();
+//                                    return;
+//                                }
+//
+//                                if (username.getText().toString().matches(user) && password.getText().toString().matches(pass)) {
                                     Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                                     finish();
                                     startActivity(intent);
-                                } else {
-                                    Toast.makeText(MainActivity.this, "Wrong Username / Password", Toast.LENGTH_SHORT).show();
-                                    return;
-                                }
+//                                } else {
+//                                    Toast.makeText(MainActivity.this, "Wrong Username / Password", Toast.LENGTH_SHORT).show();
+//                                    return;
+//                                }
                             }
                         })
                         .setNegativeButton("Cancel", null)

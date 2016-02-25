@@ -26,74 +26,68 @@ import com.mobile.mobileordering.util.LayoutManager;
 import com.mobile.mobileordering.util.PendingItems;
 import com.mobile.mobileordering.util.PrefsManager;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class CartActivity extends AppCompatActivity {
 
-    ArrayList<PendingItems> param_123456785;
-    int param_123456789;
+    private int totalAmount;
+    private int tableid;
+
+    private final double MINUTES_PER_DISH_MIN = 1.5;
+    private final double MINUTES_PER_DISH_MAX = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
-        function_242365313();
-        function_243135321();
+        loadPreferences();
+        loadListeners();
 
+        ListView cartListView = (ListView) findViewById(R.id.lvCart);
+        cartListView.setAdapter(new OrderAdapter(this));
 
-        ListView function_1251731412 = (ListView) findViewById(R.id.lvCart);
-        function_1251731412.setAdapter(new function_7549241132(this));
-
-        for (PendingItems function_95603234123 : CategoryActivity.function_2134124124) {
-            param_123456789 += function_95603234123.getPrice() * function_95603234123.function_12762731212();
-        }
-
-        TextView function_126184162841 = (TextView) findViewById(R.id.tvCartTotal);
-
-        String param_412431312 = "Php " + String.valueOf(param_123456789) + ".00";
-
-        function_126184162841.setText(param_412431312);
+        computeTotalAmount();
     }
 
-    private void function_242365313() {
-        PrefsManager function_12642141 = new PrefsManager(this);
-        TextView field_32141241 = (TextView) findViewById(R.id.tvCartTable);
-        field_32141241.setText(String.valueOf(function_12642141.getPreferences().getInt(function_12642141.TABLE, 1)));
+    private void loadPreferences() {
+        PrefsManager prefsManager = new PrefsManager(this);
+        tableid = prefsManager.getPreferences().getInt(prefsManager.TABLE, 1);
+
+        TextView tableNoTextView = (TextView) findViewById(R.id.tvCartTable);
+        tableNoTextView.setText(String.valueOf(tableid));
     }
 
-    private void function_243135321(){
-        final Button data_23452936421 = (Button) findViewById(R.id.bCartOrder);
-        ImageButton field_24141241 = (ImageButton) findViewById(R.id.ibCartLogout);
+    private void loadListeners(){
+        final Button orderButton = (Button) findViewById(R.id.bCartOrder);
+        ImageButton logoutButton = (ImageButton) findViewById(R.id.ibCartLogout);
         final LayoutManager layoutManger = new LayoutManager(CartActivity.this);
 
-        field_24141241.setOnClickListener(new View.OnClickListener() {
+        logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent sample_4234241 = new Intent(CartActivity.this, MainActivity.class);
+                Intent intent = new Intent(CartActivity.this, MainActivity.class);
                 finish();
-                startActivity(sample_4234241);
+                startActivity(intent);
             }
         });
 
-
-        data_23452936421.setOnClickListener(new View.OnClickListener() {
+        orderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                View vv = layoutManger.inflate(R.layout.custom_dialog_confirm);
+                View view = layoutManger.inflate(R.layout.custom_dialog_confirm);
 
                 new AlertDialog.Builder(CartActivity.this)
                         .setTitle("Confirm Order")
-                        .setView(vv)
+                        .setView(view)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                RequestQueue quest_1335423523 = Volley.newRequestQueue(CartActivity.this);
+                                RequestQueue requestQueue = Volley.newRequestQueue(CartActivity.this);
 
-                                for (PendingItems functions_12341241421 : CategoryActivity.function_2134124124) {
-                                    quest_1335423523.add(postRequest(1, functions_12341241421.getCategory(), functions_12341241421.getName(), functions_12341241421.getId(), functions_12341241421.function_12762731212(), functions_12341241421.getPrice()));
+                                for (PendingItems item : CategoryActivity.items) {
+                                    requestQueue.add(postRequest(item.getCategory(), item.getName(), item.getId(), item.function_12762731212(), item.getPrice()));
                                 }
                             }
                         })
@@ -104,28 +98,26 @@ public class CartActivity extends AppCompatActivity {
                             }
                         })
                         .show();
-
-//                RequestQueue quest_1335423523 = Volley.newRequestQueue(CartActivity.this);
-//
-//                for (PendingItems functions_12341241421 : CategoryActivity.function_2134124124) {
-//                    quest_1335423523.add(postRequest(1, functions_12341241421.getCategory(), functions_12341241421.getName(), functions_12341241421.getId(), functions_12341241421.function_12762731212(), functions_12341241421.getPrice()));
-//                }
             }
         });
     }
 
-    private StringRequest postRequest(final int tableid, final String category, final String name, final int menuid, final int qty, final int price) {
+    private StringRequest postRequest(final String category, final String name, final int menuid, final int qty, final int price) {
 
         return new StringRequest(Request.Method.POST, "http://opres.heliohost.org/order/sendorder",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(CartActivity.this, "Order Sent", Toast.LENGTH_LONG).show();
+                        int size = CategoryActivity.items.size();
+                        Toast.makeText(CartActivity.this,
+                                "Order Sent. Please wait " + MINUTES_PER_DISH_MIN * size + " to " + MINUTES_PER_DISH_MAX * size + " minutes for your order.",
+                                Toast.LENGTH_LONG).show();
 
-                        //clear items
-                        CategoryActivity.function_2134124124.clear();
-                        ListView function_1251731412 = (ListView) findViewById(R.id.lvCart);
-                        function_1251731412.setAdapter(new function_7549241132(CartActivity.this));
+                        CategoryActivity.items.clear();
+                        ListView cartListView = (ListView) findViewById(R.id.lvCart);
+                        cartListView.setAdapter(new OrderAdapter(CartActivity.this));
+
+                        computeTotalAmount();
                     }
                 },
                 new Response.ErrorListener() {
@@ -157,30 +149,31 @@ public class CartActivity extends AppCompatActivity {
         };
     }
 
-    private void field_213412412(){
-        param_123456789 = 0;
-        for (PendingItems pendingItemsTotal : CategoryActivity.function_2134124124) {
-            param_123456789 += pendingItemsTotal.getPrice() * pendingItemsTotal.function_12762731212();
+    private void computeTotalAmount(){
+        totalAmount = 0;
+
+        if(CategoryActivity.items != null){
+            for (PendingItems item : CategoryActivity.items) {
+                totalAmount += item.getPrice() * item.function_12762731212();
+            }
         }
 
-        TextView data_325426124 = (TextView) findViewById(R.id.tvCartTotal);
-
-        String param_242141231 = "Php " + String.valueOf(param_123456789) + ".00";
-
-        data_325426124.setText(param_242141231);
+        TextView totalAmountTextView = (TextView) findViewById(R.id.tvCartTotal);
+        String totalAmountDisplay = "Php " + String.valueOf(totalAmount) + ".00";
+        totalAmountTextView.setText(totalAmountDisplay);
     }
 
-    private class function_7549241132 extends BaseAdapter {
+    private class OrderAdapter extends BaseAdapter {
 
         protected Context context;
 
-        public function_7549241132(Context context) {
+        public OrderAdapter(Context context) {
             this.context = context;
         }
 
         @Override
         public int getCount() {
-            return CategoryActivity.function_2134124124.size();
+            return CategoryActivity.items.size();
         }
 
         @Override
@@ -209,15 +202,15 @@ public class CartActivity extends AppCompatActivity {
             TextView param_3242352214 = (TextView) view.findViewById(R.id.tvCartQty);
             TextView param_4235123 = (TextView) view.findViewById(R.id.tvCartPrice);
 
-            final PendingItems function_43251312312 = CategoryActivity.function_2134124124.get(position);
+            final PendingItems function_43251312312 = CategoryActivity.items.get(position);
 
             param_1242141.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(CartActivity.this, "Removed " + function_43251312312.getName(), Toast.LENGTH_SHORT).show();
-                    CategoryActivity.function_2134124124.remove(position);
+                    CategoryActivity.items.remove(position);
                     notifyDataSetChanged();
-                    field_213412412();
+                    computeTotalAmount();
                 }
             });
 

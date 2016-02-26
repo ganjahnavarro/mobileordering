@@ -41,10 +41,10 @@ public class FeedbackActivity extends AppCompatActivity{
         progressBar = (ProgressBar) findViewById(R.id.feedbackProgressBar);
 
         refreshListView();
-        loadListAndListeners();
+        loadListeners();
     }
 
-    private void loadListAndListeners(){
+    private void loadListeners(){
         ImageButton logout = (ImageButton) findViewById(R.id.ibFeedbackLogout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +71,21 @@ public class FeedbackActivity extends AppCompatActivity{
         requestQueue.add(stringRequest);
     }
 
+    private void updateOverallRating(){
+        float totalRating = 0f;
+
+        for(Feedback feedback : feedbackList){
+            totalRating += (float) feedback.getRating();
+        }
+
+        float average = totalRating / (float) feedbackList.size();
+        RatingBar overallRatingBar = (RatingBar) findViewById(R.id.overallRatingBar);
+        overallRatingBar.setRating(average);
+
+        TextView overallRatingLabel = (TextView) findViewById(R.id.tvOverallRating);
+        overallRatingLabel.setText("Overall Rating: " + String.format("%.1f", average));
+    }
+
     private StringRequest request(String uri) {
         return new StringRequest(uri,
                 new Response.Listener<String>() {
@@ -80,6 +95,7 @@ public class FeedbackActivity extends AppCompatActivity{
                         feedbackList = JSONParser.parseFeedFeedback(response);
                         feedbackListView = (ListView) findViewById(R.id.lvFeedback);
                         feedbackListView.setAdapter(new FeedbackAdapter(FeedbackActivity.this));
+                        updateOverallRating();
                     }
                 },
                 new Response.ErrorListener() {

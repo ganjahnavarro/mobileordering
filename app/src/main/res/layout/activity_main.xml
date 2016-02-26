@@ -63,11 +63,24 @@
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="75dp"
         android:background="@android:color/transparent"
         android:text="Touch Here to Start"
         android:textColor="@android:color/background_light"
         android:textSize="@dimen/textsize_md"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/bAddFeedback"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:background="@android:color/transparent"
+        android:text="RATE US"
+        android:textColor="@android:color/background_light"
+        android:textSize="@dimen/textsize_sm"
         android:textStyle="bold" />
 
     <TextView

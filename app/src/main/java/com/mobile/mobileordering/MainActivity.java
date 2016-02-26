@@ -10,10 +10,12 @@ import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -47,41 +49,12 @@ public class MainActivity extends AppCompatActivity {
 
         Intent fetchOrdersIntent = new Intent(MainActivity.this, OrderService.class);
         startService(fetchOrdersIntent);
-
         loadListeners();
-    }
-
-    private void volleyTest(){
-        RequestQueue queue = Volley.newRequestQueue(this);
-        String urlHeliosGet ="http://mobileordering-gnjb.rhcloud.com/orders.php?status=33";
-
-        StringRequest orderRequest = new StringRequest(Request.Method.GET, urlHeliosGet,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            ArrayList<Order> orders = JSONParser.parseFeedOrder(response);
-
-                            if(orders != null){
-                                for(Order order : orders){
-                                    System.out.println("@MobileOrdering Order: " + order.getId() + " - " + order.getName() + " " + order.getQty());
-                                }
-                            }
-                        } catch (Exception e){
-                            System.out.println("@MobileOrdering Error: " + e.getMessage());
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                System.out.println("@MobileOrdering Volley Helios Error: " + error.getMessage());
-            }
-        });
-        queue.add(orderRequest);
     }
 
     private void loadListeners() {
         Button customer = (Button) findViewById(R.id.bMainCustomer);
+        Button addFeedback = (Button) findViewById(R.id.bAddFeedback);
         ImageButton admin = (ImageButton) findViewById(R.id.ibMainAdmin);
 
         customer.setOnClickListener(new View.OnClickListener() {
@@ -93,12 +66,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        addFeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FeedbackAddActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         admin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//              TODO
-                volleyTest();
-
                 LayoutManager layoutManager = new LayoutManager(MainActivity.this);
                 View loginView = layoutManager.inflate(R.layout.custom_dialog_main);
 
@@ -111,23 +90,22 @@ public class MainActivity extends AppCompatActivity {
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-//                                TODO
-//                                String user = "papis";
-//                                String pass = "2011";
-//
-//                                if (TextUtils.isEmpty(username.getText().toString()) || TextUtils.isEmpty(password.getText().toString())) {
-//                                    Toast.makeText(MainActivity.this, "Incomplete Credentials", Toast.LENGTH_SHORT).show();
-//                                    return;
-//                                }
-//
-//                                if (username.getText().toString().matches(user) && password.getText().toString().matches(pass)) {
+                                String user = "papis";
+                                String pass = "2011";
+
+                                if (TextUtils.isEmpty(username.getText().toString()) || TextUtils.isEmpty(password.getText().toString())) {
+                                    Toast.makeText(MainActivity.this, "Incomplete Credentials", Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
+
+                                if (username.getText().toString().matches(user) && password.getText().toString().matches(pass)) {
                                     Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                                     finish();
                                     startActivity(intent);
-//                                } else {
-//                                    Toast.makeText(MainActivity.this, "Wrong Username / Password", Toast.LENGTH_SHORT).show();
-//                                    return;
-//                                }
+                                } else {
+                                    Toast.makeText(MainActivity.this, "Wrong Username / Password", Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
                             }
                         })
                         .setNegativeButton("Cancel", null)
@@ -171,11 +149,8 @@ public class MainActivity extends AppCompatActivity {
         notificationBuilder = new NotificationCompat.Builder(MainActivity.this)
                 .setSmallIcon(R.drawable.download)
                 .setContentTitle("New Orders")
+                .setContentText("Click here to view")
                 .setAutoCancel(true);
-
-        //TODO
-        notificationBuilder.setContentTitle("Test Title");
-        notificationBuilder.setContentText("Test description");
 
         Intent intent = new Intent(MainActivity.this, MainActivity.class);
         TaskStackBuilder taskStackBuilder = TaskStackBuilder.create(MainActivity.this);

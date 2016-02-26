@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="12"
+    tools:context="com.mobile.mobileordering.FeedbackAddActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="12">
+
+        <Space
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="2" />
+
+        <TextView
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:gravity="center"
+            android:text="Rate Us"
+            android:textSize="25sp" />
+
+        <ImageButton
+            android:id="@+id/ibFeedbackLogout"
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@android:color/transparent"
+            android:cropToPadding="true"
+            android:padding="@dimen/padding_lg"
+            android:scaleType="fitCenter"
+            android:src="@drawable/home" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:gravity="center_horizontal"
+        android:layout_weight="10"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rating"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="@dimen/textsize_sm" />
+
+        <RatingBar
+            android:id="@+id/feedbackRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="1.0"
+            android:rating="5"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name (optional)"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="@dimen/textsize_sm" />
+
+        <EditText
+            android:id="@+id/feedbackName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remarks"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="@dimen/textsize_sm" />
+
+        <EditText
+            android:id="@+id/feedbackMessage"
+            android:inputType="textMultiLine"
+            android:lines="2"
+            android:minLines="2"
+            android:gravity="top|left"
+            android:maxLines="4"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="12">
+
+        <Space
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="3" />
+
+        <Button
+            android:id="@+id/bSubmitFeedback"
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:text="SUBMIT"
+            android:textSize="@dimen/textsize_sm" />
+
+        <Space
+            android:layout_width="@dimen/linear_zero_dimen"
+            android:layout_height="match_parent"
+            android:layout_weight="3" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -205,7 +205,6 @@ public class ReportActivity extends FragmentActivity implements DatePickerDialog
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        System.out.println("@MobileOrdering Volley Report Response: " + response);
                         salesList = JSONParser.parseFeedSales(response);
                         printDialog();
                     }

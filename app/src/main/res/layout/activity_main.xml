@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/bg_home"
     tools:context="com.mobile.mobileordering.MainActivity">
 
     <ImageButton
@@ -44,18 +45,18 @@
         android:textSize="@dimen/textsize_sm"
         android:textStyle="italic" />
 
-    <!--<ImageView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_alignTop="@+id/tempVarMainSubName"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginEnd="30dp"-->
-        <!--android:layout_marginStart="30dp"-->
-        <!--android:layout_marginTop="50dp"-->
-        <!--android:scaleType="centerCrop"-->
-        <!--android:layout_marginBottom="80dp"-->
-        <!--android:layout_alignBottom="@+id/bMainCustomer"-->
-        <!--android:src="@drawable/icon" />-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/tempVarMainSubName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="80dp"
+        android:layout_alignBottom="@+id/bMainCustomer"
+        android:src="@drawable/icon" />
 
     <Button
         android:id="@+id/bMainCustomer"

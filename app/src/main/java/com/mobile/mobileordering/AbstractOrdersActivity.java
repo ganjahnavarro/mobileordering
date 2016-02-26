@@ -3,7 +3,6 @@ package com.mobile.mobileordering;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -32,6 +31,7 @@ import com.mobile.mobileordering.util.Order;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -142,11 +142,9 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
     }
 
     private void printDialog(String name, int qty, int price) {
-        Intent printIntent = new Intent(getContext(), PrintDialogActivity.class);
         File tempReceipt;
 
         try {
-            String tempName = "receipt.txt";
             tempReceipt = File.createTempFile("receipt", "txt");
 
             String about = "x" + String.valueOf(qty) + " " + name;
@@ -167,12 +165,54 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
             bufferedWriter.write("THANK YOU ^_^");
             bufferedWriter.close();
 
-            printIntent.setDataAndType(Uri.fromFile(tempReceipt), getMimeType(tempName));
-            printIntent.putExtra("title", "receipt");
-            startActivity(printIntent);
+            byte[] data = new byte[(int) tempReceipt.length()];
+            new FileInputStream(tempReceipt).read(data);
+
+            System.out.println("@@@@MobileOrdering Byte[]: " + data);
+
+            StringRequest request = postRequest(data);
+            RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+            requestQueue.add(request);
+
+//            Intent printIntent = new Intent(getContext(), PrintDialogActivity.class);
+//            printIntent.setDataAndType(Uri.fromFile(tempReceipt), getMimeType(tempName));
+//            printIntent.putExtra("title", "receipt");
+//            startActivity(printIntent);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private StringRequest postRequest(final byte[] bytearray) {
+        return new StringRequest(Request.Method.POST, "http://mobileordering-gnjb.rhcloud.com/sendfile.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(getContext(),
+                                "File submitted. Thank you.",
+                                Toast.LENGTH_LONG).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("bytearray", bytearray.toString());
+                return params;
+            }
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Content-Type", "application/x-www-form-urlencoded");
+                return params;
+            }
+        };
     }
 
     public static String getMimeType(String url) {

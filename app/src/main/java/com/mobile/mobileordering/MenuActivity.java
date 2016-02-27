@@ -5,6 +5,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +26,8 @@ import com.mobile.mobileordering.util.Constants;
 import com.mobile.mobileordering.util.LayoutManager;
 import com.mobile.mobileordering.util.PrefsManager;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -162,9 +168,14 @@ public class MenuActivity extends AppCompatActivity {
                 view = convertView;
             }
 
+            ImageView imageView = (ImageView) view.findViewById(R.id.ivMenuItem);
             TextView label = (TextView) view.findViewById(R.id.tvMenuItem);
             label.setText(getMenuList().get(position));
-
+            try {
+                imageView.setImageDrawable(getDrawableFromAsset(getMenuList().get(position) + ".png"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             return view;
         }
     }
@@ -186,4 +197,13 @@ public class MenuActivity extends AppCompatActivity {
                 .show();
 
     }
+
+    private BitmapDrawable getDrawableFromAsset(String filename) throws IOException {
+        filename = filename.replace(" ", "").toLowerCase();
+        AssetManager assetManager = getAssets();
+        InputStream inputStream = assetManager.open("menu_image/" + filename);
+        Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+        return new BitmapDrawable(bitmap);
+    }
+
 }

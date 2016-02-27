@@ -9,7 +9,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:weightSum="12"
-    tools:context=".ItemsActivity">
+    tools:context=".ItemsActivity"
+    android:background="@drawable/a4">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,8 +53,7 @@
         android:id="@+id/gvItems"
         android:layout_width="match_parent"
         android:layout_height="@dimen/linear_zero_dimen"
-        android:layout_weight="10"
-        android:background="@drawable/bg_item" />
+        android:layout_weight="10" />
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -9,7 +9,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:weightSum="24"
-    tools:context="com.mobile.mobileordering.CategoryActivity">
+    tools:context="com.mobile.mobileordering.CategoryActivity"
+    android:background="@drawable/a4">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,7 +58,6 @@
         android:id="@+id/lvCategory"
         android:layout_width="match_parent"
         android:layout_height="@dimen/linear_zero_dimen"
-        android:layout_weight="21"
-        android:background="@drawable/bg_item" />
+        android:layout_weight="21" />
 
 </LinearLayout>

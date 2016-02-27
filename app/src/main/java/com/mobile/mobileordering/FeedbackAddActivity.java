@@ -60,6 +60,7 @@ public class FeedbackAddActivity extends AppCompatActivity {
                 if(message != null && !message.isEmpty()){
                     RequestQueue requestQueue = Volley.newRequestQueue(FeedbackAddActivity.this);
                     StringRequest request = postRequest(rating, message, name);
+                    request.setShouldCache(false);
                     requestQueue.add(request);
                 } else {
                     Toast.makeText(FeedbackAddActivity.this, "Message is required.", Toast.LENGTH_SHORT).show();

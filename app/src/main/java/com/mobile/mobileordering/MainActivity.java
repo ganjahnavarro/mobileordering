@@ -23,6 +23,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.mobile.mobileordering.util.Constants;
 import com.mobile.mobileordering.util.OrderService;
 import com.mobile.mobileordering.util.JSONParser;
 import com.mobile.mobileordering.util.LayoutManager;
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         Intent fetchOrdersIntent = new Intent(MainActivity.this, OrderService.class);
         startService(fetchOrdersIntent);
         loadListeners();
+
+
     }
 
     private void loadListeners() {
@@ -90,15 +93,38 @@ public class MainActivity extends AppCompatActivity {
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                String user = "papis";
-                                String pass = "2011";
+                                String adminUsername = "papis";
+                                String adminPassword = "2011";
+
+                                String cashierUsername = "cashier";
+                                String cashierPassword = "2012";
+
+                                String cookUsername = "cook";
+                                String cookPassword = "2013";
+
+                                boolean validUser = false;
 
                                 if (TextUtils.isEmpty(username.getText().toString()) || TextUtils.isEmpty(password.getText().toString())) {
                                     Toast.makeText(MainActivity.this, "Incomplete Credentials", Toast.LENGTH_SHORT).show();
                                     return;
                                 }
 
-                                if (username.getText().toString().matches(user) && password.getText().toString().matches(pass)) {
+                                if (username.getText().toString().matches(adminUsername) && password.getText().toString().matches(adminPassword)) {
+                                    validUser = true;
+                                    Constants.ROLE = Constants.ROLE_ADMIN;
+                                }
+
+                                if (username.getText().toString().matches(cashierUsername) && password.getText().toString().matches(cashierPassword)) {
+                                    validUser = true;
+                                    Constants.ROLE = Constants.ROLE_CASHIER;
+                                }
+
+                                if (username.getText().toString().matches(cookUsername) && password.getText().toString().matches(cookPassword)) {
+                                    validUser = true;
+                                    Constants.ROLE = Constants.ROLE_COOK;
+                                }
+
+                                if (validUser) {
                                     Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                                     finish();
                                     startActivity(intent);

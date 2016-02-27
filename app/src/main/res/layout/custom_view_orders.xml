@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/linear_zero_dimen"
+        android:layout_height="wrap_content"
         android:layout_weight="9"
         android:orientation="horizontal"
         android:weightSum="12">
@@ -26,8 +26,8 @@
             android:layout_width="@dimen/linear_zero_dimen"
             android:layout_height="match_parent"
             android:layout_weight="10"
-            android:gravity="end"
-            android:textSize="@dimen/textsize_md" />
+            android:gravity="right|center_vertical"
+            android:textSize="@dimen/textsize_sm" />
 
     </LinearLayout>
 

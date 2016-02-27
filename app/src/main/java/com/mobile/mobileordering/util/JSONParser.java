@@ -73,12 +73,16 @@ public class JSONParser {
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                Order order = new Order(jsonObject.getString("category"), jsonObject.getInt("menuid"), jsonObject.getInt("id"), jsonObject.getString("name"), jsonObject.getInt("qty"), jsonObject.getInt("price"));
-                order.setTableid(jsonObject.getInt("tableid"));
+                Order order = new Order(jsonObject.getInt("id"), jsonObject.getInt("tableid"),
+                        jsonObject.getInt("batchid"), jsonObject.getString("category"),
+                        jsonObject.getString("name"), jsonObject.getInt("menuid"), jsonObject.getInt("qty"),
+                        jsonObject.getInt("price"), jsonObject.getInt("status"));
                 orders.add(order);
             }
             return orders;
         } catch (JSONException e) {
+            System.out.println("@@@@Mobile: JSON Exception: " + e.getMessage());
+
             e.printStackTrace();
             return null;
         }

@@ -68,6 +68,7 @@ public class FeedbackActivity extends AppCompatActivity{
         feedbackList = new ArrayList<>();
         progressBar.setVisibility(View.VISIBLE);
         StringRequest stringRequest = request("http://mobileordering-gnjb.rhcloud.com/feedback.php");
+        stringRequest.setShouldCache(false);
         requestQueue.add(stringRequest);
     }
 

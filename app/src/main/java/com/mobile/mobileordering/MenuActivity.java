@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,14 +18,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mobile.mobileordering.util.Constants;
 import com.mobile.mobileordering.util.LayoutManager;
 import com.mobile.mobileordering.util.PrefsManager;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MenuActivity extends AppCompatActivity {
-
-    private String menuList[] = {"Unpaid Orders", "Paid Orders", "Inventory", "Report", "Customer Feedback", "Set Table"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,7 @@ public class MenuActivity extends AppCompatActivity {
         menuListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String menuName = menuList[position];
+                String menuName = getMenuList().get(position);
 
                 switch (menuName) {
                     case "Unpaid Orders":
@@ -115,7 +117,16 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
 
+    private List<String> getMenuList(){
+        if(Constants.ROLE == Constants.ROLE_ADMIN){
+            return Arrays.asList("Report", "Customer Feedback", "Set Table");
+        } else if(Constants.ROLE == Constants.ROLE_CASHIER) {
+            return Arrays.asList("Unpaid Orders", "Paid Orders");
+        } else {
+            return Arrays.asList("Paid Orders");
+        }
     }
 
     private class MenuAdapter extends BaseAdapter {
@@ -127,7 +138,7 @@ public class MenuActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return menuList.length;
+            return getMenuList().size();
         }
 
         @Override
@@ -152,7 +163,7 @@ public class MenuActivity extends AppCompatActivity {
             }
 
             TextView label = (TextView) view.findViewById(R.id.tvMenuItem);
-            label.setText(menuList[position]);
+            label.setText(getMenuList().get(position));
 
             return view;
         }

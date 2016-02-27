@@ -62,8 +62,8 @@ public class ReportActivity extends FragmentActivity implements DatePickerDialog
             @Override
             public void onClick(View v) {
                 StringRequest stringRequest = request("http://opres.heliohost.org/order/getsalesdaily", "" + String.valueOf(calendar.get(Calendar.YEAR)) + "-" + String.valueOf(calendar.get(Calendar.MONTH) + 1) + "-" + String.valueOf(calendar.get(Calendar.DAY_OF_YEAR) + ""));
-
                 RequestQueue requestQueue = Volley.newRequestQueue(ReportActivity.this);
+                stringRequest.setShouldCache(false);
                 requestQueue.add(stringRequest);
             }
         });
@@ -78,6 +78,7 @@ public class ReportActivity extends FragmentActivity implements DatePickerDialog
 
                 StringRequest stringRequest = request("http://opres.heliohost.org/order/getsalesmonthly", month);
                 RequestQueue requestQueue = Volley.newRequestQueue(ReportActivity.this);
+                stringRequest.setShouldCache(false);
                 requestQueue.add(stringRequest);
             }
         });
@@ -89,8 +90,8 @@ public class ReportActivity extends FragmentActivity implements DatePickerDialog
                 String year = String.valueOf(calendar.get(Calendar.YEAR));
 
                 StringRequest stringRequest = request("http://opres.heliohost.org/order/getsalesyearly", year);
-
                 RequestQueue requestQueue = Volley.newRequestQueue(ReportActivity.this);
+                stringRequest.setShouldCache(false);
                 requestQueue.add(stringRequest);
             }
         });

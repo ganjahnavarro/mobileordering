@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.MimeTypeMap;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -27,20 +26,20 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.mobile.mobileordering.util.Constants;
 import com.mobile.mobileordering.util.JSONParser;
+import com.mobile.mobileordering.util.LayoutManager;
 import com.mobile.mobileordering.util.Order;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public abstract class AbstractOrdersActivity extends AppCompatActivity {
 
-    public static ArrayList<Order> orders = new ArrayList<>();
+    private List<List<Order>> mapList;
+    public static LinkedHashMap<Integer, List<Order>> ordersMap = new LinkedHashMap<>();
+
     private ProgressBar progressBar;
     private ListView ordersListView;
     private RequestQueue requestQueue;
@@ -76,6 +75,7 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
         });
 
         StringRequest stringRequest = request("http://mobileordering-gnjb.rhcloud.com/orders.php?status=" + getStatus());
+        stringRequest.setShouldCache(false);
         requestQueue.add(stringRequest);
     }
 
@@ -85,7 +85,20 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         progressBar.setVisibility(View.GONE);
-                        orders = JSONParser.parseFeedOrder(response);
+                        List<Order> orders = JSONParser.parseFeedOrder(response);
+
+                        ordersMap = new LinkedHashMap<>();
+                        for(Order order : orders){
+                            if(ordersMap.get(order.getBatchid()) != null){
+                                ordersMap.get(order.getBatchid()).add(order);
+                            } else {
+                                List<Order> list = new ArrayList<>();
+                                list.add(order);
+                                ordersMap.put(order.getBatchid(), list);
+                            }
+                        }
+                        mapList = new ArrayList<List<Order>>(ordersMap.values());
+
                         ordersListView = (ListView) findViewById(R.id.lvOrders);
                         ordersListView.setAdapter(new OrdersAdapter(getContext()));
                     }
@@ -99,7 +112,7 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
         );
     }
 
-    private StringRequest updateRequest(final String status, final int id, final String message) {
+    private StringRequest updateRequest(final String status, final int batchid, final String message) {
         return new StringRequest(Request.Method.POST, "http://mobileordering-gnjb.rhcloud.com/updateorder.php",
                 new Response.Listener<String>() {
                     @Override
@@ -118,15 +131,15 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
                 }) {
             @Override
             protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<String, String>();
+                Map<String, String> params = new HashMap<>();
                 params.put("status", status);
-                params.put("id", String.valueOf(id));
+                params.put("batchid", String.valueOf(batchid));
                 return params;
             }
 
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
+                Map<String, String> params = new HashMap<>();
                 params.put("Content-Type", "application/x-www-form-urlencoded");
                 return params;
             }
@@ -134,62 +147,27 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
     }
 
     private void refreshListView() {
-        orders = new ArrayList<>();
         progressBar.setVisibility(View.VISIBLE);
         StringRequest stringRequest = request("http://mobileordering-gnjb.rhcloud.com/orders.php?status=" + getStatus());
+        stringRequest.setShouldCache(false);
         requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
 
-    private void printDialog(String name, int qty, int price) {
-        File tempReceipt;
-
-        try {
-            tempReceipt = File.createTempFile("receipt", "txt");
-
-            String about = "x" + String.valueOf(qty) + " " + name;
-            int total = qty * price;
-
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(tempReceipt));
-            bufferedWriter.write("Official Receipt");
-            bufferedWriter.newLine();
-            bufferedWriter.newLine();
-            bufferedWriter.write(about);
-            bufferedWriter.newLine();
-            bufferedWriter.write("Php " + String.valueOf(price));
-            bufferedWriter.newLine();
-            bufferedWriter.newLine();
-            bufferedWriter.write("Total: Php " + String.valueOf(total) + ".00");
-            bufferedWriter.newLine();
-            bufferedWriter.newLine();
-            bufferedWriter.write("THANK YOU ^_^");
-            bufferedWriter.close();
-
-            byte[] data = new byte[(int) tempReceipt.length()];
-            new FileInputStream(tempReceipt).read(data);
-
-            System.out.println("@@@@MobileOrdering Byte[]: " + data);
-
-            StringRequest request = postRequest(data);
-            RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-            requestQueue.add(request);
-
-//            Intent printIntent = new Intent(getContext(), PrintDialogActivity.class);
-//            printIntent.setDataAndType(Uri.fromFile(tempReceipt), getMimeType(tempName));
-//            printIntent.putExtra("title", "receipt");
-//            startActivity(printIntent);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private void printDialog(final int batchid) {
+        StringRequest request = postRequest(batchid);
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        request.setShouldCache(false);
+        requestQueue.add(request);
     }
 
-    private StringRequest postRequest(final byte[] bytearray) {
-        return new StringRequest(Request.Method.POST, "http://mobileordering-gnjb.rhcloud.com/sendfile.php",
+    private StringRequest postRequest(final int batchid) {
+        return new StringRequest(Request.Method.POST, "http://mobileordering-gnjb.rhcloud.com/sendreceipt.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(getContext(),
-                                "File submitted. Thank you.",
+                                "Receipt was successfully submitted to printer.",
                                 Toast.LENGTH_LONG).show();
                     }
                 },
@@ -201,27 +179,18 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
                 }) {
             @Override
             protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("bytearray", bytearray.toString());
+                Map<String, String> params = new HashMap<>();
+                params.put("batchid", String.valueOf(batchid));
                 return params;
             }
 
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
+                Map<String, String> params = new HashMap<>();
                 params.put("Content-Type", "application/x-www-form-urlencoded");
                 return params;
             }
         };
-    }
-
-    public static String getMimeType(String url) {
-        String type = null;
-        String extension = MimeTypeMap.getFileExtensionFromUrl(url);
-        if (extension != null) {
-            type = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
-        }
-        return type;
     }
 
     private class OrdersAdapter extends BaseAdapter {
@@ -230,12 +199,11 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
 
         public OrdersAdapter(Context context) {
             this.context = context;
-
         }
 
         @Override
         public int getCount() {
-            return orders.size();
+            return ordersMap.size();
         }
 
         @Override
@@ -263,39 +231,46 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
             TextView items = (TextView) view.findViewById(R.id.tvOrdersItem);
             TextView table = (TextView) view.findViewById(R.id.tvOrdersTable);
 
-            final Order order = orders.get(position);
+            List<Order> orders = mapList.get(position);
 
-            String value = "x" + String.valueOf(order.getQty()) + " " + order.getName();
 
+            String value = "";
+            for(Order order : orders){
+                value += "x" + order.getQty() + " " + order.getName() + "\n";
+            }
             items.setText(value);
-            table.setText(String.valueOf(order.getTableid()));
-            loadOrderActions(view, order);
+
+            table.setText(String.valueOf(orders.get(0).getTableid()));
+            loadOrderActions(view, orders);
             return view;
         }
 
-        private void loadOrderActions(View view, final Order order) {
+        private void loadOrderActions(View view, final List<Order> orders) {
             LinearLayout forPendingLayout = (LinearLayout) view.findViewById(R.id.layoutForPending);
             LinearLayout forPaidLayout = (LinearLayout) view.findViewById(R.id.layoutForPaid);
 
             forPendingLayout.setVisibility(isForPending() ? View.VISIBLE : View.GONE);
             forPaidLayout.setVisibility(!isForPending() ? View.VISIBLE : View.GONE);
 
+            System.out.println("@@@@ Test: " + orders.get(0).getBatchid());
+
             if(isForPending()){
-                loadForPendingActions(view, order);
+                loadForPendingActions(view, orders);
             } else {
-                loadForPaidActions(view, order);
+                loadForPaidActions(view, orders);
             }
         }
 
-        private void loadForPendingActions(View view, final Order order) {
+        private void loadForPendingActions(View view, final List<Order> orders) {
             Button processPayment = (Button) view.findViewById(R.id.bOrdersProcess);
             Button cancelOrder = (Button) view.findViewById(R.id.bOrdersCancel);
 
             processPayment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    StringRequest stringRequest = updateRequest(Constants.ORDER_STATUS_PAID, order.getId(),
-                            order.getName() + " (Qty: " + order.getQty() + ") is successfully paid.");
+                    String message = "Order is successfully paid.";
+                    StringRequest stringRequest = updateRequest(Constants.ORDER_STATUS_PAID, orders.get(0).getBatchid(), message);
+                    stringRequest.setShouldCache(false);
                     requestQueue.add(stringRequest);
                 }
             });
@@ -303,29 +278,31 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
             cancelOrder.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    StringRequest stringRequest = updateRequest(Constants.ORDER_STATUS_CANCELLED, order.getId(),
-                            order.getName() + " (Qty: " + order.getQty() + ") is successfully cancelled.");
+                    String message = "Order is successfully cancelled.";
+                    StringRequest stringRequest = updateRequest(Constants.ORDER_STATUS_CANCELLED, orders.get(0).getBatchid(), message);
+                    stringRequest.setShouldCache(false);
                     requestQueue.add(stringRequest);
                 }
             });
         }
 
-        private void loadForPaidActions(View view, final Order order) {
+        private void loadForPaidActions(View view, final List<Order> orders) {
             Button reprintOrder = (Button) view.findViewById(R.id.bOrdersReceipt);
             Button voidOrder = (Button) view.findViewById(R.id.bOrdersVoid);
 
             reprintOrder.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    printDialog(order.getName(), order.getQty(), order.getPrice());
+                    printDialog(orders.get(0).getBatchid());
                 }
             });
 
             voidOrder.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    StringRequest stringRequest = updateRequest(Constants.ORDER_STATUS_VOID, order.getId(),
-                            order.getName() + " (Qty: " + order.getQty() + ") is successfully voided.");
+                    String message = "Order is successfully voided.";
+                    StringRequest stringRequest = updateRequest(Constants.ORDER_STATUS_VOID, orders.get(0).getBatchid(), message);
+                    stringRequest.setShouldCache(false);
                     requestQueue.add(stringRequest);
                 }
             });
@@ -334,6 +311,47 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
 
     private boolean isForPending(){
         return getStatus().equals(Constants.ORDER_STATUS_PENDING);
+    }
+
+    private class OrderItemAdapter extends BaseAdapter {
+
+        private Context context;
+        private List<Order> orderItems;
+
+        public OrderItemAdapter(Context context, List<Order> orderItems) {
+            this.context = context;
+            this.orderItems = orderItems;
+        }
+
+        @Override
+        public int getCount() {
+            return orderItems.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View view;
+
+            if (convertView == null) {
+                LayoutManager layoutManager = new LayoutManager(context);
+                view = layoutManager.inflate(R.layout.custom_view_order_item, parent);
+            } else {
+                view = convertView;
+            }
+            TextView label = (TextView) view.findViewById(R.id.tvOrderItem);
+            label.setText("x" + orderItems.get(position).getQty() + " " + orderItems.get(position).getName());
+            return view;
+        }
     }
 
 }

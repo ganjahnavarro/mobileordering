@@ -32,6 +32,7 @@ public class OrderService extends Service {
         super.onCreate();
         requestQueue = Volley.newRequestQueue(this);
         stringRequest = request("http://mobileordering-gnjb.rhcloud.com/orders.php?status=" + Constants.ORDER_STATUS_PENDING);
+        stringRequest.setShouldCache(false);
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {

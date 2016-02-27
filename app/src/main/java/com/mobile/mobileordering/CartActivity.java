@@ -86,6 +86,9 @@ public class CartActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 RequestQueue requestQueue = Volley.newRequestQueue(CartActivity.this);
 
+                                //TODO
+                                getRequest();
+
                                 for (PendingItem item : CategoryActivity.items) {
                                     requestQueue.add(postRequest(item.getCategory(), item.getName(), item.getId(), item.getQty(), item.getPrice()));
                                 }
@@ -150,6 +153,22 @@ public class CartActivity extends AppCompatActivity {
                     }
 
         };
+    }
+
+    private StringRequest getRequest() {
+        return new StringRequest(Request.Method.GET, "http://mobileordering-gnjb.rhcloud.com/latestbatch.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        System.out.println("@@@@Mobile : " + response);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.println("@@@@Error : " + error.getMessage());
+                    }
+                });
     }
 
     private void computeTotalAmount(){

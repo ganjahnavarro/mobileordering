@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 if (username.getText().toString().matches(cookUsername) && password.getText().toString().matches(cookPassword)) {
                                     validUser = true;
-                                    Constants.ROLE = Constants.ROLE_COOK;
+                                    Constants.ROLE = Constants.ROLE_KITCHEN;
                                 }
 
                                 if (validUser) {

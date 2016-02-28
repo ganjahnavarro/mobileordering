@@ -39,6 +39,9 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        TextView roleTextView = (TextView) findViewById(R.id.tvRole);
+        roleTextView.setText(Constants.ROLE);
+
         ListView menuListView = (ListView) findViewById(R.id.lvMenu);
         menuListView.setAdapter(new MenuAdapter(this));
         menuListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -190,14 +193,6 @@ public class MenuActivity extends AppCompatActivity {
                 .setNegativeButton("No", null)
                 .show();
 
-    }
-
-    private BitmapDrawable getDrawableFromAsset(String filename) throws IOException {
-        filename = filename.replace(" ", "").toLowerCase();
-        AssetManager assetManager = getAssets();
-        InputStream inputStream = assetManager.open("menu_image/" + filename);
-        Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-        return new BitmapDrawable(bitmap);
     }
 
 }

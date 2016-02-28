@@ -31,6 +31,7 @@ import com.mobile.mobileordering.util.Order;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -87,6 +88,14 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.GONE);
                         List<Order> orders = JSONParser.parseFeedOrder(response);
 
+                        Iterator<Order> orderIterator = orders.iterator();
+                        while(orderIterator.hasNext()){
+                            Order order = orderIterator.next();
+                            if(isKitchenOrders() && order.getCooked() == 1){
+                                orderIterator.remove();
+                            }
+                        }
+
                         ordersMap = new LinkedHashMap<>();
                         for(Order order : orders){
                             if(ordersMap.get(order.getBatchid()) != null){
@@ -133,6 +142,39 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
                 params.put("status", status);
+                params.put("batchid", String.valueOf(batchid));
+                return params;
+            }
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("Content-Type", "application/x-www-form-urlencoded");
+                return params;
+            }
+        };
+    }
+
+    private StringRequest updateCookedRequest(final int batchid, final String message) {
+        return new StringRequest(Request.Method.POST, "http://mobileordering-gnjb.rhcloud.com/updatecookedorder.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        if(message != null){
+                            Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+                        }
+                        refreshListView();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<>();
                 params.put("batchid", String.valueOf(batchid));
                 return params;
             }
@@ -233,7 +275,6 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
 
             List<Order> orders = mapList.get(position);
 
-
             String value = "";
             for(Order order : orders){
                 value += "x" + order.getQty() + " " + order.getName() + "\n";
@@ -262,18 +303,34 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
         }
 
         private void loadForPendingActions(View view, final List<Order> orders) {
-            Button processPayment = (Button) view.findViewById(R.id.bOrdersProcess);
+            Button actionButton = (Button) view.findViewById(R.id.bOrdersProcess);
             Button cancelOrder = (Button) view.findViewById(R.id.bOrdersCancel);
 
-            processPayment.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    String message = "Order is successfully paid.";
-                    StringRequest stringRequest = updateRequest(Constants.ORDER_STATUS_PAID, orders.get(0).getBatchid(), message);
-                    stringRequest.setShouldCache(false);
-                    requestQueue.add(stringRequest);
-                }
-            });
+            if(isKitchenOrders()){
+                actionButton.setText("FINISHED");
+
+                actionButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String message = "Order is successfully finished.";
+                        StringRequest stringRequest = updateCookedRequest(orders.get(0).getBatchid(), message);
+                        stringRequest.setShouldCache(false);
+                        requestQueue.add(stringRequest);
+                    }
+                });
+            } else {
+                actionButton.setText("PROCESS PAYMENT");
+
+                actionButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String message = "Order is successfully paid.";
+                        StringRequest stringRequest = updateRequest(Constants.ORDER_STATUS_PAID, orders.get(0).getBatchid(), message);
+                        stringRequest.setShouldCache(false);
+                        requestQueue.add(stringRequest);
+                    }
+                });
+            }
 
             cancelOrder.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -313,45 +370,8 @@ public abstract class AbstractOrdersActivity extends AppCompatActivity {
         return getStatus().equals(Constants.ORDER_STATUS_PENDING);
     }
 
-    private class OrderItemAdapter extends BaseAdapter {
-
-        private Context context;
-        private List<Order> orderItems;
-
-        public OrderItemAdapter(Context context, List<Order> orderItems) {
-            this.context = context;
-            this.orderItems = orderItems;
-        }
-
-        @Override
-        public int getCount() {
-            return orderItems.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return null;
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            View view;
-
-            if (convertView == null) {
-                LayoutManager layoutManager = new LayoutManager(context);
-                view = layoutManager.inflate(R.layout.custom_view_order_item, parent);
-            } else {
-                view = convertView;
-            }
-            TextView label = (TextView) view.findViewById(R.id.tvOrderItem);
-            label.setText("x" + orderItems.get(position).getQty() + " " + orderItems.get(position).getName());
-            return view;
-        }
+    protected boolean isKitchenOrders(){
+        return false;
     }
 
 }

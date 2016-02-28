@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="100dp"
-android:orientation="horizontal"
-android:weightSum="12">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
 
-<ImageView
-    android:id="@+id/ivMenuItem"
-    android:layout_width="@dimen/linear_zero_dimen"
-    android:layout_height="match_parent"
-    android:layout_weight="4"
-    android:contentDescription="Category"
-    android:cropToPadding="true"
-    android:padding="@dimen/padding_lg"
-    android:scaleType="centerCrop" />
+    <TextView
+        android:id="@+id/tvMenuItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="25dp"
+        android:textSize="@dimen/textsize_lg" />
 
-<TextView
-    android:id="@+id/tvMenuItem"
-    android:layout_width="@dimen/linear_zero_dimen"
-    android:layout_height="match_parent"
-    android:layout_weight="8"
-    android:gravity="center"
-    android:textSize="@dimen/textsize_sm"
-    android:textStyle="bold" />
-
-</LinearLayout>
+</RelativeLayout>

@@ -14,8 +14,9 @@ public class Order implements Parcelable {
     private int qty;
     private int price;
     private int status;
+    private int cooked;
 
-    public Order(int id, int tableid, int batchid, String category, String name, int menuid, int qty, int price, int status){
+    public Order(int id, int tableid, int batchid, String category, String name, int menuid, int qty, int price, int status, int cooked){
         this.id = id;
         this.tableid = tableid;
         this.batchid = batchid;
@@ -25,6 +26,7 @@ public class Order implements Parcelable {
         this.qty = qty;
         this.price = price;
         this.status = status;
+        this.cooked = cooked;
     }
 
     public Order(Parcel in) {
@@ -37,6 +39,7 @@ public class Order implements Parcelable {
         this.qty = in.readInt();
         this.price = in.readInt();
         this.status = in.readInt();
+        this.cooked = in.readInt();
     }
 
     public static final Creator<Order> CREATOR = new Creator<Order>() {
@@ -68,6 +71,7 @@ public class Order implements Parcelable {
         dest.writeInt(qty);
         dest.writeInt(price);
         dest.writeInt(status);
+        dest.writeInt(cooked);
     }
 
     public String getCategory() {
@@ -140,5 +144,13 @@ public class Order implements Parcelable {
 
     public void setBatchid(int batchid) {
         this.batchid = batchid;
+    }
+
+    public int getCooked() {
+        return cooked;
+    }
+
+    public void setCooked(int cooked) {
+        this.cooked = cooked;
     }
 }

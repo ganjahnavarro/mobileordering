@@ -85,13 +85,10 @@ public class CartActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 RequestQueue requestQueue = Volley.newRequestQueue(CartActivity.this);
+                                StringRequest stringRequest = getRequest();
+                                stringRequest.setShouldCache(false);
+                                requestQueue.add(stringRequest);
 
-                                //TODO
-                                getRequest();
-
-                                for (PendingItem item : CategoryActivity.items) {
-                                    requestQueue.add(postRequest(item.getCategory(), item.getName(), item.getId(), item.getQty(), item.getPrice()));
-                                }
                             }
                         })
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -105,7 +102,7 @@ public class CartActivity extends AppCompatActivity {
         });
     }
 
-    private StringRequest postRequest(final String category, final String name, final int menuid, final int qty, final int price) {
+    private StringRequest postRequest(final String category, final String name, final int menuid, final int qty, final int price, final int batchid) {
         return new StringRequest(Request.Method.POST, "http://mobileordering-gnjb.rhcloud.com/sendorder.php",
                 new Response.Listener<String>() {
                     @Override
@@ -141,6 +138,7 @@ public class CartActivity extends AppCompatActivity {
                         params.put("name", name);
                         params.put("menuid", String.valueOf(menuid));
                         params.put("qty", String.valueOf(qty));
+                        params.put("batchid", String.valueOf(batchid));
                         params.put("price", String.valueOf(price));
                         return params;
                     }
@@ -160,13 +158,18 @@ public class CartActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        System.out.println("@@@@Mobile : " + response);
+                        RequestQueue requestQueue = Volley.newRequestQueue(CartActivity.this);
+                        for (PendingItem item : CategoryActivity.items) {
+                            StringRequest stringRequest = postRequest(item.getCategory(), item.getName(), item.getId(), item.getQty(), item.getPrice(), Integer.valueOf(response));
+                            stringRequest.setShouldCache(false);
+                            requestQueue.add(stringRequest);
+                        }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        System.out.println("@@@@Error : " + error.getMessage());
+
                     }
                 });
     }

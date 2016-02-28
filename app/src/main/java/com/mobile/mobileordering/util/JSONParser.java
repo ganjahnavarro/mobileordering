@@ -76,7 +76,7 @@ public class JSONParser {
                 Order order = new Order(jsonObject.getInt("id"), jsonObject.getInt("tableid"),
                         jsonObject.getInt("batchid"), jsonObject.getString("category"),
                         jsonObject.getString("name"), jsonObject.getInt("menuid"), jsonObject.getInt("qty"),
-                        jsonObject.getInt("price"), jsonObject.getInt("status"));
+                        jsonObject.getInt("price"), jsonObject.getInt("status"), jsonObject.getInt("cooked"));
                 orders.add(order);
             }
             return orders;

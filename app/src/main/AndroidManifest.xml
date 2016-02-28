@@ -62,6 +62,12 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".KitchenOrdersActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:parentActivityName=".MenuActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".FeedbackActivity"
             android:configChanges="orientation|keyboard|keyboardHidden"
             android:parentActivityName=".MenuActivity"

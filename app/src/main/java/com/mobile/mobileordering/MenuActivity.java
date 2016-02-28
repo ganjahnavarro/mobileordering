@@ -62,7 +62,7 @@ public class MenuActivity extends AppCompatActivity {
                         startActivity(inventoryIntent);
                         break;
 
-                    case "Report":
+                    case "Reports":
                         Intent reportIntent = new Intent(MenuActivity.this, ReportActivity.class);
                         startActivity(reportIntent);
                         break;
@@ -127,7 +127,7 @@ public class MenuActivity extends AppCompatActivity {
 
     private List<String> getMenuList(){
         if(Constants.ROLE == Constants.ROLE_ADMIN){
-            return Arrays.asList("Report", "Customer Feedback", "Set Table");
+            return Arrays.asList("Reports", "Customer Feedback", "Set Table");
         } else if(Constants.ROLE == Constants.ROLE_CASHIER) {
             return Arrays.asList("Unpaid Orders", "Paid Orders");
         } else {
@@ -168,14 +168,8 @@ public class MenuActivity extends AppCompatActivity {
                 view = convertView;
             }
 
-            ImageView imageView = (ImageView) view.findViewById(R.id.ivMenuItem);
             TextView label = (TextView) view.findViewById(R.id.tvMenuItem);
             label.setText(getMenuList().get(position));
-            try {
-                imageView.setImageDrawable(getDrawableFromAsset(getMenuList().get(position) + ".png"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
             return view;
         }
     }

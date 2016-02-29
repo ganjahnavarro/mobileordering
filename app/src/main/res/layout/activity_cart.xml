@@ -89,6 +89,6 @@
         android:layout_height="@dimen/linear_zero_dimen"
         android:layout_weight="1"
         android:textSize="@dimen/textsize_sm"
-        android:text="Order" />
+        android:text="Submit Order" />
 
 </LinearLayout>

@@ -22,6 +22,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.mobile.mobileordering.util.Cache;
 import com.mobile.mobileordering.util.LayoutManager;
 import com.mobile.mobileordering.util.PendingItem;
 import com.mobile.mobileordering.util.PrefsManager;
@@ -107,21 +108,7 @@ public class CartActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        int size = 0;
-
-                        for(PendingItem item : CategoryActivity.items){
-                            size += item.getQty();
-                        }
-
-                        Toast.makeText(CartActivity.this,
-                                "Order Sent. Please wait " + MINUTES_PER_DISH_MIN * size + " to " + MINUTES_PER_DISH_MAX * size + " minutes for your order.",
-                                Toast.LENGTH_LONG).show();
-
-                        CategoryActivity.items.clear();
-                        ListView cartListView = (ListView) findViewById(R.id.lvCart);
-                        cartListView.setAdapter(new OrderAdapter(CartActivity.this));
-
-                        computeTotalAmount();
+                        System.out.println("Item submitted.");
                     }
                 },
                 new Response.ErrorListener() {
@@ -149,7 +136,6 @@ public class CartActivity extends AppCompatActivity {
                         params.put("Content-Type", "application/x-www-form-urlencoded");
                         return params;
                     }
-
         };
     }
 
@@ -158,12 +144,27 @@ public class CartActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        int size = 0;
                         RequestQueue requestQueue = Volley.newRequestQueue(CartActivity.this);
+
                         for (PendingItem item : CategoryActivity.items) {
                             StringRequest stringRequest = postRequest(item.getCategory(), item.getName(), item.getId(), item.getQty(), item.getPrice(), Integer.valueOf(response));
                             stringRequest.setShouldCache(false);
                             requestQueue.add(stringRequest);
+
+                            Cache.put(item);
+                            size += item.getQty();
                         }
+
+                        Toast.makeText(CartActivity.this,
+                                "Order Sent. Please wait " + MINUTES_PER_DISH_MIN * size + " to " + MINUTES_PER_DISH_MAX * size + " minutes for your order.",
+                                Toast.LENGTH_LONG).show();
+
+                        CategoryActivity.items.clear();
+                        ListView cartListView = (ListView) findViewById(R.id.lvCart);
+                        cartListView.setAdapter(new OrderAdapter(CartActivity.this));
+
+                        computeTotalAmount();
                     }
                 },
                 new Response.ErrorListener() {
@@ -216,35 +217,34 @@ public class CartActivity extends AppCompatActivity {
             final View view;
 
             if (convertView == null) {
-                LayoutManager function_121412 = new LayoutManager(context);
-                view = function_121412.inflate(R.layout.custom_view_cart, parent);
+                LayoutManager layout = new LayoutManager(context);
+                view = layout.inflate(R.layout.custom_view_cart, parent);
             } else {
                 view = convertView;
             }
 
-            ImageButton param_1242141 = (ImageButton) view.findViewById(R.id.ibCartRemove);
-            TextView param_423542352 = (TextView) view.findViewById(R.id.tvCartLabel);
-            TextView param_3242352214 = (TextView) view.findViewById(R.id.tvCartQty);
-            TextView param_4235123 = (TextView) view.findViewById(R.id.tvCartPrice);
+            ImageButton imageButton = (ImageButton) view.findViewById(R.id.ibCartRemove);
+            TextView cartLabel = (TextView) view.findViewById(R.id.tvCartLabel);
+            TextView cartQty = (TextView) view.findViewById(R.id.tvCartQty);
+            TextView cartPrice = (TextView) view.findViewById(R.id.tvCartPrice);
 
-            final PendingItem function_43251312312 = CategoryActivity.items.get(position);
+            final PendingItem item = CategoryActivity.items.get(position);
 
-            param_1242141.setOnClickListener(new View.OnClickListener() {
+            imageButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(CartActivity.this, "Removed " + function_43251312312.getName(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CartActivity.this, "Removed " + item.getName(), Toast.LENGTH_SHORT).show();
                     CategoryActivity.items.remove(position);
                     notifyDataSetChanged();
                     computeTotalAmount();
                 }
             });
 
-            param_423542352.setText(String.valueOf(function_43251312312.getName()));
-            //modified on february 20, 2016
-            param_3242352214.setText(String.valueOf(function_43251312312.getQty()) + " x " + function_43251312312.getPrice() + ".00");
+            cartLabel.setText(String.valueOf(item.getName()));
+            cartQty.setText(String.valueOf(item.getQty()) + " x " + item.getPrice() + ".00");
 
-            int subTotal = function_43251312312.getPrice() * function_43251312312.getQty();
-            param_4235123.setText("Php " + String.valueOf(subTotal) + ".00");
+            int subTotal = item.getPrice() * item.getQty();
+            cartPrice.setText("Php " + String.valueOf(subTotal) + ".00");
 
             return view;
         }

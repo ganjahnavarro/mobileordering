@@ -62,23 +62,22 @@
         android:orientation="horizontal"
         android:weightSum="12">
 
-        <Space
-            android:layout_width="@dimen/linear_zero_dimen"
-            android:layout_height="match_parent"
-            android:layout_weight="3" />
-
         <Button
-            android:id="@+id/bItemsView"
+            android:id="@+id/bItemsViewCurrent"
             android:layout_width="@dimen/linear_zero_dimen"
             android:layout_height="match_parent"
             android:layout_weight="6"
-            android:text="@string/items_b_view_order"
+            android:text="@string/items_b_view_order_current"
             android:textSize="@dimen/textsize_sm" />
 
-        <Space
+        <Button
+            android:id="@+id/bItemsViewSubmitted"
             android:layout_width="@dimen/linear_zero_dimen"
             android:layout_height="match_parent"
-            android:layout_weight="3" />
+            android:layout_weight="6"
+            android:text="@string/items_b_view_order_submitted"
+            android:textSize="@dimen/textsize_sm" />
+
     </LinearLayout>
 
 </LinearLayout>

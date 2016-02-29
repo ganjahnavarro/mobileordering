@@ -64,7 +64,9 @@ public class ItemsActivity extends AppCompatActivity {
     }
 
     private void loadListeners() {
-        Button viewOrder = (Button) findViewById(R.id.bItemsView);
+        Button viewCurrentOrders = (Button) findViewById(R.id.bItemsViewCurrent);
+        Button viewSubmittedOrders = (Button) findViewById(R.id.bItemsViewSubmitted);
+
         ImageButton logout = (ImageButton) findViewById(R.id.ibItemsLogout);
 
         logout.setOnClickListener(new View.OnClickListener() {
@@ -76,10 +78,18 @@ public class ItemsActivity extends AppCompatActivity {
             }
         });
 
-        viewOrder.setOnClickListener(new View.OnClickListener() {
+        viewCurrentOrders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ItemsActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        viewSubmittedOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ItemsActivity.this, SubmittedOrdersActivity.class);
                 startActivity(intent);
             }
         });

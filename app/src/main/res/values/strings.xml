@@ -6,6 +6,7 @@
     <string name="app_version">v1.0.0 2016</string>
 
     <string name="app_act_cart">Orders</string>
+    <string name="app_act_submitted_orders">Submitted Orders</string>
     <string name="app_act_category">Menu</string>
     <string name="app_act_item">Item</string>
     <string name="app_act_menu">Admin</string>
@@ -24,7 +25,8 @@
     <string name="main_b_login">Login</string>
 
     <!-- ITEMS ACTIVITY -->
-    <string name="items_b_view_order">View Order</string>
+    <string name="items_b_view_order_current">View Order</string>
+    <string name="items_b_view_order_submitted">Submitted Orders</string>
 
 
     <string name="b_admin">Admin</string>

@@ -22,6 +22,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mobile.mobileordering.util.Cache;
 import com.mobile.mobileordering.util.Constants;
 import com.mobile.mobileordering.util.LayoutManager;
 import com.mobile.mobileordering.util.PrefsManager;
@@ -60,6 +61,11 @@ public class MenuActivity extends AppCompatActivity {
                         startActivity(paidOrdersIntent);
                         break;
 
+                    case "Orders":
+                        Intent ordersIntent = new Intent(MenuActivity.this, PaidOrdersActivity.class);
+                        startActivity(ordersIntent);
+                        break;
+
                     case "Inventory":
                         Intent inventoryIntent = new Intent(MenuActivity.this, InventoryActivity.class);
                         startActivity(inventoryIntent);
@@ -68,6 +74,11 @@ public class MenuActivity extends AppCompatActivity {
                     case "Reports":
                         Intent reportIntent = new Intent(MenuActivity.this, ReportActivity.class);
                         startActivity(reportIntent);
+                        break;
+
+                    case "Clear Orders":
+                        Cache.clear();
+                        Toast.makeText(MenuActivity.this, "Clear orders successful.", Toast.LENGTH_SHORT).show();
                         break;
 
                     case "Set Table":
@@ -130,11 +141,11 @@ public class MenuActivity extends AppCompatActivity {
 
     private List<String> getMenuList(){
         if(Constants.ROLE == Constants.ROLE_ADMIN){
-            return Arrays.asList("Reports", "Customer Feedback", "Set Table");
+            return Arrays.asList("Reports", "Customer Feedback", "Set Table", "Clear Orders");
         } else if(Constants.ROLE == Constants.ROLE_CASHIER) {
             return Arrays.asList("Unpaid Orders", "Paid Orders");
         } else {
-            return Arrays.asList("Paid Orders");
+            return Arrays.asList("Orders");
         }
     }
 

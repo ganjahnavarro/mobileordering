@@ -45,6 +45,11 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".SubmittedOrdersActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".MenuActivity"
             android:configChanges="orientation|keyboard|keyboardHidden"
             android:screenOrientation="portrait" />

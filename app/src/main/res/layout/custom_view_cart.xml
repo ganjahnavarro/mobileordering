@@ -46,18 +46,20 @@
             android:id="@+id/tvCartQty"
             android:layout_width="@dimen/linear_zero_dimen"
             android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:text="asasa"
+            android:layout_weight="6"
+            android:gravity="start|center"
+            android:text="Qty x Price"
+            android:paddingLeft="10sp"
             android:textSize="@dimen/textsize_md" />
 
         <TextView
             android:id="@+id/tvCartPrice"
             android:layout_width="@dimen/linear_zero_dimen"
             android:layout_height="match_parent"
-            android:layout_weight="10"
+            android:layout_weight="6"
+            android:paddingRight="10sp"
             android:gravity="end|center"
-            android:text="asasa"
+            android:text="Total"
             android:textSize="@dimen/textsize_md" />
 
     </LinearLayout>

@@ -2,66 +2,66 @@
   {
     "menu_name": "breakfast",
     "menu_label": "BREAKFAST CHOICES",
-    "menu_image": "sizzling_bangus"
+    "menu_image": "breakfast_tapsilog"
   },
   {
     "menu_name": "lipsmacking",
     "menu_label": "LIPSMACKING SELECTION",
-    "menu_image": "beef_karekare"
+    "menu_image": "lipsmacking_porksteak"
   },
   {
     "menu_name": "meaty",
     "menu_label": "MEATY MEMORIES",
-    "menu_image": "inihaw_chicken"
+    "menu_image": "meaty_babybackribs"
   },
   {
     "menu_name": "rice",
     "menu_label": "SPECIAL RICE PLATTERS",
-    "menu_image": "tapsi_longsilog"
+    "menu_image": "specialriceplatters_shanghairice"
   },
   {
-    "menu_name": "paLatable",
+    "menu_name": "palatable",
     "menu_label": "PALATABLE FOOD MEDLEY",
-    "menu_image": "pares_lechonpares"
+    "menu_image": "palatable_friedwholechicken"
   },
   {
     "menu_name": "beverages",
     "menu_label": "REFRESHING BEVERAGES",
-    "menu_image": "sandwich_clubhouse"
+    "menu_image": "beverages_mangoyogurtmilkshake"
   },
   {
     "menu_name": "supreme",
     "menu_label": "SUPREME PLATES",
-    "menu_image": "appetizer_calamares"
+    "menu_image": "supremeplates_seasonedchickendishwithsoupandicedtea"
   },
-  {
-    "menu_name": "combo",
-    "menu_label": "COMBO SPECIALS",
-    "menu_image": "pork_crispypata"
-  },
+//  {
+//    "menu_name": "combo",
+//    "menu_label": "COMBO SPECIALS",
+//    "menu_image": "pork_crispypata"
+//  },
   {
     "menu_name": "soup",
     "menu_label": "SOUP COLLECTION",
-    "menu_image": "seafood_shrimp"
+    "menu_image": "soup_bulalo"
   },
   {
     "menu_name": "adds",
     "menu_label": "ADDS-ON",
-    "menu_image": "noodles_cantonbihon"
+    "menu_image": "adds_extraegg"
   },
   {
     "menu_name": "blissful",
     "menu_label": "BLISSFUL FLAVORS",
-    "menu_image": "soup_nido"
+    "menu_image": "blissfulflavors_pestopasta"
   },
   {
     "menu_name": "stimulating",
     "menu_label": "STIMULATING POTIONS",
-    "menu_image": "chicken_whole"
+    "menu_image": "stimulating_rumcoke"
   },
   {
     "menu_name": "alcoholic",
     "menu_label": "ALCOHOLIC BEVERAGES",
-    "menu_image": "vegetables_chinese"
+    "menu_image": "alcoholic_palepilsen"
   }
   ]

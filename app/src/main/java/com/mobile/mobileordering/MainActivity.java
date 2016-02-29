@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                                 String cashierUsername = "cashier";
                                 String cashierPassword = "2012";
 
-                                String cookUsername = "cook";
+                                String cookUsername = "kitchen";
                                 String cookPassword = "2013";
 
                                 boolean validUser = false;
